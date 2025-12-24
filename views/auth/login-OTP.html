@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/login-OTP-B3SBsH_c.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-BINZ1ccu.js">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/just-validate.es-C73wyOde.js">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-CLnNTaS0.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/login-OTP-RQC8iS05.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/auth-BG_u3x__.css">
+</head>
+
+<body>
+    <!-- Background Decorative illustration (left) -->
+    <div class="dv-auth__bg-decor dv-auth__bg-decor--left" aria-hidden="true"></div>
+    <!-- Background Decorative illustration (right) -->
+    <div class="dv-auth__bg-decor dv-auth__bg-decor--right"></div>
+
+    <!-- Background Primary Light -> top right -->
+    <!-- <div class="dv-auth__bg-light dv-auth__bg-light--right"></div> -->
+    <div class="dv-auth__bg-light dv-auth__bg-light--right"></div>
+
+    <!-- Background Secondary Light -> bottom left -->
+    <div class="dv-auth__bg-light dv-auth__bg-light--left"></div>
+
+    <main class="dv-main container">
+        <!-- ****[OTP Page]**** Start -->
+        <div class="dv-auth">
+            <!-- Auth Card -->
+            <div class="dv-auth__card">
+
+                <!-- Header -->
+                <div class="dv-auth__header">
+                    <h1 class="dv-auth__title">کد یکبار مصرف</h1>
+                    <p class="dv-auth__subtitle">کد به شماره 09123456789 ارسال شد.</p>
+                </div>
+
+                <!-- Form -->
+                <form class="dv-auth__form" action="" method="">
+
+                    <!-- Honeypot field to fuck mf bots -->
+                    <div style="position:absolute; left:-9999px;">
+                        <input type="text" name="hp-field" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="dv-auth__otp-wrapper" id="dv-auth__otp-inputs-wrapper">
+                        <div class="dv-input dv-input__otp">
+                            <div class="dv-input__field">
+                                <input class="dv-auth__input dv-auth__otp-input" maxlength="1" inputmode="numeric"
+                                    pattern="[0-9]" autocomplete="one-time-code" type="text" name="otp-code-1"
+                                    id="otp-code-1" autofocus />
+                            </div>
+                        </div>
+                        <div class="dv-input dv-input__otp">
+                            <div class="dv-input__field">
+                                <input class="dv-auth__input dv-auth__otp-input" maxlength="1" inputmode="numeric"
+                                    pattern="[0-9]" autocomplete="one-time-code" type="text" name="otp-code-2"
+                                    id="otp-code-2" />
+                            </div>
+                        </div>
+                        <div class="dv-input dv-input__otp">
+                            <div class="dv-input__field">
+                                <input class="dv-auth__input dv-auth__otp-input" maxlength="1" inputmode="numeric"
+                                    pattern="[0-9]" autocomplete="one-time-code" type="text" name="otp-code-3"
+                                    id="otp-code-3" />
+                            </div>
+                        </div>
+                        <div class="dv-input dv-input__otp">
+                            <div class="dv-input__field">
+                                <input class="dv-auth__input dv-auth__otp-input" maxlength="1" inputmode="numeric"
+                                    pattern="[0-9]" autocomplete="one-time-code" type="text" name="otp-code-4"
+                                    id="otp-code-4" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit -->
+                    <button type="submit" disabled
+                        class="dv-auth__submit dv-btn dv-btn--lg dv-btn--primary dv-btn--fill w-100">
+                        <div class="dv-btn__text">ورود</div>
+                    </button>
+                    <div class="dv-auth__otp-timer-container">
+                        <div id="timer" class="dv-auth__otp-timer">
+                            <span class="dv-auth__timer-text">زمان باقی‌مانده:</span>
+                            <span id="time" class="dv-auth__timer-digits">02:00</span>
+                        </div>
+                        <a type="button" id="resend" class="dv-auth__otp-resend-btn dv-display-none">
+                            ارسال مجدد کد
+                        </a>
+                    </div>
+                    <div class="dv-auth__otp-form-footer">
+                        <p class="dv-auth__otp-form-footer-text">شماره را اشتباه وارد کردید؟ <a href="login.html"
+                                class="dv-auth__otp-form-footer-link">تغییر شماره</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ****[OTP Page]**** End -->
+    </main>
+
+    <!-- ! Core Scripts -->
+
+    <!-- ! Page Scripts -->
+</body>
+
+</html>

@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/game-BMEPJP0G.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-BINZ1ccu.js">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/swiper-CRU51p5Y.js">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/just-validate.es-C73wyOde.js">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-CLnNTaS0.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/swiper-DtOVtP06.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/game-zyrFTngJ.css">
+</head>
+
+<body>
+
+    <!-- * Navbar Start -->
+    <nav data-aos="fade-down" class="dv-nav container">
+        <div class="dv-nav__right col d-none d-lg-flex">
+            <a href="/index.html">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo_text.png" alt="Arcane Logo">
+            </a>
+        </div>
+
+        <ul class="dv-nav__center col" x-data="{
+        open: false,
+        resetSearch(el) {
+          this.open = !!el.value.trim();
+          this.open ? el.focus() : '';
+        },
+        openFocus(el) {
+          setTimeout(()=>{
+            el.focus();
+          }, 400)
+          this.open = true;
+        },
+      }">
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link" href="">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        sports_esports
+                    </span>
+                    <div class="dv-nav__title">
+                        بازی‌ها
+                    </div>
+                </a>
+            </li>
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link" href="about-us.html">
+                    <div class="dv-nav__title">
+                        درباره ما
+                    </div>
+                    <span class="dv-nav__icon material-icons-outlined">
+                        info
+                    </span>
+                </a>
+            </li>
+            <li class="d-block d-lg-none">
+                <a class="dv-nav__link dv-padding-sm" href="#" data-bs-toggle="offcanvas" data-bs-target="#sidemenu"
+                    aria-controls="sidemenu">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        menu
+                    </span>
+                </a>
+            </li>
+            <li class="d-block d-lg-none">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
+            </li>
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link" href="/index.html">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        home
+                    </span>
+                    <div class="dv-nav__title">
+                        خانه
+                    </div>
+                </a>
+            </li>
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link" href="faq.html">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        contact_support
+                    </span>
+                    <div class="dv-nav__title">
+                        ارتباط و سوالات
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a @click="openFocus($refs.searchField)" type="button"
+                    class="dv-btn dv-btn--primary dv-nav__search-btn">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        search
+                    </span>
+                </a>
+            </li>
+            <form action="" class="dv-nav__search dv-nav__search--open" :class="{ 'dv-nav__search--open': open }">
+                <input x-ref="searchField" class="dv-nav__search-field" type="search" name=""
+                    placeholder="جستجوی بازی..." id="">
+                <button type="reset" @click="resetSearch($refs.searchField)">
+                    <span class="material-icons-outlined">
+                        close
+                    </span>
+                </button>
+            </form>
+        </ul>
+
+        <div class="dv-nav__left col d-none d-lg-flex">
+            <!-- <a class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" href="#">
+          <span class="dv-btn__icon material-icons-outlined">
+            person
+          </span>
+          <div class="dv-btn__text">ورود | ثبت نام</div>
+        </a> -->
+            <div class="dv-nav__left-auth">
+                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="سبد خرید">
+                    <div class="dv-badge dv-badge--number">+9</div>
+                    <span class="dv-btn__icon material-icons-outlined">
+                        shopping_cart
+                    </span>
+                </a>
+                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="داشبورد کاربری">
+                    <span class="dv-btn__icon material-icons-outlined">
+                        account_circle
+                    </span>
+                </a>
+                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="پشتیبانی">
+                    <span class="dv-btn__icon material-icons-outlined">
+                        headset
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- * Navbar End -->
+
+    <!-- * Sidemenu Start -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="sidemenu" aria-labelledby="sidemenu-title">
+        <div class="offcanvas-header">
+            <a href="/" class="offcanvas-header__logo">
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo" />
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo_text.png" alt="فروشگاه گیمینگ آرکین" />
+            </a>
+            <button type="button" class="dv-btn dv-btn--xs button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    arrow_forward_ios
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body">
+            <!-- Logged in Mode -->
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">داشبورد کاربری</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">سبد خرید</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">پشتیبانی</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <hr>
+            <!-- Logged in Mode -->
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">بازی‌ها</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="faq.html">
+                <div class="dv-sidemenu__text">سوالات متداول</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="about-us.html">
+                <div class="dv-sidemenu__text">درباره ما</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+        </div>
+        <div class="offcanvas-footer">
+            <!-- ? Logged in Mode -->
+            <a class="dv-btn dv-btn--lg dv-btn--error dv-btn--outline" href="#">
+                <span class="dv-btn__icon material-icons-outlined dv-flip-hr">
+                    logout
+                </span>
+                <div class="dv-btn__text">خروج از حساب</div>
+            </a>
+            <!-- ? Logged in Mode -->
+
+            <!-- ? Guest Mode -->
+            <!-- <a class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill" href="#">
+        <span class="dv-btn__icon material-icons-outlined">
+          person
+        </span>
+        <div class="dv-btn__text">ورود | ثبت نام</div>
+      </a> -->
+            <!-- ? Guest Mode -->
+        </div>
+    </div>
+    <!-- * Sidemenu End -->
+
+    <!-- ************ [Header Game Background] Start ************ -->
+    <div class="dv-game-header">
+        <img class="dv-game-header__bg" src="/Arcane-Front-build/imgs/66246-2880x1800-desktop-hd-assassins-creed-background.jpg"
+            alt="background image">
+        <!-- ************ [Payment box] Start ************ -->
+        <div class="dv-payment-box__container container">
+            <!-- box wrapper -->
+            <div class="dv-payment-box__boxes-wrapper">
+                <!-- background lights start -->
+                <!-- background light -> right polygon -->
+                <img class="dv-payment-box__bg-light dv-payment-box__bg-light-right"
+                    src="/Arcane-Front-build/imgs/game-page__polygon-secondary-right.png" alt="box background light right">
+                <!-- background light -> centered rectangle -->
+                <img class="dv-payment-box__bg-light dv-payment-box__bg-light-center"
+                    src="/Arcane-Front-build/imgs/game-page__rect-secondary.png" alt="box background light center">
+                <img class="dv-payment-box__bg-light-center-h" src="/Arcane-Front-build/imgs/game-page__rect-secondary-h.png"
+                    alt="box background light center">
+                <!-- background light -> left polygon -->
+                <img class="dv-payment-box__bg-light dv-payment-box__bg-light-left"
+                    src="/Arcane-Front-build/imgs/game-page__polygon-secondary-left.png" alt="box background light left">
+                <!-- background lights end -->
+
+                <div class="dv-payment-box__box dv-payment-box__box-right">
+                    <div class="dv-payment-box__box-right-content">
+                        <div class="dv-payment-box__title">FC24 Standard Edition</div>
+                        <div class="dv-payment-box__action-field-wrapper">
+                            <div class="dropdown-center dv-dropdown w-100" data-dropdown>
+                                <input type="hidden" name="edition" value="" data-dropdown-value>
+                                <button class="dv-dropdown__btn w-100" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" data-dropdown-btn>
+                                    <div class="dv-dropdown__btn-text">- انتخاب نسخه -</div>
+                                    <span class="dv-dropdown__arrow material-icons-outlined">
+                                        expand_more
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu dv-dropdown-menu w-100">
+                                    <li class="dv-dropdown-menu__li">
+                                        <button class="dropdown-item" type="button" data-value="standard">
+                                            <span class="dv-dropdown-menu__value">Standard Edition</span>
+                                            <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                check
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="dv-dropdown-menu__li">
+                                        <button class="dropdown-item" type="button" data-value="ultimate">
+                                            <span class="dv-dropdown-menu__value">Ultimate Edition</span>
+                                            <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                check
+                                            </span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-center dv-dropdown w-100" data-dropdown>
+                                <input type="hidden" name="edition" value="" data-dropdown-value>
+                                <button class="dv-dropdown__btn w-100" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" data-dropdown-btn>
+                                    <div class="dv-dropdown__btn-text">- انتخاب ظرفیت -</div>
+                                    <span class="dv-dropdown__arrow material-icons-outlined">
+                                        expand_more
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu dv-dropdown-menu w-100">
+                                    <li class="dv-dropdown-menu__li">
+                                        <button class="dropdown-item" type="button" data-value="1">
+                                            <span class="dv-dropdown-menu__value">ظرفیت اول</span>
+                                            <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                check
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="dv-dropdown-menu__li">
+                                        <button class="dropdown-item" type="button" data-value="2">
+                                            <span class="dv-dropdown-menu__value">ظرفیت دوم</span>
+                                            <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                check
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="dv-dropdown-menu__li">
+                                        <button class="dropdown-item" type="button" data-value="3">
+                                            <span class="dv-dropdown-menu__value">ظرفیت سوم</span>
+                                            <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                check
+                                            </span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dv-payment-box__btn-wrapper">
+                                <button type="submit" class="dv-btn dv-btn--md dv-btn--primary dv-btn--outline w-100">
+                                    <div class="dv-btn__text">افزودن به سبد</div>
+                                </button>
+                                <button
+                                    class="dv-btn dv-btn--md dv-btn--secondary dv-btn--outline dv-payment-box__fav-btn"
+                                    href="#">
+                                    <span class="dv-btn__icon material-icons-outlined">
+                                        favorite_border
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="dv-payment-box__price-wrapper">
+                                <!-- "card body with discount" start (for Mohsen: we can achieve "card body without discount" with removing or making comment ".dv-payment-box__discount") -->
+                                <div class="dv-payment-box__discount">
+                                    <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                                </div>
+                                <div class="dv-payment-box__price">
+                                    <div class="dv-payment-box__price-before">
+                                        5/500/000
+                                    </div>
+                                    <div class="dv-payment-box__price-after">
+                                        <span class="dv-payment-box__price-after-value">4/950/000</span>
+                                        <span class="dv-payment-box__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body with discount" end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dv-payment-box__box dv-payment-box__box-left"><img
+                        src="/Arcane-Front-build/imgs/66246-2880x1800-desktop-hd-assassins-creed-background.jpg" alt="game cover"></img>
+                </div>
+            </div>
+        </div>
+        <!-- ************ [Payment box] end ************ -->
+    </div>
+    <!-- ************ [Header Game Background] end ************ -->
+
+    <main class="dv-main container">
+        <!-- ************ [Game Details Section] Start ************ -->
+        <section class="dv-section dv-game-details">
+            <div class="dv-game-details__container">
+
+                <!-- About Game -->
+                <div class="dv-game-details__about">
+                    <div class="dv-game-details__header dv-section__head">
+                        <div class="dv-section__title-wrapper">
+                            <span class="dv-section__title-icon material-icons-outlined">
+                                info
+                            </span>
+                            <h4 class="dv-game-details__title dv-section__title">درباره بازی</h4>
+                        </div>
+                    </div>
+
+                    <p class="dv-game-details__description">
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی
+                        مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
+                        درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری
+                        را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
+                        صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و
+                        زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی
+                        اساسا مورد استفاده قرار گیرد.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="dv-game-details__tags">
+                        <span class="dv-game-details__tag-title">دست‌بندی :</span>
+                        <span
+                            class="dv-game-details__tag dv-label dv-label--md dv-label--primary dv-label--outline">ورزشی</span>
+                        <span
+                            class="dv-game-details__tag dv-label dv-label--md dv-label--primary dv-label--outline">رقابتی</span>
+                        <span
+                            class="dv-game-details__tag dv-label dv-label--md dv-label--primary dv-label--outline">مسابقه
+                            ای</span>
+                        <span
+                            class="dv-game-details__tag dv-label dv-label--md dv-label--primary dv-label--outline">آفلاین</span>
+                    </div>
+                </div>
+
+                <!-- Game Info -->
+                <div class="dv-game-details__info">
+                    <div class="dv-game-details__header dv-section__head">
+                        <div class="dv-section__title-wrapper">
+                            <span class="dv-section__title-icon material-icons-outlined">
+                                list_alt
+                            </span>
+                            <h4 class="dv-game-details__title dv-section__title">اطلاعات بازی</h4>
+                        </div>
+                    </div>
+
+                    <ul class="dv-game-details__list">
+
+                        <li class="dv-game-details__item">
+                            <div class="dv-game-details__label-wrapper">
+                                <span class="dv-game-details__label-icon material-icons-outlined">
+                                    corporate_fare
+                                </span>
+                                <span class="dv-game-details__label">شرکت سازنده:</span>
+                            </div>
+                            <span class="dv-game-details__value">Electronic Arts</span>
+                        </li>
+
+                        <li class="dv-game-details__item">
+                            <div class="dv-game-details__label-wrapper">
+                                <span class="dv-game-details__label-icon material-icons-outlined">
+                                    date_range
+                                </span>
+                                <span class="dv-game-details__label">تاریخ انتشار:</span>
+                            </div>
+                            <span class="dv-game-details__value">۱۴۰۳/۱۱/۲۳</span>
+                        </li>
+
+                        <li class="dv-game-details__item">
+                            <div class="dv-game-details__label-wrapper">
+                                <span class="dv-game-details__label-icon material-icons-outlined">
+                                    star_purple500
+                                </span>
+                                <span class="dv-game-details__label">امتیاز آرکین:</span>
+                            </div>
+                            <span class="dv-game-details__value">
+                                <i class="dv-game-details__icon dv-icon-star"></i>
+                                ۹ / ۱۰
+                            </span>
+                        </li>
+
+                        <li class="dv-game-details__item">
+                            <div class="dv-game-details__label-wrapper">
+                                <span class="dv-game-details__label-icon material-icons-outlined">
+                                    storage
+                                </span>
+                                <span class="dv-game-details__label">حجم بازی:</span>
+                            </div>
+                            <span class="dv-game-details__value">۱۰۰ گیگابایت</span>
+                        </li>
+
+                        <li class="dv-game-details__item">
+                            <div class="dv-game-details__label-wrapper">
+                                <span class="dv-game-details__label-icon material-icons-outlined">
+                                    account_circle
+                                </span>
+                                <span class="dv-game-details__label">رده‌بندی سنی:</span>
+                            </div>
+                            <span class="dv-game-details__value">
+                                <img src="/Arcane-Front-build/imgs/pegi/image 11.png" alt="Age Rating" class="dv-game-details__age" />
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        <!-- ************ [Game Details Section] end ************ -->
+
+        <!-- ************ [Game Gallery Section] Start ************ -->
+        <section class="dv-section dv-game-gallery">
+            <div class="dv-game-gallery__container">
+
+                <!-- Header -->
+                <div class="dv-game-gallery__header dv-section__head">
+                    <div class="dv-section__title-wrapper">
+                        <span class="dv-section__title-icon material-icons-outlined">
+                            image
+                        </span>
+                        <h4 class="dv-game-gallery__title dv-section__title">تصاویر بازی</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery -->
+                <div class="dv-game-gallery__wrapper">
+                    <div class="dv-game-gallery__item-wrapper">
+                        <a href="/Arcane-Front-build/imgs/fc-24 (1).webp" data-fancybox="game-gallery"
+                            class="dv-game-gallery__item">
+                            <img src="/Arcane-Front-build/imgs/fc-24 (1).webp" alt="Game screenshot" class="dv-game-gallery__image" />
+                            <span class="dv-game-gallery__overlay">
+                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="dv-game-gallery__item-wrapper">
+                        <a href="/Arcane-Front-build/imgs/fc-24 (2).webp" data-fancybox="game-gallery"
+                            class="dv-game-gallery__item">
+                            <img src="/Arcane-Front-build/imgs/fc-24 (2).webp" alt="Game screenshot" class="dv-game-gallery__image" />
+                            <span class="dv-game-gallery__overlay">
+                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="dv-game-gallery__item-wrapper">
+                        <a href="/Arcane-Front-build/imgs/fc-24 (3).webp" data-fancybox="game-gallery"
+                            class="dv-game-gallery__item">
+                            <img src="/Arcane-Front-build/imgs/fc-24 (3).webp" alt="Game screenshot" class="dv-game-gallery__image" />
+                            <span class="dv-game-gallery__overlay">
+                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="dv-game-gallery__item-wrapper">
+                        <a href="/Arcane-Front-build/imgs/fc-24 (4).jpg" data-fancybox="game-gallery"
+                            class="dv-game-gallery__item">
+                            <img src="/Arcane-Front-build/imgs/fc-24 (4).jpg" alt="Game screenshot" class="dv-game-gallery__image" />
+                            <span class="dv-game-gallery__overlay">
+                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="dv-game-gallery__item-wrapper">
+                        <a href="/Arcane-Front-build/imgs/fc-24 (5).jpg" data-fancybox="game-gallery"
+                            class="dv-game-gallery__item">
+                            <img src="/Arcane-Front-build/imgs/fc-24 (5).jpg" alt="Game screenshot" class="dv-game-gallery__image" />
+                            <span class="dv-game-gallery__overlay">
+                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="dv-game-gallery__item-wrapper">
+                        <a href="/Arcane-Front-build/imgs/fc-24 (6).jpg" data-fancybox="game-gallery"
+                            class="dv-game-gallery__item">
+                            <img src="/Arcane-Front-build/imgs/fc-24 (6).jpg" alt="Game screenshot" class="dv-game-gallery__image" />
+                            <span class="dv-game-gallery__overlay">
+                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ************ [Game Gallery Section] End ************ -->
+
+        <!-- ************ [Pre‑Purchase Tips / Setup & Activation Section] Start ************ -->
+        <section class="dv-section dv-game-details">
+            <div class="dv-game-details__container">
+
+                <!-- Pre‑Purchase Tips Game -->
+                <div class="dv-game-details__tips">
+                    <div class="dv-game-details__header dv-section__head">
+                        <div class="dv-section__title-wrapper">
+                            <span class="dv-section__title-icon material-icons-outlined">
+                                warning_amber
+                            </span>
+                            <h4 class="dv-game-details__title dv-section__title">نکات قبل از خرید</h4>
+                        </div>
+                    </div>
+
+                    <p class="dv-game-details__description">
+                        1. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی
+                        مورد
+                    </p>
+                    <p class="dv-game-details__description">
+                        2. نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد
+                        گذشته
+                    </p>
+                    <p class="dv-game-details__description">3. حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا
+                        با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص</p>
+                    <p class="dv-game-details__description">4. طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در
+                        این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
+                        رسد.</p>
+                </div>
+
+                <!-- Setup & Activation -->
+                <div class="dv-game-details__setup">
+                    <div class="dv-game-details__header dv-section__head">
+                        <div class="dv-section__title-wrapper">
+                            <span class="dv-section__title-icon material-icons-outlined">
+                                download_done
+                            </span>
+                            <h4 class="dv-game-details__title dv-section__title">آموزش و فعال‌سازی</h4>
+                        </div>
+                    </div>
+
+                    <p class="dv-game-details__description">
+                        1. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی
+                        مورد
+                    </p>
+                    <p class="dv-game-details__description">
+                        2. نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد
+                        گذشته
+                    </p>
+                    <p class="dv-game-details__description">3. حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا
+                        با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص</p>
+                    <p class="dv-game-details__description">4. طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در
+                        این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
+                        رسد.</p>
+                </div>
+
+            </div>
+        </section>
+        <!-- ************ [Pre‑Purchase Tips / Setup & Activation Section] end ************ -->
+
+        <!-- ************ [Related Games Slider] Start ************ -->
+        <section class="dv-section">
+            <div class="dv-section__head">
+                <div class="dv-section__title-wrapper">
+                    <span class="dv-section__title-icon material-icons-outlined">
+                        sports_esports
+                    </span>
+                    <h4 class="dv-section__title">محصولات مشابه</h4>
+                </div>
+                <a href="#" class="dv-section__see-more-wrapper">
+                    <h4 class="dv-section__see-more-text">مشاهده بیشتر</h4>
+                    <span class="dv-section__see-more-icon material-icons-outlined">
+                        arrow_circle_left
+                    </span>
+                </a>
+            </div>
+            <div class="dv-section__body">
+                <div class="dv-section__game-cards-swiper swiper padding-sm">
+                    <div class="dv-section__swiper-wrapper swiper-wrapper">
+                        <div class="dv-section__swiper-slide swiper-slide">
+                            <a href="game.html" class="dv-section__card">
+                                <div class="dv-card__head">
+                                    <div class="dv-card__image-wrapper">
+                                        <img class="dv-card__image skeleton" loading="lazy"
+                                            src="/Arcane-Front-build/imgs/the last of us.jpeg" alt="Game" />
+                                    </div>
+                                    <span class="dv-card__title">The Last Of Us part II</span>
+                                </div>
+                                <div class="dv-card__body">
+                                    <div class="dv-card__info">
+                                        <!-- "card body with discount" start -->
+                                        <div class="dv-card__discount">
+                                            <span
+                                                class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                                        </div>
+                                        <div class="dv-card__price">
+                                            <div class="dv-card__price-before">
+                                                5/500/000
+                                            </div>
+                                            <div class="dv-card__price-after">
+                                                <span class="dv-card__price-after-value">4/950/000</span>
+                                                <span class="dv-card__price-unit">تومان</span>
+                                            </div>
+                                        </div>
+                                        <!-- "card body with discount" end -->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="dv-section__swiper-slide swiper-slide">
+                            <a href="game.html" class="dv-section__card">
+                                <div class="dv-card__head">
+                                    <div class="dv-card__image-wrapper">
+                                        <img class="dv-card__image skeleton" loading="lazy"
+                                            src="/Arcane-Front-build/imgs/call of duty black ops.jpeg" alt="Game" />
+                                    </div>
+                                    <span class="dv-card__title">Call of Duty: Black Ops III</span>
+                                </div>
+                                <div class="dv-card__body">
+                                    <div class="dv-card__info">
+                                        <!-- "card body with discount" start -->
+                                        <div class="dv-card__discount">
+                                            <span
+                                                class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                                        </div>
+                                        <div class="dv-card__price">
+                                            <div class="dv-card__price-before">
+                                                5/500/000
+                                            </div>
+                                            <div class="dv-card__price-after">
+                                                <span class="dv-card__price-after-value">4/950/000</span>
+                                                <span class="dv-card__price-unit">تومان</span>
+                                            </div>
+                                        </div>
+                                        <!-- "card body with discount" end -->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="dv-section__swiper-slide swiper-slide">
+                            <a href="game.html" class="dv-section__card">
+                                <div class="dv-card__head">
+                                    <div class="dv-card__image-wrapper">
+                                        <img class="dv-card__image skeleton" loading="lazy"
+                                            src="/Arcane-Front-build/imgs/‘Assassin’s Creed Shadows’ Is Better Than You___.jpeg"
+                                            alt="Game" />
+                                    </div>
+                                    <span class="dv-card__title">Assassin’s Creed Shadows</span>
+                                </div>
+                                <div class="dv-card__body">
+                                    <div class="dv-card__info">
+                                        <!-- "card body without discount" start -->
+                                        <div class="dv-card__price">
+                                            <div class="dv-card__price-after">
+                                                <span class="dv-card__price-after-value">4/950/000</span>
+                                                <span class="dv-card__price-unit">تومان</span>
+                                            </div>
+                                        </div>
+                                        <!-- "card body without discount" end -->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="dv-section__swiper-slide swiper-slide">
+                            <a href="game.html" class="dv-section__card">
+                                <div class="dv-card__head">
+                                    <div class="dv-card__image-wrapper">
+                                        <img class="dv-card__image skeleton" loading="lazy"
+                                            src="/Arcane-Front-build/imgs/resident evil.jpeg" alt="Game" />
+                                    </div>
+                                    <span class="dv-card__title">Resident Evil 7: Biohazard</span>
+                                </div>
+                                <div class="dv-card__body">
+                                    <div class="dv-card__info">
+                                        <!-- "card body without discount" start -->
+                                        <div class="dv-card__price">
+                                            <div class="dv-card__price-after">
+                                                <span class="dv-card__price-after-value">4/950/000</span>
+                                                <span class="dv-card__price-unit">تومان</span>
+                                            </div>
+                                        </div>
+                                        <!-- "card body without discount" end -->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="dv-section__swiper-slide swiper-slide">
+                            <a href="game.html" class="dv-section__card">
+                                <div class="dv-card__head">
+                                    <div class="dv-card__image-wrapper">
+                                        <img class="dv-card__image skeleton" loading="lazy"
+                                            src="/Arcane-Front-build/imgs/Assassins Creed Origins.jpeg" alt="Game" />
+                                    </div>
+                                    <span class="dv-card__title">Assassin's Creed Origins</span>
+                                </div>
+                                <div class="dv-card__body">
+                                    <div class="dv-card__info">
+                                        <!-- "card body with discount" start -->
+                                        <div class="dv-card__discount">
+                                            <span
+                                                class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                                        </div>
+                                        <div class="dv-card__price">
+                                            <div class="dv-card__price-before">
+                                                5/500/000
+                                            </div>
+                                            <div class="dv-card__price-after">
+                                                <span class="dv-card__price-after-value">4/950/000</span>
+                                                <span class="dv-card__price-unit">تومان</span>
+                                            </div>
+                                        </div>
+                                        <!-- "card body with discount" end -->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ************ [Related Games Slider] End ************ -->
+
+        <!-- [Comments] start -->
+        <section class="dv-section dv-comment__section">
+            <div class="dv-comment__form-container">
+                <div class="dv-section__head w-100">
+                    <div class="dv-section__title-wrapper">
+                        <span class="dv-section__title-icon material-icons-outlined">
+                            recommend
+                        </span>
+                        <h4 class="dv-section__title">نظرات کاربران</h4>
+                    </div>
+                </div>
+                <form class="dv-comment__form" id="comment-form" action="#">
+                    <div class="dv-comment-form__head">
+                        <span class="dv-comment-form__head-title">امتیاز دهید: </span>
+                        <div class="dv-comment__score">
+                            <div class="dv-comment__stars-wrapper" role="radiogroup" aria-label="امتیاز" data-max="5">
+                                <input type="radio" name="rating" id="star1" value="1" />
+                                <input type="radio" name="rating" id="star2" value="2" />
+                                <input type="radio" name="rating" id="star3" value="3" />
+                                <input type="radio" name="rating" id="star4" value="4" />
+                                <input type="radio" name="rating" id="star5" value="5" />
+
+                                <label for="star1" class="dv-comment__star-label" data-value="1">
+                                    <span class="dv-comment__star-icon material-icons-outlined"
+                                        aria-hidden="true">star_border</span>
+                                </label>
+                                <label for="star2" class="dv-comment__star-label" data-value="2">
+                                    <span class="dv-comment__star-icon material-icons-outlined"
+                                        aria-hidden="true">star_border</span>
+                                </label>
+                                <label for="star3" class="dv-comment__star-label" data-value="3">
+                                    <span class="dv-comment__star-icon material-icons-outlined"
+                                        aria-hidden="true">star_border</span>
+                                </label>
+                                <label for="star4" class="dv-comment__star-label" data-value="4">
+                                    <span class="dv-comment__star-icon material-icons-outlined"
+                                        aria-hidden="true">star_border</span>
+                                </label>
+                                <label for="star5" class="dv-comment__star-label" data-value="5">
+                                    <span class="dv-comment__star-icon material-icons-outlined"
+                                        aria-hidden="true">star_border</span>
+                                </label>
+
+                                <span class="dv-comment__score-title" aria-live="polite">0 ستاره</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="dv-comment-form__fields">
+                        <div class="dv-input w-100">
+                            <label class="dv-input__label" for="comment-text">
+                                متن پیام
+                            </label>
+                            <div class="dv-input__field">
+                                <textarea rows="3" placeholder="پیام مورد نظر" name="comment-text"
+                                    id="comment-text"></textarea>
+                            </div>
+                            <div class="dv-char-limit">
+                                <span class='dv-char-limit__label'>تعداد کاراکترها:</span>
+                                <small class='dv-char-limit__count'></small>
+                            </div>
+                        </div>
+                        <div class="dv-comment-form__submit-button-wrapper">
+                            <button type="submit" class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill">
+                                <div class="dv-btn__text">ثبت و ارسال پیام</div>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="dv-comment__comments-container" id="dv-comments-section" data-linked-to="comments">
+                <div class="dv-comment">
+                    <div class="dv-comment__head">
+                        <div class="dv-comment__user-image">
+                            <img src="/Arcane-Front-build/imgs/user1.png" alt="user" />
+                        </div>
+                        <div class="dv-comment__info">
+                            <div class="dv-comment__user-name-wrapper">
+                                <div class="dv-comment__user-name">رامتین مرادی اصل</div>
+                                <div class="dv-comment__score">
+                                    <span class="dv-comment__score-title">0 ستاره</span>
+                                    <div class="dv-comment__stars-wrapper">
+                                        <input type="radio" id="star1" name="rating" value="1" />
+                                        <label for="star1" class="dv-comment__star-label">
+                                            <span class="dv-comment__star-icon material-icons-outlined">star</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dv-comment__user-info">
+                                <span class="dv-label dv-label--sm dv-label--outline dv-label--secondary">
+                                    <span class="dv-label__icon material-icons-outlined dv-label__icon-md">
+                                        verified_user
+                                    </span>
+                                    خریدار محصول
+                                </span>
+                                <span class="dv-comments__date">1404/04/20 11:31</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dv-comment__content">
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+                            با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و
+                            مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+                            تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای
+                            کاربردی می باشد،
+                        </p>
+                    </div>
+                </div>
+                <span class="m-auto">
+                    <button type="submit" class="dv-btn dv-btn--lg dv-btn--primary dv-btn--outline">
+                        <div class="dv-btn__text">مشاهده بیشتر</div>
+                    </button>
+                </span>
+            </div>
+        </section>
+        <!-- [Comments] end -->
+    </main>
+
+    <!-- ************ Footer Start ************ -->
+    <footer class="dv-footer container">
+        <div class="dv-footer__container">
+
+            <!-- Logo -->
+            <div class="dv-footer__logo">
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo" class="dv-footer__logo-img" />
+            </div>
+
+            <!-- Description -->
+            <p class="dv-footer__description">
+                آن چیزی که می‌تواند در خصوص متن ها نوشته شود می تواند در این قسمت درج شود.
+            </p>
+
+            <!-- Social / Contact Icons -->
+            <div class="dv-footer__social">
+                <a href="#" class="dv-footer__social-item" aria-label="Email">
+                    <svg class="icon icon--xl icon-filled" viewBox="0 0 24 24">
+                        <use href="/Arcane-Front-build/icons/sprites.svg#mdi:instagram"></use>
+                    </svg>
+                </a>
+                <a href="#" class="dv-footer__social-item" aria-label="Phone">
+                    <svg class="icon icon--xl icon-filled" viewBox="0 0 24 24">
+                        <use href="/Arcane-Front-build/icons/sprites.svg#ic:baseline-telegram"></use>
+                    </svg>
+                </a>
+                <a href="#" class="dv-footer__social-item" aria-label="Instagram">
+                    <span class="icon icon--xl material-icons-outlined">
+                        phone
+                    </span>
+                </a>
+                <a href="#" class="dv-footer__social-item" aria-label="Instagram">
+                    <span class="icon icon--xl material-icons-outlined">
+                        mail_outline
+                    </span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="dv-footer__nav">
+                <li class="dv-footer__nav-item">
+                    <a href="/index.html" class="dv-footer__nav-link">صفحه اصلی</a>
+                </li>
+                <div class="dv-footer__divider"></div>
+                <li class="dv-footer__nav-item">
+                    <a href="about-us.html" class="dv-footer__nav-link">درباره ما</a>
+                </li>
+                <div class="dv-footer__divider"></div>
+                <li class="dv-footer__nav-item">
+                    <a href="faq.html" class="dv-footer__nav-link">تماس با ما</a>
+                </li>
+                <div class="dv-footer__divider"></div>
+                <li class="dv-footer__nav-item">
+                    <a href="#" class="dv-footer__nav-link">لیست بازی‌ها</a>
+                </li>
+            </ul>
+
+            <!-- Copyright / Credits -->
+            <div class="dv-footer__copyright">
+                تمامی حقوق محفوظ است |
+                طراحی و توسعه در استودیو <a href="#" class="dv-footer__credit">Devign</a>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ************ Footer End ************ -->
+
+    <!-- ! Core Scripts -->
+
+    <!-- ! Page Scripts -->
+</body>
+
+</html>

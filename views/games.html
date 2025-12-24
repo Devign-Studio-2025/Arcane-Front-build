@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/games-Ie42G1O9.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-BINZ1ccu.js">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-CLnNTaS0.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/games-BXhxKGqj.css">
+</head>
+
+<body>
+
+    <!-- * Navbar Start -->
+    <nav data-aos="fade-down" class="dv-nav container">
+        <div class="dv-nav__right col d-none d-lg-flex">
+            <a href="/index.html">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo_text.png" alt="Arcane Logo">
+            </a>
+        </div>
+
+        <ul class="dv-nav__center col" x-data="{
+        open: false,
+        resetSearch(el) {
+          this.open = !!el.value.trim();
+          this.open ? el.focus() : '';
+        },
+        openFocus(el) {
+          setTimeout(()=>{
+            el.focus();
+          }, 400)
+          this.open = true;
+        },
+      }">
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link dv-nav__link--active" href="games.html">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        sports_esports
+                    </span>
+                    <div class="dv-nav__title">
+                        بازی‌ها
+                    </div>
+                </a>
+            </li>
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link" href="about-us.html">
+                    <div class="dv-nav__title">
+                        درباره ما
+                    </div>
+                    <span class="dv-nav__icon material-icons-outlined">
+                        info
+                    </span>
+                </a>
+            </li>
+            <li class="d-block d-lg-none">
+                <a class="dv-nav__link dv-padding-sm" href="#" data-bs-toggle="offcanvas" data-bs-target="#sidemenu"
+                    aria-controls="sidemenu">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        menu
+                    </span>
+                </a>
+            </li>
+            <li class="d-block d-lg-none">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
+            </li>
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link" href="/index.html">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        home
+                    </span>
+                    <div class="dv-nav__title">
+                        خانه
+                    </div>
+                </a>
+            </li>
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link" href="faq.html">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        contact_support
+                    </span>
+                    <div class="dv-nav__title">
+                        ارتباط و سوالات
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a @click="openFocus($refs.searchField)" type="button"
+                    class="dv-btn dv-btn--primary dv-nav__search-btn">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        search
+                    </span>
+                </a>
+            </li>
+            <form action="" class="dv-nav__search dv-nav__search--open" :class="{ 'dv-nav__search--open': open }">
+                <input x-ref="searchField" class="dv-nav__search-field" type="search" name=""
+                    placeholder="جستجوی بازی..." id="">
+                <button type="reset" @click="resetSearch($refs.searchField)">
+                    <span class="material-icons-outlined">
+                        close
+                    </span>
+                </button>
+            </form>
+        </ul>
+
+        <div class="dv-nav__left col d-none d-lg-flex">
+            <!-- <a class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" href="#">
+          <span class="dv-btn__icon material-icons-outlined">
+            person
+          </span>
+          <div class="dv-btn__text">ورود | ثبت نام</div>
+        </a> -->
+            <div class="dv-nav__left-auth">
+                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="سبد خرید">
+                    <div class="dv-badge dv-badge--number">+9</div>
+                    <span class="dv-btn__icon material-icons-outlined">
+                        shopping_cart
+                    </span>
+                </a>
+                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="داشبورد کاربری">
+                    <span class="dv-btn__icon material-icons-outlined">
+                        account_circle
+                    </span>
+                </a>
+                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="پشتیبانی">
+                    <span class="dv-btn__icon material-icons-outlined">
+                        headset
+                    </span>
+                </a>
+            </div>
+        </div>
+
+    </nav>
+    <!-- * Navbar End -->
+
+    <!-- * Sidemenu Start -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="sidemenu" aria-labelledby="sidemenu-title">
+        <div class="offcanvas-header">
+            <a href="/" class="offcanvas-header__logo">
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo" />
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo_text.png" alt="فروشگاه گیمینگ آرکین" />
+            </a>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    arrow_forward_ios
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body">
+            <!-- Logged in Mode -->
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">داشبورد کاربری</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">سبد خرید</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">پشتیبانی</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <hr>
+            <!-- Logged in Mode -->
+            <a class="dv-sidemenu__link" href="games.html">
+                <div class="dv-sidemenu__text">بازی‌ها</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="faq.html">
+                <div class="dv-sidemenu__text">سوالات متداول</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="about-us.html">
+                <div class="dv-sidemenu__text">درباره ما</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+        </div>
+        <div class="offcanvas-footer">
+            <!-- ? Logged in Mode -->
+            <a class="dv-btn dv-btn--lg dv-btn--error dv-btn--outline" href="#">
+                <span class="dv-btn__icon material-icons-outlined dv-flip-hr">
+                    logout
+                </span>
+                <div class="dv-btn__text">خروج از حساب</div>
+            </a>
+            <!-- ? Logged in Mode -->
+
+            <!-- ? Guest Mode -->
+            <!-- <a class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill" href="#">
+        <span class="dv-btn__icon material-icons-outlined">
+          person
+        </span>
+        <div class="dv-btn__text">ورود | ثبت نام</div>
+      </a> -->
+            <!-- ? Guest Mode -->
+        </div>
+    </div>
+    <!-- * Sidemenu End -->
+
+    <main class="dv-main container">
+
+        <!-- * [Section Games] Start -->
+        <section class="dv-section dv-section--games">
+            <aside x-data x-init="$store.filters.init()" class="dv-section__aside col-4 col-xl-3 d-none d-lg-flex">
+                <div class="dv-section__aside-header">
+                    <div class="dv-section__aside-title">
+                        <span class="dv-section__aside-icon material-icons-outlined">
+                            tune
+                        </span>
+                        <h5 class="dv-section__aside-heading">فیلترها
+                            <span x-text="$store.filters.filterCount">(2)</span>
+                        </h5>
+                    </div>
+                    <button @click="$store.filters.reset()" class="dv-btn dv-btn--sm dv-btn--error dv-btn--subtle">
+                        <div class="dv-btn__text">حذف فیلترها</div>
+                    </button>
+                </div>
+                <div class="dv-section__accordions">
+                    <div class="accordion-item dv-accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button dv-accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                دسته‌بندی‌ها
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show">
+                            <div class="accordion-body dv-accordion-body dv-labels">
+                                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_1">
+                                    <input x-model="$store.filters.categories" @change="$store.filters.apply()"
+                                        type="checkbox" name="categories[]" value="cat_1" id="cat_1">
+                                    ورزشی
+                                </label>
+                                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_2">
+                                    <input x-model="$store.filters.categories" @change="$store.filters.apply()"
+                                        type="checkbox" name="categories[]" value="cat_2" id="cat_2">
+                                    ماجراجویی
+                                </label>
+                                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_3">
+                                    <input x-model="$store.filters.categories" @change="$store.filters.apply()"
+                                        type="checkbox" name="categories[]" value="cat_3" id="cat_3">
+                                    نقش آفرینی
+                                </label>
+                                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_4">
+                                    <input x-model="$store.filters.categories" @change="$store.filters.apply()"
+                                        type="checkbox" name="categories[]" value="cat_4" id="cat_4">
+                                    مسابقه‌ای
+                                </label>
+                                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_5">
+                                    <input x-model="$store.filters.categories" @change="$store.filters.apply()"
+                                        type="checkbox" name="categories[]" value="cat_5" id="cat_5">
+                                    استراتژی
+                                </label>
+                                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_6">
+                                    <input x-model="$store.filters.categories" @change="$store.filters.apply()"
+                                        type="checkbox" name="categories[]" value="cat_6" id="cat_6">
+                                    شوتر
+                                </label>
+                                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_7">
+                                    <input x-model="$store.filters.categories" @change="$store.filters.apply()"
+                                        type="checkbox" name="categories[]" value="cat_7" id="cat_7">
+                                    اکشن
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item dv-accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button dv-accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                بازه قیمتی
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse show">
+                            <div class="accordion-body dv-accordion-body dv-prices">
+                                <div class=" d-flex flex-column dv-gap-sm">
+                                    <div class="dv-price">
+                                        <span class="dv-price__text">از قیمت:</span>
+                                        <div class="dv-input dv-input--secondary w-100">
+                                            <div class="dv-input__field">
+                                                <input x-model="$store.filters.tmp_price_from" class="dv-format-num"
+                                                    type="text" name="price_from" id="" placeholder="وارد کنید...">
+                                                <div class="dv-input__icon">
+                                                    <svg viewBox="0 0 24 24">
+                                                        <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dv-price">
+                                        <span class="dv-price__text">تا قیمت:</span>
+                                        <div class="dv-input dv-input--secondary w-100">
+                                            <div class="dv-input__field">
+                                                <input x-model="$store.filters.tmp_price_to" class="dv-format-num"
+                                                    type="text" name="price_to" id="" placeholder="وارد کنید...">
+                                                <div class="dv-input__icon">
+                                                    <svg viewBox="0 0 24 24">
+                                                        <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dv-price-btns">
+                                    <button @click="$store.filters.applyPrices()"
+                                        class="w-100 dv-btn dv-btn--md dv-btn--secondary dv-btn--fill">
+                                        <div class="dv-btn__text">اعمال قیمت</div>
+                                    </button>
+                                    <button @click="$store.filters.resetPrices()"
+                                        class="dv-btn dv-btn--md dv-btn--secondary dv-btn--outline">
+                                        <div class="dv-btn__text">حذف</div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item dv-accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button dv-accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                موارد بیشتر
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse show">
+                            <div class="accordion-body dv-accordion-body dv-checks">
+                                <label class="form-check dv-form-check" for="op_1">
+                                    <div class="form-check-label dv-form-check-label">
+                                        فقط تخفیف‌دارها
+                                    </div>
+                                    <input x-model="$store.filters.options" @change="$store.filters.apply()"
+                                        class="form-check-input dv-form-check-input" value="op_1" type="checkbox"
+                                        name="options[]" id="op_1">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="dv-section__content col col-xl-8" x-data>
+                <div class="dv-section__content-header">
+                    <div class="dv-input col col-lg-5">
+                        <div class="dv-input__field">
+                            <input x-model="$store.filters.tmp_keyword" x-debounce="$store.filters.search()"
+                                data-spinner-target="parent" class="" type="search" name="keyword" id=""
+                                placeholder="جستجو بین بازی‌ها...">
+                            <span class="dv-input__icon material-icons-outlined">
+                                search
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center dv-gap-md">
+                        <div class="dropdown-center dv-dropdown d-none d-lg-flex w-100" data-dropdown>
+                            <input type="hidden" name="edition" value="" data-dropdown-value>
+                            <button class="dv-dropdown__btn w-100" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" data-dropdown-btn>
+                                <div class="dv-dropdown__btn-text" x-text="$store.filters.labelText">مرتب‌سازی</div>
+                                <span class="dv-dropdown__arrow material-icons-outlined">
+                                    expand_more
+                                </span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end dv-dropdown-menu w-100">
+                                <li class="dv-dropdown-menu__li">
+                                    <button @click="
+                                            $store.filters.sort = 'newest';
+                                            $store.filters.apply();
+                                            " class="dropdown-item" type="button" data-value="newest">
+                                        <span class="dv-dropdown-menu__value">جدیدترین</span>
+                                        <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                            check
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="dv-dropdown-menu__li">
+                                    <button @click="
+                                            $store.filters.sort = 'oldest';
+                                            $store.filters.apply();
+                                            " class="dropdown-item" type="button" data-value="oldest">
+                                        <span class="dv-dropdown-menu__value">قدیمی‌ترین</span>
+                                        <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                            check
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="dv-dropdown-menu__li">
+                                    <button @click="
+                                            $store.filters.sort = 'most_expensive';
+                                            $store.filters.apply();
+                                            " class="dropdown-item" type="button" data-value="most_expensive">
+                                        <span class="dv-dropdown-menu__value">گران‌ترین</span>
+                                        <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                            check
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="dv-dropdown-menu__li">
+                                    <button @click="
+                                            $store.filters.sort = 'cheapest';
+                                            $store.filters.apply();
+                                            " class="dropdown-item" type="button" data-value="cheapest">
+                                        <span class="dv-dropdown-menu__value">ارزان‌ترین</span>
+                                        <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                            check
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <button data-bs-target="#sortmenu" data-bs-toggle="offcanvas"
+                            class="dv-btn d-lg-none d-flex dv-btn--md dv-btn--primary dv-btn--outline">
+                            <span class="dv-btn__icon material-icons-outlined">
+                                filter_list
+                            </span>
+                            <div class="dv-btn__text" x-text="$store.filters.labelText">مرتبسازی</div>
+                        </button>
+                        <button class="dv-btn d-lg-none d-flex dv-btn--md dv-btn--primary dv-btn--outline"
+                            data-bs-target="#filtermenu" data-bs-toggle="offcanvas">
+                            <span class="dv-btn__icon material-icons-outlined">
+                                tune
+                            </span>
+                            <div class="dv-btn__text d-flex dv-gap-xs">فیلتر <span
+                                    x-text="$store.filters.filterCount"></span></div>
+                        </button>
+                        <span class="dv-section__content-results">18 نتیجه</span>
+                    </div>
+                </div>
+                <div class="dv-section__content-cards">
+                    <div x-data x-show="$store.ui.loading" class="dv-section__content-overlay">
+                        <div class="spinner-border" role="status">
+                        </div>
+                        در حال جستجو...
+                    </div>
+                    <a href="game.html" class="dv-section__card">
+                        <div class="dv-card__head">
+                            <div class="dv-card__image-wrapper">
+                                <img class="dv-card__image skeleton" loading="lazy"
+                                    src="/Arcane-Front-build/imgs/‘Assassin’s Creed Shadows’ Is Better Than You___.jpeg" alt="Game" />
+                            </div>
+                            <span class="dv-card__title">Assassin’s Creed Shadows</span>
+                        </div>
+                        <div class="dv-card__body">
+                            <div class="dv-card__info">
+                                <!-- "card body without discount" start -->
+                                <div class="dv-card__price">
+                                    <div class="dv-card__price-after">
+                                        <span class="dv-card__price-after-value">4/950/000</span>
+                                        <span class="dv-card__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body without discount" end -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="game.html" class="dv-section__card">
+                        <div class="dv-card__head">
+                            <div class="dv-card__image-wrapper">
+                                <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/the last of us.jpeg"
+                                    alt="Game" />
+                            </div>
+                            <span class="dv-card__title">The Last Of Us part II</span>
+                        </div>
+                        <div class="dv-card__body">
+                            <div class="dv-card__info">
+                                <!-- "card body with discount" start -->
+                                <div class="dv-card__discount">
+                                    <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                                </div>
+                                <div class="dv-card__price">
+                                    <div class="dv-card__price-before">
+                                        5/500/000
+                                    </div>
+                                    <div class="dv-card__price-after">
+                                        <span class="dv-card__price-after-value">4/950/000</span>
+                                        <span class="dv-card__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body with discount" end -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="game.html" class="dv-section__card">
+                        <div class="dv-card__head">
+                            <div class="dv-card__image-wrapper">
+                                <img class="dv-card__image skeleton" loading="lazy"
+                                    src="/Arcane-Front-build/imgs/call of duty black ops.jpeg" alt="Game" />
+                            </div>
+                            <span class="dv-card__title">Call of Duty: Black Ops III</span>
+                        </div>
+                        <div class="dv-card__body">
+                            <div class="dv-card__info">
+                                <!-- "card body with discount" start -->
+                                <div class="dv-card__discount">
+                                    <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                                </div>
+                                <div class="dv-card__price">
+                                    <div class="dv-card__price-before">
+                                        5/500/000
+                                    </div>
+                                    <div class="dv-card__price-after">
+                                        <span class="dv-card__price-after-value">4/950/000</span>
+                                        <span class="dv-card__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body with discount" end -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="game.html" class="dv-section__card">
+                        <div class="dv-card__head">
+                            <div class="dv-card__image-wrapper">
+                                <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/resident evil.jpeg"
+                                    alt="Game" />
+                            </div>
+                            <span class="dv-card__title">Resident Evil 7: Biohazard</span>
+                        </div>
+                        <div class="dv-card__body">
+                            <div class="dv-card__info">
+                                <!-- "card body without discount" start -->
+                                <div class="dv-card__price">
+                                    <div class="dv-card__price-after">
+                                        <span class="dv-card__price-after-value">4/950/000</span>
+                                        <span class="dv-card__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body without discount" end -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="game.html" class="dv-section__card">
+                        <div class="dv-card__head">
+                            <div class="dv-card__image-wrapper">
+                                <img class="dv-card__image skeleton" loading="lazy"
+                                    src="/Arcane-Front-build/imgs/Assassins Creed Origins.jpeg" alt="Game" />
+                            </div>
+                            <span class="dv-card__title">Assassin's Creed Origins</span>
+                        </div>
+                        <div class="dv-card__body">
+                            <div class="dv-card__info">
+                                <!-- "card body with discount" start -->
+                                <div class="dv-card__discount">
+                                    <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                                </div>
+                                <div class="dv-card__price">
+                                    <div class="dv-card__price-before">
+                                        5/500/000
+                                    </div>
+                                    <div class="dv-card__price-after">
+                                        <span class="dv-card__price-after-value">4/950/000</span>
+                                        <span class="dv-card__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body with discount" end -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="game.html" class="dv-section__card">
+                        <div class="dv-card__head">
+                            <div class="dv-card__image-wrapper">
+                                <img class="dv-card__image skeleton" loading="lazy"
+                                    src="/Arcane-Front-build/imgs/‘Assassin’s Creed Shadows’ Is Better Than You___.jpeg" alt="Game" />
+                            </div>
+                            <span class="dv-card__title">Assassin’s Creed Shadows</span>
+                        </div>
+                        <div class="dv-card__body">
+                            <div class="dv-card__info">
+                                <!-- "card body without discount" start -->
+                                <div class="dv-card__price">
+                                    <div class="dv-card__price-after">
+                                        <span class="dv-card__price-after-value">4/950/000</span>
+                                        <span class="dv-card__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body without discount" end -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="game.html" class="dv-section__card">
+                        <div class="dv-card__head">
+                            <div class="dv-card__image-wrapper">
+                                <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/the last of us.jpeg"
+                                    alt="Game" />
+                            </div>
+                            <span class="dv-card__title">The Last Of Us part II</span>
+                        </div>
+                        <div class="dv-card__body">
+                            <div class="dv-card__info">
+                                <!-- "card body with discount" start -->
+                                <div class="dv-card__discount">
+                                    <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                                </div>
+                                <div class="dv-card__price">
+                                    <div class="dv-card__price-before">
+                                        5/500/000
+                                    </div>
+                                    <div class="dv-card__price-after">
+                                        <span class="dv-card__price-after-value">4/950/000</span>
+                                        <span class="dv-card__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body with discount" end -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="game.html" class="dv-section__card">
+                        <div class="dv-card__head">
+                            <div class="dv-card__image-wrapper">
+                                <img class="dv-card__image skeleton" loading="lazy"
+                                    src="/Arcane-Front-build/imgs/call of duty black ops.jpeg" alt="Game" />
+                            </div>
+                            <span class="dv-card__title">Call of Duty: Black Ops III</span>
+                        </div>
+                        <div class="dv-card__body">
+                            <div class="dv-card__info">
+                                <!-- "card body with discount" start -->
+                                <div class="dv-card__discount">
+                                    <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                                </div>
+                                <div class="dv-card__price">
+                                    <div class="dv-card__price-before">
+                                        5/500/000
+                                    </div>
+                                    <div class="dv-card__price-after">
+                                        <span class="dv-card__price-after-value">4/950/000</span>
+                                        <span class="dv-card__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body with discount" end -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="game.html" class="dv-section__card">
+                        <div class="dv-card__head">
+                            <div class="dv-card__image-wrapper">
+                                <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/resident evil.jpeg"
+                                    alt="Game" />
+                            </div>
+                            <span class="dv-card__title">Resident Evil 7: Biohazard</span>
+                        </div>
+                        <div class="dv-card__body">
+                            <div class="dv-card__info">
+                                <!-- "card body without discount" start -->
+                                <div class="dv-card__price">
+                                    <div class="dv-card__price-after">
+                                        <span class="dv-card__price-after-value">4/950/000</span>
+                                        <span class="dv-card__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body without discount" end -->
+                            </div>
+                        </div>
+                    </a>
+                    <a href="game.html" class="dv-section__card">
+                        <div class="dv-card__head">
+                            <div class="dv-card__image-wrapper">
+                                <img class="dv-card__image skeleton" loading="lazy"
+                                    src="/Arcane-Front-build/imgs/Assassins Creed Origins.jpeg" alt="Game" />
+                            </div>
+                            <span class="dv-card__title">Assassin's Creed Origins</span>
+                        </div>
+                        <div class="dv-card__body">
+                            <div class="dv-card__info">
+                                <!-- "card body with discount" start -->
+                                <div class="dv-card__discount">
+                                    <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                                </div>
+                                <div class="dv-card__price">
+                                    <div class="dv-card__price-before">
+                                        5/500/000
+                                    </div>
+                                    <div class="dv-card__price-after">
+                                        <span class="dv-card__price-after-value">4/950/000</span>
+                                        <span class="dv-card__price-unit">تومان</span>
+                                    </div>
+                                </div>
+                                <!-- "card body with discount" end -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="dv-section__content-footer">
+                    <button x-data x-async="ajaxLoad()" class="m-auto dv-btn dv-btn--lg dv-btn--primary dv-btn--subtle">
+                        <div class="dv-btn__text">مشاهده بیشتر</div>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- * [Section Games] End -->
+    </main>
+
+    <!-- * Filtermenu Start -->
+    <div x-data class="offcanvas offcanvas-bottom" tabindex="-1" id="filtermenu" aria-labelledby="filtermenu-title">
+        <div class="offcanvas-header">
+            <span class="material-icons-outlined">
+                tune
+            </span>
+            <h5>فیلترها
+                <span x-text="$store.filters.filterCount">(2)</span>
+            </h5>
+            <button @click="$store.filters.reset()" type="button"
+                class="me-auto dv-btn dv-btn--sm dv-btn--subtle dv-btn--error">
+                <div class="dv-btn__text ">
+                    حذف فیلتر‌ها
+                </div>
+            </button>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body dv-section__accordions">
+            <div class="accordion-item dv-accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button dv-accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                        دسته‌بندی‌ها
+                    </button>
+                </h2>
+                <div id="collapse1" class="accordion-collapse collapse show">
+                    <div class="accordion-body dv-accordion-body dv-labels">
+                        <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_1">
+                            <input x-model="$store.filters.categories" @change="$store.filters.apply()" type="checkbox"
+                                name="categories[]" value="cat_1" id="cat_1">
+                            ورزشی
+                        </label>
+                        <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_2">
+                            <input x-model="$store.filters.categories" @change="$store.filters.apply()" type="checkbox"
+                                name="categories[]" value="cat_2" id="cat_2">
+                            ماجراجویی
+                        </label>
+                        <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_3">
+                            <input x-model="$store.filters.categories" @change="$store.filters.apply()" type="checkbox"
+                                name="categories[]" value="cat_3" id="cat_3">
+                            نقش آفرینی
+                        </label>
+                        <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_4">
+                            <input x-model="$store.filters.categories" @change="$store.filters.apply()" type="checkbox"
+                                name="categories[]" value="cat_4" id="cat_4">
+                            مسابقه‌ای
+                        </label>
+                        <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_5">
+                            <input x-model="$store.filters.categories" @change="$store.filters.apply()" type="checkbox"
+                                name="categories[]" value="cat_5" id="cat_5">
+                            استراتژی
+                        </label>
+                        <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_6">
+                            <input x-model="$store.filters.categories" @change="$store.filters.apply()" type="checkbox"
+                                name="categories[]" value="cat_6" id="cat_6">
+                            شوتر
+                        </label>
+                        <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cat_7">
+                            <input x-model="$store.filters.categories" @change="$store.filters.apply()" type="checkbox"
+                                name="categories[]" value="cat_7" id="cat_7">
+                            اکشن
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item dv-accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button dv-accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                        بازه قیمتی
+                    </button>
+                </h2>
+                <div id="collapse2" class="accordion-collapse collapse show">
+                    <div class="accordion-body dv-accordion-body dv-prices">
+                        <div class=" d-flex flex-column dv-gap-sm">
+                            <div class="dv-price">
+                                <span class="dv-price__text">از قیمت:</span>
+                                <div class="dv-input dv-input--secondary w-100">
+                                    <div class="dv-input__field">
+                                        <input x-model="$store.filters.tmp_price_from" class="dv-format-num" type="text"
+                                            name="price_from" id="" placeholder="وارد کنید...">
+                                        <div class="dv-input__icon">
+                                            <svg viewBox="0 0 24 24">
+                                                <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dv-price">
+                                <span class="dv-price__text">تا قیمت:</span>
+                                <div class="dv-input dv-input--secondary w-100">
+                                    <div class="dv-input__field">
+                                        <input x-model="$store.filters.tmp_price_to" class="dv-format-num" type="text"
+                                            name="price_to" id="" placeholder="وارد کنید...">
+                                        <div class="dv-input__icon">
+                                            <svg viewBox="0 0 24 24">
+                                                <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dv-price-btns">
+                            <button @click="$store.filters.applyPrices()"
+                                class="w-100 dv-btn dv-btn--md dv-btn--secondary dv-btn--fill">
+                                <div class="dv-btn__text">اعمال قیمت</div>
+                            </button>
+                            <button @click="$store.filters.resetPrices()"
+                                class="dv-btn dv-btn--md dv-btn--secondary dv-btn--outline">
+                                <div class="dv-btn__text">حذف</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item dv-accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button dv-accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                        موارد بیشتر
+                    </button>
+                </h2>
+                <div id="collapse3" class="accordion-collapse collapse show">
+                    <div class="accordion-body dv-accordion-body dv-checks">
+                        <label class="form-check dv-form-check" for="op_1">
+                            <div class="form-check-label dv-form-check-label">
+                                فقط تخفیف‌دارها
+                            </div>
+                            <input x-model="$store.filters.options" @change="$store.filters.apply()"
+                                class="form-check-input dv-form-check-input" value="op_1" type="checkbox"
+                                name="options[]" id="op_1">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * Filtermenu End -->
+
+    <!-- * Sortmenu Start -->
+    <div x-data class="offcanvas offcanvas-bottom" tabindex="-1" id="sortmenu" aria-labelledby="sortmenu-title">
+        <div class="offcanvas-header">
+            <span class="material-icons-outlined">
+                filter_list
+            </span>
+            <h5>مرتبسازی
+            </h5>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body ">
+            <div class="dv-labels">
+                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="newest">
+                    <input x-model="$store.filters.sort" @change="$store.filters.apply()" type="radio" name="sort"
+                        value="newest" id="newest">
+                    جدیدترین
+                </label>
+                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="oldest">
+                    <input x-model="$store.filters.sort" @change="$store.filters.apply()" type="radio" name="sort"
+                        value="oldest" id="oldest">
+                    قدیمی‌ترین
+                </label>
+                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="most_expensive">
+                    <input x-model="$store.filters.sort" @change="$store.filters.apply()" type="radio" name="sort"
+                        value="most_expensive" id="most_expensive">
+                    گران‌ترین
+                </label>
+                <label class="dv-label dv-label--outline dv-label--secondary dv-label--md" for="cheapest">
+                    <input x-model="$store.filters.sort" @change="$store.filters.apply()" type="radio" name="sort"
+                        value="cheapest" id="cheapest">
+                    ارزان‌ترین
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- * Sortmenu End -->
+
+    <!-- ************ Footer Start ************ -->
+    <footer class="dv-footer container">
+        <div class="dv-footer__container">
+
+            <!-- Logo -->
+            <div class="dv-footer__logo">
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo" class="dv-footer__logo-img" />
+            </div>
+
+            <!-- Description -->
+            <p class="dv-footer__description">
+                آن چیزی که می‌تواند در خصوص متن ها نوشته شود می تواند در این قسمت درج شود.
+            </p>
+
+            <!-- Social / Contact Icons -->
+            <div class="dv-footer__social">
+                <a href="#" class="dv-footer__social-item" aria-label="Email">
+                    <svg class="icon icon--xl icon-filled" viewBox="0 0 24 24">
+                        <use href="/Arcane-Front-build/icons/sprites.svg#mdi:instagram"></use>
+                    </svg>
+                </a>
+                <a href="#" class="dv-footer__social-item" aria-label="Phone">
+                    <svg class="icon icon--xl icon-filled" viewBox="0 0 24 24">
+                        <use href="/Arcane-Front-build/icons/sprites.svg#ic:baseline-telegram"></use>
+                    </svg>
+                </a>
+                <a href="#" class="dv-footer__social-item" aria-label="Instagram">
+                    <span class="icon icon--xl material-icons-outlined">
+                        phone
+                    </span>
+                </a>
+                <a href="#" class="dv-footer__social-item" aria-label="Instagram">
+                    <span class="icon icon--xl material-icons-outlined">
+                        mail_outline
+                    </span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="dv-footer__nav">
+                <li class="dv-footer__nav-item">
+                    <a href="/index.html" class="dv-footer__nav-link">صفحه اصلی</a>
+                </li>
+                <div class="dv-footer__divider"></div>
+                <li class="dv-footer__nav-item">
+                    <a href="about-us.html" class="dv-footer__nav-link">درباره ما</a>
+                </li>
+                <div class="dv-footer__divider"></div>
+                <li class="dv-footer__nav-item">
+                    <a href="faq.html" class="dv-footer__nav-link">تماس با ما</a>
+                </li>
+                <div class="dv-footer__divider"></div>
+                <li class="dv-footer__nav-item">
+                    <a href="games.html" class="dv-footer__nav-link">لیست بازی‌ها</a>
+                </li>
+            </ul>
+
+            <!-- Copyright / Credits -->
+            <div class="dv-footer__copyright">
+                تمامی حقوق محفوظ است |
+                طراحی و توسعه در استودیو <a href="#" class="dv-footer__credit">Devign</a>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ************ Footer End ************ -->
+
+    <!-- ! Alpine Stores -->
+
+    <!-- ! Core Scripts -->
+
+    <!-- ! Page Scripts -->
+</body>
+
+</html>

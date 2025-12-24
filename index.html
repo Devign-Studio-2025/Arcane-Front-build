@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/index-YzTrj2yK.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-BINZ1ccu.js">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/swiper-CRU51p5Y.js">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-CLnNTaS0.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/swiper-DtOVtP06.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/index-IrMzHZ5u.css">
+</head>
+
+<body>
+
+  <!-- * Header Start -->
+  <header class="dv-header">
+
+    <video src="/Arcane-Front-build/imgs/particles.mp4" autoplay loop muted></video>
+
+    <!-- * Navbar Start -->
+    <nav data-aos="fade-down" class="dv-nav container">
+      <div class="dv-nav__right col d-none d-lg-flex">
+        <a href="/index.html">
+          <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
+          <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo_text.png" alt="Arcane Logo">
+        </a>
+      </div>
+
+      <ul class="dv-nav__center col" x-data="{
+        open: false,
+        resetSearch(el) {
+          this.open = !!el.value.trim();
+          this.open ? el.focus() : '';
+        },
+        openFocus(el) {
+          setTimeout(()=>{
+            el.focus();
+          }, 400)
+          this.open = true;
+        },
+      }">
+        <li class="d-none d-lg-block">
+          <a class="dv-nav__link" href="views/games.html">
+            <span class="dv-nav__icon material-icons-outlined">
+              sports_esports
+            </span>
+            <div class="dv-nav__title">
+              بازی‌ها
+            </div>
+          </a>
+        </li>
+        <li class="d-none d-lg-block">
+          <a class="dv-nav__link" href="views/about-us.html">
+            <div class="dv-nav__title">
+              درباره ما
+            </div>
+            <span class="dv-nav__icon material-icons-outlined">
+              info
+            </span>
+          </a>
+        </li>
+        <li class="d-block d-lg-none">
+          <a class="dv-nav__link dv-padding-sm" href="#" data-bs-toggle="offcanvas" data-bs-target="#sidemenu"
+            aria-controls="sidemenu">
+            <span class="dv-nav__icon material-icons-outlined">
+              menu
+            </span>
+          </a>
+        </li>
+        <li class="d-block d-lg-none">
+          <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
+        </li>
+        <li class="d-none d-lg-block">
+          <a class="dv-nav__link dv-nav__link--active" href="/index.html">
+            <span class="dv-nav__icon material-icons-outlined">
+              home
+            </span>
+            <div class="dv-nav__title">
+              خانه
+            </div>
+          </a>
+        </li>
+        <li class="d-none d-lg-block">
+          <a class="dv-nav__link" href="views/faq.html">
+            <span class="dv-nav__icon material-icons-outlined">
+              contact_support
+            </span>
+            <div class="dv-nav__title">
+              ارتباط و سوالات
+            </div>
+          </a>
+        </li>
+        <li>
+          <a @click="openFocus($refs.searchField)" type="button" class="dv-btn dv-btn--primary dv-nav__search-btn">
+            <span class="dv-nav__icon material-icons-outlined">
+              search
+            </span>
+          </a>
+        </li>
+        <form action="" class="dv-nav__search dv-nav__search--open" :class="{ 'dv-nav__search--open': open }">
+          <input x-ref="searchField" class="dv-nav__search-field" type="search" name="" placeholder="جستجوی بازی..."
+            id="">
+          <button type="reset" @click="resetSearch($refs.searchField)">
+            <span class="material-icons-outlined">
+              close
+            </span>
+          </button>
+        </form>
+      </ul>
+
+      <div class="dv-nav__left col d-none d-lg-flex">
+        <!-- <a class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" href="#">
+          <span class="dv-btn__icon material-icons-outlined">
+            person
+          </span>
+          <div class="dv-btn__text">ورود | ثبت نام</div>
+        </a> -->
+        <div class="dv-nav__left-auth">
+          <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            data-bs-title="سبد خرید">
+            <div class="dv-badge dv-badge--number">+9</div>
+            <span class="dv-btn__icon material-icons-outlined">
+              shopping_cart
+            </span>
+          </a>
+          <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            data-bs-title="داشبورد کاربری">
+            <span class="dv-btn__icon material-icons-outlined">
+              account_circle
+            </span>
+          </a>
+          <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            data-bs-title="پشتیبانی">
+            <span class="dv-btn__icon material-icons-outlined">
+              headset
+            </span>
+          </a>
+        </div>
+      </div>
+
+    </nav>
+    <!-- * Navbar End -->
+
+    <!-- * Header Slider Start -->
+    <div class="swiper swiper--header">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide" data-color="0, 150, 115">
+          <div class="dv-header__char-img">
+            <img data-aos="fade-up" loading="eager" src="/Arcane-Front-build/imgs/ghost.png" alt="Game character">
+          </div>
+        </div>
+        <div class="swiper-slide" data-color="50, 60, 85">
+          <div class="dv-header__char-img">
+            <img src="/Arcane-Front-build/imgs/Uncharted-Character-PNG-Clipart-Background.png" loading="lazy" alt="Game character">
+          </div>
+        </div>
+        <div class="swiper-slide" data-color="35, 48, 91">
+          <div class="dv-header__char-img">
+            <img src="/Arcane-Front-build/imgs/cp-price.png" loading="lazy" alt="Game character">
+          </div>
+        </div>
+        <div class="swiper-slide" data-color="141, 45, 29">
+          <div class="dv-header__char-img">
+            <img src="/Arcane-Front-build/imgs/Fortnite-Kratos-Transparent-PNG.png" loading="lazy" alt="Game character">
+          </div>
+        </div>
+        <div class="swiper-slide" data-color="82, 100, 96">
+          <div class="dv-header__char-img">
+            <img src="/Arcane-Front-build/imgs/Master-Chief-PNG-Background-Image.png" loading="lazy" alt="Game character">
+          </div>
+        </div>
+        <div class="swiper-slide" data-color="145, 152, 185">
+          <div class="dv-header__char-img">
+            <img src="/Arcane-Front-build/imgs/witcher.png" loading="lazy" alt="Game character">
+          </div>
+        </div>
+        <div class="swiper-slide" data-color="117, 117, 117">
+          <div class="dv-header__char-img">
+            <img src="/Arcane-Front-build/imgs/The-Last-of-Us-Character-PNG-Clipart-Background.png" loading="lazy" alt="Game character">
+          </div>
+        </div>
+        <div class="swiper-slide" data-color="191, 142, 64">
+          <div class="dv-header__char-img">
+            <img src="/Arcane-Front-build/imgs/jacob.png" loading="lazy" alt="Game character">
+          </div>
+        </div>
+        <div class="swiper-slide" data-color="41, 96, 140">
+          <div class="dv-header__char-img">
+            <img src="/Arcane-Front-build/imgs/Mortal-Kombat-Characters-PNG-Photo.png" loading="lazy" alt="Game character">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- * Header Slider End -->
+
+
+    <!-- * Text & GameBox Start -->
+    <div class="dv-header__overlay-wrapper container">
+      <!-- * Texts -->
+      <div class="dv-header__texts">
+        <div class="d-flex flex-column dv-gap-md" data-aos="fade-up" data-aos-offset="-200" data-aos-delay="0">
+          <h1 class="display-3 fw-bold" data-aos="fade-up" data-aos-offset="-200" data-aos-delay="100">آرکـِــیـــن</h1>
+          <h2 class="h3" data-aos="fade-up" data-aos-offset="-200" data-aos-delay="200">پلتفرم خرید محصولات گیمینگ</h2>
+          <p data-aos="fade-up" data-aos-offset="-200" data-aos-delay="300">لورم ایپسوم متن ساختگی با تولید سادگی
+            نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-offset="-200" data-aos-delay="400">
+          <a class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill" href="#">
+            <span class="dv-btn__icon material-icons-outlined">
+              person
+            </span>
+            <div class="dv-btn__text">شروع خریدی هیجان انگیز!</div>
+          </a>
+        </div>
+      </div>
+      <!-- * Texts -->
+      <!-- * Games Start -->
+      <div class="swiper--header-games-wrapper align-self-end d-none d-xl-flex" data-aos="fade-down"
+        data-aos-offset="-200" data-aos-delay="100">
+        <div class="swiper swiper--header-games">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <img src="/Arcane-Front-build/imgs/Assassins Creed Origins.jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <img src="/Arcane-Front-build/imgs/‘Assassin’s Creed Shadows’ Is Better Than You___.jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <img src="/Arcane-Front-build/imgs/call of duty black ops.jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <img src="/Arcane-Front-build/imgs/resident evil.jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <img src="/Arcane-Front-build/imgs/the last of us.jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <img src="/Arcane-Front-build/imgs/EA et Dice annoncent le pass premium Battlefield 1.jpeg" class="w-100"
+                  alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <img src="/Arcane-Front-build/imgs/Need for Speed Payback (PS4).jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- * Games End -->
+    </div>
+    <!-- * Text & GameBox End -->
+
+    <!-- * Socials -->
+    <div data-aos="fade-up" data-aos-offset="-100" data-aos-delay="200" class="dv-header__socials">
+      <a href="" class="dv-header__social">
+        <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+          <use href="/Arcane-Front-build/icons/sprites.svg#mdi:instagram" />
+        </svg>
+      </a>
+      <a href="" class="dv-header__social">
+        <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+          <use href="/Arcane-Front-build/icons/sprites.svg#ic:baseline-telegram" />
+        </svg>
+      </a>
+      <a href="" class="dv-header__social">
+        <span class="dv-sidemenu__icon material-icons-outlined">
+          phone
+        </span>
+      </a>
+      <a href="" class="dv-header__social">
+        <span class="dv-sidemenu__icon material-icons-outlined">
+          mail
+        </span>
+      </a>
+    </div>
+    <!-- * Socials -->
+
+  </header>
+  <!-- * Header End -->
+
+  <!-- * Sidemenu Start -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="sidemenu" aria-labelledby="sidemenu-title">
+    <div class="offcanvas-header">
+      <a href="/" class="offcanvas-header__logo">
+        <img src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo" />
+        <img src="/Arcane-Front-build/imgs/logos/arcane-logo_text.png" alt="فروشگاه گیمینگ آرکین" />
+      </a>
+      <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+        <span class="dv-btn__icon material-icons-outlined">
+          arrow_forward_ios
+        </span>
+      </button>
+    </div>
+    <hr class="m-0">
+    <div class="offcanvas-body">
+      <!-- Logged in Mode -->
+      <a class="dv-sidemenu__link" href="#">
+        <div class="dv-sidemenu__text">داشبورد کاربری</div>
+        <span class="dv-sidemenu__icon material-icons-outlined">
+          arrow_back_ios
+        </span>
+      </a>
+      <a class="dv-sidemenu__link" href="#">
+        <div class="dv-sidemenu__text">سبد خرید</div>
+        <span class="dv-sidemenu__icon material-icons-outlined">
+          arrow_back_ios
+        </span>
+      </a>
+      <a class="dv-sidemenu__link" href="#">
+        <div class="dv-sidemenu__text">پشتیبانی</div>
+        <span class="dv-sidemenu__icon material-icons-outlined">
+          arrow_back_ios
+        </span>
+      </a>
+      <hr>
+      <!-- Logged in Mode -->
+      <a class="dv-sidemenu__link" href="views/games.html">
+        <div class="dv-sidemenu__text">بازی‌ها</div>
+        <span class="dv-sidemenu__icon material-icons-outlined">
+          arrow_back_ios
+        </span>
+      </a>
+      <a class="dv-sidemenu__link" href="views/faq.html">
+        <div class="dv-sidemenu__text">سوالات متداول</div>
+        <span class="dv-sidemenu__icon material-icons-outlined">
+          arrow_back_ios
+        </span>
+      </a>
+      <a class="dv-sidemenu__link" href="views/about-us.html">
+        <div class="dv-sidemenu__text">درباره ما</div>
+        <span class="dv-sidemenu__icon material-icons-outlined">
+          arrow_back_ios
+        </span>
+      </a>
+    </div>
+    <div class="offcanvas-footer">
+      <!-- ? Logged in Mode -->
+      <a class="dv-btn dv-btn--lg dv-btn--error dv-btn--outline" href="#">
+        <span class="dv-btn__icon material-icons-outlined dv-flip-hr">
+          logout
+        </span>
+        <div class="dv-btn__text">خروج از حساب</div>
+      </a>
+      <!-- ? Logged in Mode -->
+
+      <!-- ? Guest Mode -->
+      <!-- <a class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill" href="#">
+        <span class="dv-btn__icon material-icons-outlined">
+          person
+        </span>
+        <div class="dv-btn__text">ورود | ثبت نام</div>
+      </a> -->
+      <!-- ? Guest Mode -->
+    </div>
+  </div>
+  <!-- * Sidemenu End -->
+
+  <main class="dv-main container">
+    <!-- * [Section Hot games] Start -->
+    <section class="dv-section">
+      <div class="dv-section__head">
+        <div class="dv-section__title-wrapper">
+          <span class="dv-section__title-icon material-icons-outlined">
+            local_fire_department
+          </span>
+          <h5 class="dv-section__title">داغ‌ترین‌ها</h5>
+        </div>
+        <a href="#" class="dv-section__see-more-wrapper">
+          <h6 class="dv-section__see-more-text">مشاهده همه</h6>
+          <span class="dv-section__see-more-icon material-icons-outlined">
+            arrow_circle_left
+          </span>
+        </a>
+      </div>
+      <div class="dv-section__body hot-games-wrapper">
+        <div class="dv-cuts">
+          <div class="dv-arrow">
+            <div class="dv-corner dv-corner--top dv-corner--right"></div>
+            <div class="dv-corner dv-corner--bottom dv-corner--left"></div>
+            <div class="dv-swiper-btn dv-swiper-btn--prev">
+              <span class="material-icons-outlined">
+                chevron_right
+              </span>
+            </div>
+          </div>
+          <div class="dv-arrow">
+            <div class="dv-corner dv-corner--top dv-corner--left"></div>
+            <div class="dv-corner dv-corner--bottom dv-corner--right"></div>
+            <div class="dv-swiper-btn dv-swiper-btn--next">
+              <span class="material-icons-outlined">
+                chevron_left
+              </span>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper swiper--hot-games">
+          <img class="light" src="/Arcane-Front-build/imgs/hot-box-light.png" alt="Light">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <label class="dv-label dv-label--subtle dv-label--error dv-label--sm" for="">
+                  <span class="dv-label__icon material-icons-outlined">
+                    local_fire_department
+                  </span>
+                </label>
+                <img src="/Arcane-Front-build/imgs/Assassins Creed Origins.jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <label class="dv-label dv-label--subtle dv-label--error dv-label--sm" for="">
+                  <span class="dv-label__icon material-icons-outlined">
+                    local_fire_department
+                  </span>
+                </label>
+                <img src="/Arcane-Front-build/imgs/‘Assassin’s Creed Shadows’ Is Better Than You___.jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <label class="dv-label dv-label--subtle dv-label--error dv-label--sm" for="">
+                  <span class="dv-label__icon material-icons-outlined">
+                    local_fire_department
+                  </span>
+                </label>
+                <img src="/Arcane-Front-build/imgs/Need for Speed Payback (PS4).jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <label class="dv-label dv-label--subtle dv-label--error dv-label--sm" for="">
+                  <span class="dv-label__icon material-icons-outlined">
+                    local_fire_department
+                  </span>
+                </label>
+                <img src="/Arcane-Front-build/imgs/EA et Dice annoncent le pass premium Battlefield 1.jpeg" class="w-100"
+                  alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <label class="dv-label dv-label--subtle dv-label--error dv-label--sm" for="">
+                  <span class="dv-label__icon material-icons-outlined">
+                    local_fire_department
+                  </span>
+                </label>
+                <img src="/Arcane-Front-build/imgs/resident evil.jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <label class="dv-label dv-label--subtle dv-label--error dv-label--sm" for="">
+                  <span class="dv-label__icon material-icons-outlined">
+                    local_fire_department
+                  </span>
+                </label>
+                <img src="/Arcane-Front-build/imgs/call of duty black ops.jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="views/game.html" class="game-box">
+                <label class="dv-label dv-label--subtle dv-label--error dv-label--sm" for="">
+                  <span class="dv-label__icon material-icons-outlined">
+                    local_fire_department
+                  </span>
+                </label>
+                <img src="/Arcane-Front-build/imgs/the last of us.jpeg" class="w-100" alt="Game poster">
+              </a>
+            </div>
+          </div>
+          <div class="dv-center-cut">
+            <div class="dv-corner dv-corner--bottom dv-corner--left"></div>
+            <div class="dv-corner dv-corner--bottom dv-corner--right"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- * [Section Hot games] End -->
+
+    <!-- * [Section Categories ] Start -->
+    <section class="dv-section">
+      <div class="dv-section__head">
+        <div class="dv-section__title-wrapper">
+          <span class="dv-section__title-icon material-icons-outlined">
+            gamepad
+          </span>
+          <h5 class="dv-section__title">دسته بندی‌ها</h5>
+        </div>
+      </div>
+      <div class="dv-section__body dv-category-links">
+        <div class="dv-lights"></div>
+        <a href="#" class="dv-category-link">
+          <span class="dv-category-link__icon material-icons-outlined">
+            sports_baseball
+          </span>
+          <h6 class="dv-category-link__title">ورزشی</h6>
+        </a>
+        <a href="#" class="dv-category-link">
+          <svg class="dv-category-link__icon" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+            <use href="/Arcane-Front-build/icons/sprites.svg#ri:sword-line" />
+          </svg>
+          <h6 class="dv-category-link__title">اکشن</h6>
+        </a>
+        <a href="#" class="dv-category-link">
+          <span class="dv-category-link__icon material-icons-outlined">
+            map
+          </span>
+          <h6 class="dv-category-link__title">ماجراجویی</h6>
+        </a>
+        <a href="#" class="dv-category-link">
+          <span class="dv-category-link__icon material-icons-outlined">
+            supervisor_account
+          </span>
+          <h6 class="dv-category-link__title">نقش‌آفرینی</h6>
+        </a>
+        <a href="#" class="dv-category-link">
+          <span class="dv-category-link__icon material-icons-outlined">
+            sports_score
+          </span>
+          <h6 class="dv-category-link__title">مسابقه‌ای</h6>
+        </a>
+        <a href="#" class="dv-category-link">
+          <svg class="dv-category-link__icon" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+            <use href="/Arcane-Front-build/icons/sprites.svg#icon-park-outline:chess-one" />
+          </svg>
+          <h6 class="dv-category-link__title">استراتژی</h6>
+        </a>
+        <a href="#" class="dv-category-link">
+          <svg class="dv-category-link__icon" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+            <use href="/Arcane-Front-build/icons/sprites.svg#mdi:gun" />
+          </svg>
+          <h6 class="dv-category-link__title">شوتر</h6>
+        </a>
+      </div>
+    </section>
+    <!-- * [Section Categories ] End -->
+
+    <!-- * [Section Images ] Start -->
+    <section class="dv-section overflow-x-clip">
+      <div class="dv-banners flex-column flex-lg-row">
+        <img data-aos="fade-down" data-aos-delay="0" class="dv-banner__light" src="/Arcane-Front-build/imgs/img-light.svg" alt="Light">
+        <img data-aos="fade-left" data-aos-delay="100" class="dv-banner dv-banner--right col-12 col-lg-6"
+          src="/Arcane-Front-build/imgs/img-box-right.svg" alt="Banner">
+        <img data-aos="fade-right" data-aos-delay="200" class="dv-banner dv-banner--left col-12 col-lg-6"
+          src="/Arcane-Front-build/imgs/img-box-left.svg" alt="Banner">
+      </div>
+    </section>
+    <!-- * [Section Images ] End -->
+
+    <!-- ************ Games With High Discounts Slider section Start ************ -->
+    <section class="dv-section">
+      <div class="dv-section__head">
+        <div class="dv-section__title-wrapper">
+          <span class="dv-section__title-icon material-icons-outlined">
+            discount
+          </span>
+          <h4 class="dv-section__title">پرتخفیف‌ها</h4>
+        </div>
+        <a href="#" class="dv-section__see-more-wrapper">
+          <h4 class="dv-section__see-more-text">مشاهده بیشتر</h4>
+          <span class="dv-section__see-more-icon material-icons-outlined">
+            arrow_circle_left
+          </span>
+        </a>
+      </div>
+      <div class="dv-section__body">
+        <div class="dv-section__game-cards-swiper swiper padding-sm">
+          <div class="dv-section__swiper-wrapper swiper-wrapper">
+            <div class="dv-section__swiper-slide swiper-slide">
+              <a href="views/game.html" class="dv-section__card">
+                <div class="dv-card__head">
+                  <div class="dv-card__image-wrapper">
+                    <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/the last of us.jpeg" alt="Game" />
+                  </div>
+                  <span class="dv-card__title">The Last Of Us part II</span>
+                </div>
+                <div class="dv-card__body">
+                  <div class="dv-card__info">
+                    <!-- "card body with discount" start -->
+                    <div class="dv-card__discount">
+                      <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                    </div>
+                    <div class="dv-card__price">
+                      <div class="dv-card__price-before">
+                        5/500/000
+                      </div>
+                      <div class="dv-card__price-after">
+                        <span class="dv-card__price-after-value">4/950/000</span>
+                        <span class="dv-card__price-unit">تومان</span>
+                      </div>
+                    </div>
+                    <!-- "card body with discount" end -->
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="dv-section__swiper-slide swiper-slide">
+              <a href="views/game.html" class="dv-section__card">
+                <div class="dv-card__head">
+                  <div class="dv-card__image-wrapper">
+                    <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/call of duty black ops.jpeg"
+                      alt="Game" />
+                  </div>
+                  <span class="dv-card__title">Call of Duty: Black Ops III</span>
+                </div>
+                <div class="dv-card__body">
+                  <div class="dv-card__info">
+                    <!-- "card body with discount" start -->
+                    <div class="dv-card__discount">
+                      <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                    </div>
+                    <div class="dv-card__price">
+                      <div class="dv-card__price-before">
+                        5/500/000
+                      </div>
+                      <div class="dv-card__price-after">
+                        <span class="dv-card__price-after-value">4/950/000</span>
+                        <span class="dv-card__price-unit">تومان</span>
+                      </div>
+                    </div>
+                    <!-- "card body with discount" end -->
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="dv-section__swiper-slide swiper-slide">
+              <a href="views/game.html" class="dv-section__card">
+                <div class="dv-card__head">
+                  <div class="dv-card__image-wrapper">
+                    <img class="dv-card__image skeleton" loading="lazy"
+                      src="/Arcane-Front-build/imgs/‘Assassin’s Creed Shadows’ Is Better Than You___.jpeg" alt="Game" />
+                  </div>
+                  <span class="dv-card__title">Assassin’s Creed Shadows</span>
+                </div>
+                <div class="dv-card__body">
+                  <div class="dv-card__info">
+                    <!-- "card body without discount" start -->
+                    <div class="dv-card__price">
+                      <div class="dv-card__price-after">
+                        <span class="dv-card__price-after-value">4/950/000</span>
+                        <span class="dv-card__price-unit">تومان</span>
+                      </div>
+                    </div>
+                    <!-- "card body without discount" end -->
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="dv-section__swiper-slide swiper-slide">
+              <a href="views/game.html" class="dv-section__card">
+                <div class="dv-card__head">
+                  <div class="dv-card__image-wrapper">
+                    <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/resident evil.jpeg" alt="Game" />
+                  </div>
+                  <span class="dv-card__title">Resident Evil 7: Biohazard</span>
+                </div>
+                <div class="dv-card__body">
+                  <div class="dv-card__info">
+                    <!-- "card body without discount" start -->
+                    <div class="dv-card__price">
+                      <div class="dv-card__price-after">
+                        <span class="dv-card__price-after-value">4/950/000</span>
+                        <span class="dv-card__price-unit">تومان</span>
+                      </div>
+                    </div>
+                    <!-- "card body without discount" end -->
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="dv-section__swiper-slide swiper-slide">
+              <a href="views/game.html" class="dv-section__card">
+                <div class="dv-card__head">
+                  <div class="dv-card__image-wrapper">
+                    <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/Assassins Creed Origins.jpeg"
+                      alt="Game" />
+                  </div>
+                  <span class="dv-card__title">Assassin's Creed Origins</span>
+                </div>
+                <div class="dv-card__body">
+                  <div class="dv-card__info">
+                    <!-- "card body with discount" start -->
+                    <div class="dv-card__discount">
+                      <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                    </div>
+                    <div class="dv-card__price">
+                      <div class="dv-card__price-before">
+                        5/500/000
+                      </div>
+                      <div class="dv-card__price-after">
+                        <span class="dv-card__price-after-value">4/950/000</span>
+                        <span class="dv-card__price-unit">تومان</span>
+                      </div>
+                    </div>
+                    <!-- "card body with discount" end -->
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ************ Games With High Discounts Slider section End ************ -->
+
+    <!-- ************ Favorite Games Slider section Start ************ -->
+    <section class="dv-section">
+      <div class="dv-section__head">
+        <div class="dv-section__title-wrapper">
+          <span class="dv-section__title-icon material-icons-outlined">
+            favorite_border
+          </span>
+          <h4 class="dv-section__title">محبوب</h4>
+        </div>
+        <a href="#" class="dv-section__see-more-wrapper">
+          <h4 class="dv-section__see-more-text">مشاهده بیشتر</h4>
+          <span class="dv-section__see-more-icon material-icons-outlined">
+            arrow_circle_left
+          </span>
+        </a>
+      </div>
+      <div class="dv-section__body">
+        <div class="dv-section__game-cards-swiper swiper padding-sm">
+          <div class="dv-section__swiper-wrapper swiper-wrapper">
+            <div class="dv-section__swiper-slide swiper-slide">
+              <a href="views/game.html" class="dv-section__card">
+                <div class="dv-card__head">
+                  <div class="dv-card__image-wrapper">
+                    <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/the last of us.jpeg" alt="Game" />
+                  </div>
+                  <span class="dv-card__title">The Last Of Us part II</span>
+                </div>
+                <div class="dv-card__body">
+                  <div class="dv-card__info">
+                    <!-- "card body with discount" start -->
+                    <div class="dv-card__discount">
+                      <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                    </div>
+                    <div class="dv-card__price">
+                      <div class="dv-card__price-before">
+                        5/500/000
+                      </div>
+                      <div class="dv-card__price-after">
+                        <span class="dv-card__price-after-value">4/950/000</span>
+                        <span class="dv-card__price-unit">تومان</span>
+                      </div>
+                    </div>
+                    <!-- "card body with discount" end -->
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="dv-section__swiper-slide swiper-slide">
+              <a href="views/game.html" class="dv-section__card">
+                <div class="dv-card__head">
+                  <div class="dv-card__image-wrapper">
+                    <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/call of duty black ops.jpeg"
+                      alt="Game" />
+                  </div>
+                  <span class="dv-card__title">Call of Duty: Black Ops III</span>
+                </div>
+                <div class="dv-card__body">
+                  <div class="dv-card__info">
+                    <!-- "card body with discount" start -->
+                    <div class="dv-card__discount">
+                      <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                    </div>
+                    <div class="dv-card__price">
+                      <div class="dv-card__price-before">
+                        5/500/000
+                      </div>
+                      <div class="dv-card__price-after">
+                        <span class="dv-card__price-after-value">4/950/000</span>
+                        <span class="dv-card__price-unit">تومان</span>
+                      </div>
+                    </div>
+                    <!-- "card body with discount" end -->
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="dv-section__swiper-slide swiper-slide">
+              <a href="views/game.html" class="dv-section__card">
+                <div class="dv-card__head">
+                  <div class="dv-card__image-wrapper">
+                    <img class="dv-card__image skeleton" loading="lazy"
+                      src="/Arcane-Front-build/imgs/‘Assassin’s Creed Shadows’ Is Better Than You___.jpeg" alt="Game" />
+                  </div>
+                  <span class="dv-card__title">Assassin’s Creed Shadows</span>
+                </div>
+                <div class="dv-card__body">
+                  <div class="dv-card__info">
+                    <!-- "card body without discount" start -->
+                    <div class="dv-card__price">
+                      <div class="dv-card__price-after">
+                        <span class="dv-card__price-after-value">4/950/000</span>
+                        <span class="dv-card__price-unit">تومان</span>
+                      </div>
+                    </div>
+                    <!-- "card body without discount" end -->
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="dv-section__swiper-slide swiper-slide">
+              <a href="views/game.html" class="dv-section__card">
+                <div class="dv-card__head">
+                  <div class="dv-card__image-wrapper">
+                    <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/resident evil.jpeg" alt="Game" />
+                  </div>
+                  <span class="dv-card__title">Resident Evil 7: Biohazard</span>
+                </div>
+                <div class="dv-card__body">
+                  <div class="dv-card__info">
+                    <!-- "card body without discount" start -->
+                    <div class="dv-card__price">
+                      <div class="dv-card__price-after">
+                        <span class="dv-card__price-after-value">4/950/000</span>
+                        <span class="dv-card__price-unit">تومان</span>
+                      </div>
+                    </div>
+                    <!-- "card body without discount" end -->
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="dv-section__swiper-slide swiper-slide">
+              <a href="views/game.html" class="dv-section__card">
+                <div class="dv-card__head">
+                  <div class="dv-card__image-wrapper">
+                    <img class="dv-card__image skeleton" loading="lazy" src="/Arcane-Front-build/imgs/Assassins Creed Origins.jpeg"
+                      alt="Game" />
+                  </div>
+                  <span class="dv-card__title">Assassin's Creed Origins</span>
+                </div>
+                <div class="dv-card__body">
+                  <div class="dv-card__info">
+                    <!-- "card body with discount" start -->
+                    <div class="dv-card__discount">
+                      <span class="dv-label dv-label--sm dv-label--error dv-label--outline">10%</span>
+                    </div>
+                    <div class="dv-card__price">
+                      <div class="dv-card__price-before">
+                        5/500/000
+                      </div>
+                      <div class="dv-card__price-after">
+                        <span class="dv-card__price-after-value">4/950/000</span>
+                        <span class="dv-card__price-unit">تومان</span>
+                      </div>
+                    </div>
+                    <!-- "card body with discount" end -->
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ************ Favorite Games Slider section End ************ -->
+
+    <!-- ************ How Arcane Works Section Start ************ -->
+    <section class="dv-section dv-how-works">
+      <div class="dv-how-works__container">
+        <!-- Item 1 -->
+        <div class="dv-how-works__item">
+          <div class="dv-how-works__text" data-aos="fade-down">
+            <h3 class="dv-how-works__title">لورم ایپسوم متن ساختگی</h3>
+            <p class="dv-how-works__description">
+              لورم ایپسوم متن ساختگی با تولید سادگی لورم ایپسوم متن ساختگی با تولید سادگی لورم ایپسوم متن ساختگی با
+              تولید
+              سادگی لورم ایپسوم متن ساختگی با تولید سادگیلورم ایپسوم متن ساختگی با تولید سادگیلورم ایپسوم متن ساختگی با
+              تولید سادگیلورم ایپسوم متن ساختگی با تولید سادگیلورم ایپسوم متن ساختگی با تولید سادگیلورم ایپسوم متن
+              ساختگی با تولید سادگیلورم یپسوم متن ساختگی با تولید سادگیلورم ایپسوم متن ساختگی با تولید سادگی
+            </p>
+            <a class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill" href="#">
+              <span class="dv-btn__icon material-icons-outlined">
+                person
+              </span>
+              <div class="dv-btn__text">دکمه تستی</div>
+            </a>
+          </div>
+          <div class="dv-how-works__image-wrapper" data-aos="fade-up">
+            <img src="/Arcane-Front-build/imgs/ghost.png" class="dv-how-works__image" id="dv-how-works__image-item-1"
+              alt="how arcane works" />
+            <div id="dv-light-blur__item-1"></div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="dv-how-works__item dv-how-works__item-reverse">
+          <div class="dv-how-works__text" data-aos="fade-down">
+            <h3 class="dv-how-works__title">لورم ایپسوم متن ساختگی</h3>
+            <p class="dv-how-works__description">
+              لورم ایپسوم متن ساختگی با تولید سادگی لورم ایپسوم متن ساختگی با تولید سادگی لورم ایپسوم متن ساختگی با
+              تولید
+              سادگی لورم ایپسوم متن ساختگی با تولید سادگیلورم ایپسوم متن ساختگی با تولید سادگیلورم ایپسوم متن ساختگی با
+              تولید سادگیلورم ایپسوم متن ساختگی با تولید سادگیلورم ایپسوم متن ساختگی با تولید سادگیلورم ایپسوم متن
+              ساختگی با تولید سادگیلورم یپسوم متن ساختگی با تولید سادگیلورم ایپسوم متن ساختگی با تولید سادگی
+            </p>
+            <a class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill" href="#">
+              <span class="dv-btn__icon material-icons-outlined">
+                person
+              </span>
+              <div class="dv-btn__text">دکمه تستی</div>
+            </a>
+          </div>
+          <div class="dv-how-works__image-wrapper" data-aos="fade-up">
+            <img src="/Arcane-Front-build/imgs/cp-price.png" class="dv-how-works__image" id="dv-how-works__image-item-2"
+              alt="how arcane works" />
+            <div id="dv-light-blur__item-2"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ************ How Arcane Works Section End ************ -->
+
+    <!-- ************ Comments Slider Section Start ************ -->
+    <section class="dv-section dv-comment-slider">
+      <div class="dv-comment-slider__head">
+        <span class="dv-comment-slider__title-icon material-icons-outlined">
+          recommend
+        </span>
+        <h4 class="dv-comment-slider__title">نظرات کاربران</h4>
+      </div>
+      <div class="dv-comment-slider__body">
+        <div class="dv-section__comments-swiper swiper">
+          <div class="dv-section__comments-swiper-wrapper swiper-wrapper">
+            <div class="dv-comment-box swiper-slide">
+              <div class="dv-comment-box__content">
+                <div class="dv-comment-box__head">
+                  <hr>
+                  <div class="dv-comment-box__title">حسین فرهانی</div>
+                  <hr>
+                </div>
+                <div class="dv-comment-box__body">
+                  <div class="dv-comment-box__icon-top">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                  <div class="dv-comment-box__text">
+                    لورم ایپسوم متن ساختگی لورم ایپسوم متن
+                    ساختگی لورم لورم ایپسوم متن ساختگی لوسوم
+                    متن ساختگی لورم ایپسوم متن ساختگی لورم
+                    ایپسوم لورم ایپسوم متن ساختگی لورم ایپسوم.
+                  </div>
+                  <div class="dv-comment-box__icon-bottom">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dv-comment-box swiper-slide">
+              <div class="dv-comment-box__content">
+                <div class="dv-comment-box__head">
+                  <hr>
+                  <div class="dv-comment-box__title">حسین فرهانی</div>
+                  <hr>
+                </div>
+                <div class="dv-comment-box__body">
+                  <div class="dv-comment-box__icon-top">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                  <div class="dv-comment-box__text">
+                    لورم ایپسوم متن ساختگی لورم ایپسوم متن
+                    ساختگی لورم لورم ایپسوم متن ساختگی لوسوم
+                    متن ساختگی لورم ایپسوم متن ساختگی لورم
+                    ایپسوم لورم ایپسوم متن ساختگی لورم ایپسوم.
+                  </div>
+                  <div class="dv-comment-box__icon-bottom">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dv-comment-box swiper-slide">
+              <div class="dv-comment-box__content">
+                <div class="dv-comment-box__head">
+                  <hr>
+                  <div class="dv-comment-box__title">حسین فرهانی</div>
+                  <hr>
+                </div>
+                <div class="dv-comment-box__body">
+                  <div class="dv-comment-box__icon-top">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                  <div class="dv-comment-box__text">
+                    لورم ایپسوم متن ساختگی لورم ایپسوم متن
+                    ساختگی لورم لورم ایپسوم متن ساختگی لوسوم
+                    متن ساختگی لورم ایپسوم متن ساختگی لورم
+                    ایپسوم لورم ایپسوم متن ساختگی لورم ایپسوم.
+                  </div>
+                  <div class="dv-comment-box__icon-bottom">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dv-comment-box swiper-slide">
+              <div class="dv-comment-box__content">
+                <div class="dv-comment-box__head">
+                  <hr>
+                  <div class="dv-comment-box__title">حسین فرهانی</div>
+                  <hr>
+                </div>
+                <div class="dv-comment-box__body">
+                  <div class="dv-comment-box__icon-top">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                  <div class="dv-comment-box__text">
+                    لورم ایپسوم متن ساختگی لورم ایپسوم متن
+                    ساختگی لورم لورم ایپسوم متن ساختگی لوسوم
+                    متن ساختگی لورم ایپسوم متن ساختگی لورم
+                    ایپسوم لورم ایپسوم متن ساختگی لورم ایپسوم.
+                  </div>
+                  <div class="dv-comment-box__icon-bottom">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dv-comment-box swiper-slide">
+              <div class="dv-comment-box__content">
+                <div class="dv-comment-box__head">
+                  <hr>
+                  <div class="dv-comment-box__title">حسین فرهانی</div>
+                  <hr>
+                </div>
+                <div class="dv-comment-box__body">
+                  <div class="dv-comment-box__icon-top">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                  <div class="dv-comment-box__text">
+                    لورم ایپسوم متن ساختگی لورم ایپسوم متن
+                    ساختگی لورم لورم ایپسوم متن ساختگی لوسوم
+                    متن ساختگی لورم ایپسوم متن ساختگی لورم
+                    ایپسوم لورم ایپسوم متن ساختگی لورم ایپسوم.
+                  </div>
+                  <div class="dv-comment-box__icon-bottom">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dv-comment-box swiper-slide">
+              <div class="dv-comment-box__content">
+                <div class="dv-comment-box__head">
+                  <hr>
+                  <div class="dv-comment-box__title">حسین فرهانی</div>
+                  <hr>
+                </div>
+                <div class="dv-comment-box__body">
+                  <div class="dv-comment-box__icon-top">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                  <div class="dv-comment-box__text">
+                    لورم ایپسوم متن ساختگی لورم ایپسوم متن
+                    ساختگی لورم لورم ایپسوم متن ساختگی لوسوم
+                    متن ساختگی لورم ایپسوم متن ساختگی لورم
+                    ایپسوم لورم ایپسوم متن ساختگی لورم ایپسوم.
+                  </div>
+                  <div class="dv-comment-box__icon-bottom">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dv-comment-box swiper-slide">
+              <div class="dv-comment-box__content">
+                <div class="dv-comment-box__head">
+                  <hr>
+                  <div class="dv-comment-box__title">حسین فرهانی</div>
+                  <hr>
+                </div>
+                <div class="dv-comment-box__body">
+                  <div class="dv-comment-box__icon-top">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                  <div class="dv-comment-box__text">
+                    لورم ایپسوم متن ساختگی لورم ایپسوم متن
+                    ساختگی لورم لورم ایپسوم متن ساختگی لوسوم
+                    متن ساختگی لورم ایپسوم متن ساختگی لورم
+                    ایپسوم لورم ایپسوم متن ساختگی لورم ایپسوم.
+                  </div>
+                  <div class="dv-comment-box__icon-bottom">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dv-comment-box swiper-slide">
+              <div class="dv-comment-box__content">
+                <div class="dv-comment-box__head">
+                  <hr>
+                  <div class="dv-comment-box__title">حسین فرهانی</div>
+                  <hr>
+                </div>
+                <div class="dv-comment-box__body">
+                  <div class="dv-comment-box__icon-top">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                  <div class="dv-comment-box__text">
+                    لورم ایپسوم متن ساختگی لورم ایپسوم متن
+                    ساختگی لورم لورم ایپسوم متن ساختگی لوسوم
+                    متن ساختگی لورم ایپسوم متن ساختگی لورم
+                    ایپسوم لورم ایپسوم متن ساختگی لورم ایپسوم.
+                  </div>
+                  <div class="dv-comment-box__icon-bottom">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dv-comment-box swiper-slide">
+              <div class="dv-comment-box__content">
+                <div class="dv-comment-box__head">
+                  <hr>
+                  <div class="dv-comment-box__title">حسین فرهانی</div>
+                  <hr>
+                </div>
+                <div class="dv-comment-box__body">
+                  <div class="dv-comment-box__icon-top">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                  <div class="dv-comment-box__text">
+                    لورم ایپسوم متن ساختگی لورم ایپسوم متن
+                    ساختگی لورم لورم ایپسوم متن ساختگی لوسوم
+                    متن ساختگی لورم ایپسوم متن ساختگی لورم
+                    ایپسوم لورم ایپسوم متن ساختگی لورم ایپسوم.
+                  </div>
+                  <div class="dv-comment-box__icon-bottom">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dv-comment-box swiper-slide">
+              <div class="dv-comment-box__content">
+                <div class="dv-comment-box__head">
+                  <hr>
+                  <div class="dv-comment-box__title">حسین فرهانی</div>
+                  <hr>
+                </div>
+                <div class="dv-comment-box__body">
+                  <div class="dv-comment-box__icon-top">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                  <div class="dv-comment-box__text">
+                    لورم ایپسوم متن ساختگی لورم ایپسوم متن
+                    ساختگی لورم لورم ایپسوم متن ساختگی لوسوم
+                    متن ساختگی لورم ایپسوم متن ساختگی لورم
+                    ایپسوم لورم ایپسوم متن ساختگی لورم ایپسوم.
+                  </div>
+                  <div class="dv-comment-box__icon-bottom">
+                    <span class="dv-comment-box__icon material-icons-outlined">
+                      format_quote
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ************ Comments Slider Section End ************ -->
+  </main>
+
+  <!-- ************ Footer Start ************ -->
+  <footer class="dv-footer container">
+    <div class="dv-footer__container">
+
+      <!-- Logo -->
+      <div class="dv-footer__logo">
+        <img src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo" class="dv-footer__logo-img" />
+      </div>
+
+      <!-- Description -->
+      <p class="dv-footer__description">
+        آن چیزی که می‌تواند در خصوص متن ها نوشته شود می تواند در این قسمت درج شود.
+      </p>
+
+      <!-- Social / Contact Icons -->
+      <div class="dv-footer__social">
+        <a href="#" class="dv-footer__social-item" aria-label="Email">
+          <svg class="icon icon--xl icon-filled" viewBox="0 0 24 24">
+            <use href="/Arcane-Front-build/icons/sprites.svg#mdi:instagram"></use>
+          </svg>
+        </a>
+        <a href="#" class="dv-footer__social-item" aria-label="Phone">
+          <svg class="icon icon--xl icon-filled" viewBox="0 0 24 24">
+            <use href="/Arcane-Front-build/icons/sprites.svg#ic:baseline-telegram"></use>
+          </svg>
+        </a>
+        <a href="#" class="dv-footer__social-item" aria-label="Instagram">
+          <span class="icon icon--xl material-icons-outlined">
+            phone
+          </span>
+        </a>
+        <a href="#" class="dv-footer__social-item" aria-label="Instagram">
+          <span class="icon icon--xl material-icons-outlined">
+            mail_outline
+          </span>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="dv-footer__nav">
+        <li class="dv-footer__nav-item">
+          <a href="/index.html" class="dv-footer__nav-link">صفحه اصلی</a>
+        </li>
+        <div class="dv-footer__divider"></div>
+        <li class="dv-footer__nav-item">
+          <a href="views/about-us.html" class="dv-footer__nav-link">درباره ما</a>
+        </li>
+        <div class="dv-footer__divider"></div>
+        <li class="dv-footer__nav-item">
+          <a href="views/faq.html" class="dv-footer__nav-link">تماس با ما</a>
+        </li>
+        <div class="dv-footer__divider"></div>
+        <li class="dv-footer__nav-item">
+          <a href="views/games.html" class="dv-footer__nav-link">لیست بازی‌ها</a>
+        </li>
+      </ul>
+
+      <!-- Copyright / Credits -->
+      <div class="dv-footer__copyright">
+        تمامی حقوق محفوظ است |
+        طراحی و توسعه در استودیو <a href="#" class="dv-footer__credit">Devign</a>
+      </div>
+
+    </div>
+  </footer>
+  <!-- ************ Footer End ************ -->
+
+  <!-- ! Core Scripts -->
+
+  <!-- ! Page Scripts -->
+</body>
+
+</html>

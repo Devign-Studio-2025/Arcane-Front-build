@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/faq-3wRW-0si.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-BINZ1ccu.js">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/just-validate.es-C73wyOde.js">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-CLnNTaS0.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/faq-CriZRS51.css">
+</head>
+
+<body>
+
+    <!-- * Navbar Start -->
+    <nav data-aos="fade-down" class="dv-nav container">
+        <div class="dv-nav__right col d-none d-lg-flex">
+            <a href="/index.html">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo_text.png" alt="Arcane Logo">
+            </a>
+        </div>
+
+        <ul class="dv-nav__center col" x-data="{
+        open: false,
+        resetSearch(el) {
+          this.open = !!el.value.trim();
+          this.open ? el.focus() : '';
+        },
+        openFocus(el) {
+          setTimeout(()=>{
+            el.focus();
+          }, 400)
+          this.open = true;
+        },
+      }">
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link" href="games.html">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        sports_esports
+                    </span>
+                    <div class="dv-nav__title">
+                        بازی‌ها
+                    </div>
+                </a>
+            </li>
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link" href="about-us.html">
+                    <div class="dv-nav__title">
+                        درباره ما
+                    </div>
+                    <span class="dv-nav__icon material-icons-outlined">
+                        info
+                    </span>
+                </a>
+            </li>
+            <li class="d-block d-lg-none">
+                <a class="dv-nav__link dv-padding-sm" href="#" data-bs-toggle="offcanvas" data-bs-target="#sidemenu"
+                    aria-controls="sidemenu">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        menu
+                    </span>
+                </a>
+            </li>
+            <li class="d-block d-lg-none">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
+            </li>
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link" href="/index.html">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        home
+                    </span>
+                    <div class="dv-nav__title">
+                        خانه
+                    </div>
+                </a>
+            </li>
+            <li class="d-none d-lg-block">
+                <a class="dv-nav__link dv-nav__link--active" href="faq.html">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        contact_support
+                    </span>
+                    <div class="dv-nav__title">
+                        ارتباط و سوالات
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a @click="openFocus($refs.searchField)" type="button"
+                    class="dv-btn dv-btn--primary dv-nav__search-btn">
+                    <span class="dv-nav__icon material-icons-outlined">
+                        search
+                    </span>
+                </a>
+            </li>
+            <form action="" class="dv-nav__search dv-nav__search--open" :class="{ 'dv-nav__search--open': open }">
+                <input x-ref="searchField" class="dv-nav__search-field" type="search" name=""
+                    placeholder="جستجوی بازی..." id="">
+                <button type="reset" @click="resetSearch($refs.searchField)">
+                    <span class="material-icons-outlined">
+                        close
+                    </span>
+                </button>
+            </form>
+        </ul>
+
+        <div class="dv-nav__left col d-none d-lg-flex">
+            <!-- <a class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" href="#">
+          <span class="dv-btn__icon material-icons-outlined">
+            person
+          </span>
+          <div class="dv-btn__text">ورود | ثبت نام</div>
+        </a> -->
+            <div class="dv-nav__left-auth">
+                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="سبد خرید">
+                    <div class="dv-badge dv-badge--number">+9</div>
+                    <span class="dv-btn__icon material-icons-outlined">
+                        shopping_cart
+                    </span>
+                </a>
+                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="داشبورد کاربری">
+                    <span class="dv-btn__icon material-icons-outlined">
+                        account_circle
+                    </span>
+                </a>
+                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    data-bs-title="پشتیبانی">
+                    <span class="dv-btn__icon material-icons-outlined">
+                        headset
+                    </span>
+                </a>
+            </div>
+        </div>
+
+    </nav>
+    <!-- * Navbar End -->
+
+    <!-- * Sidemenu Start -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="sidemenu" aria-labelledby="sidemenu-title">
+        <div class="offcanvas-header">
+            <a href="/" class="offcanvas-header__logo">
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo" />
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo_text.png" alt="فروشگاه گیمینگ آرکین" />
+            </a>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    arrow_forward_ios
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body">
+            <!-- Logged in Mode -->
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">داشبورد کاربری</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">سبد خرید</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">پشتیبانی</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <hr>
+            <!-- Logged in Mode -->
+            <a class="dv-sidemenu__link" href="games.html">
+                <div class="dv-sidemenu__text">بازی‌ها</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="faq.html">
+                <div class="dv-sidemenu__text">سوالات متداول</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="about-us.html">
+                <div class="dv-sidemenu__text">درباره ما</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+        </div>
+        <div class="offcanvas-footer">
+            <!-- ? Logged in Mode -->
+            <a class="dv-btn dv-btn--lg dv-btn--error dv-btn--outline" href="#">
+                <span class="dv-btn__icon material-icons-outlined dv-flip-hr">
+                    logout
+                </span>
+                <div class="dv-btn__text">خروج از حساب</div>
+            </a>
+            <!-- ? Logged in Mode -->
+
+            <!-- ? Guest Mode -->
+            <!-- <a class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill" href="#">
+        <span class="dv-btn__icon material-icons-outlined">
+          person
+        </span>
+        <div class="dv-btn__text">ورود | ثبت نام</div>
+      </a> -->
+            <!-- ? Guest Mode -->
+        </div>
+    </div>
+    <!-- * Sidemenu End -->
+
+    <main class="dv-main container">
+        <!-- * [Section FAQ] End -->
+        <section class="dv-section dv-section--faq">
+            <div class="dv-section__head dv-section__head--center">
+                <span class="dv-section__title-icon material-icons-outlined">
+                    contact_support
+                </span>
+                <h5 class="dv-section__title">سوالات متداول (FAQ)</h5>
+            </div>
+            <div class="dv-section__body" id="faq-accordions">
+                <div class="accordion-item dv-accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button dv-accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                            aria-controls="collapseOne">
+                            جای خالی...
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faq-accordions">
+                        <div class="accordion-body dv-accordion-body">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+                            تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارها می باشد.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item dv-accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button dv-accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            جای خالی...
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faq-accordions">
+                        <div class="accordion-body dv-accordion-body">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+                            تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارها می باشد.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item dv-accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button dv-accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                            aria-controls="collapseThree">
+                            جای خالی...
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faq-accordions">
+                        <div class="accordion-body dv-accordion-body">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
+                            است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
+                            تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارها می باشد.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- * [Section FAQ] End -->
+
+        <!-- * [Section Contact-us] End -->
+        <section class="dv-section dv-section--contact">
+            <div class="dv-section__head dv-section__head--center">
+                <span class="dv-section__title-icon material-icons-outlined">
+                    message
+                </span>
+                <h5 class="dv-section__title">تماس با ما</h5>
+            </div>
+            <div class="dv-section__body">
+                <form class="dv-section__form">
+                    <!-- ! Honey pot input -->
+                    <div style="position:fixed; left:-9999px;">
+                        <input type="text" name="hp-field" tabindex="-1" autocomplete="off">
+                    </div>
+                    <!-- ! Honey pot input -->
+                    <div class="dv-input">
+                        <label class="dv-input__label">
+                            نام و نام خانوادگی
+                            <span class="dv-input__star">*</span>
+                        </label>
+                        <div class="dv-input__field">
+                            <input type="text" name="full_name" id="full_name" placeholder="نام شما">
+                        </div>
+                    </div>
+                    <div class="dv-input">
+                        <label class="dv-input__label">
+                            شماره همراه
+                            <span class="dv-input__star">*</span>
+                        </label>
+                        <div class="dv-input__field">
+                            <input type="tel" maxlength="11" minlength="11" name="phone_number" id="phone_number"
+                                placeholder="09xxxxxxxxx">
+                        </div>
+                    </div>
+                    <div class="dv-input">
+                        <label class="dv-input__label">
+                            ایمیل
+                        </label>
+                        <div class="dv-input__field">
+                            <input type="email" name="email" id="email" placeholder="example@email.com">
+                        </div>
+                    </div>
+                    <div class="dv-input">
+                        <label class="dv-input__label">
+                            موضوع
+                            <span class="dv-input__star">*</span>
+                        </label>
+                        <div class="dv-input__field">
+                            <input type="text" name="subject" id="subject" placeholder="موضوع پیام">
+                        </div>
+                    </div>
+                    <div class="dv-input w-100">
+                        <label class="dv-input__label">
+                            متن پیام
+                            <span class="dv-input__star">*</span>
+                        </label>
+                        <div class="dv-input__field">
+                            <textarea rows="3" placeholder="پیام مورد نظر" name="message" id="message"></textarea>
+                        </div>
+                        <div class="dv-char-limit">
+                            <span class='dv-char-limit__label'>تعداد کاراکترها:</span>
+                            <small class='dv-char-limit__count'></small>
+                        </div>
+                    </div>
+                    <button type="submit" class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill">
+                        <div class="dv-btn__text">ثبت و ارسال پیام</div>
+                    </button>
+                </form>
+                <div class="dv-section__info">
+                    <div class="dv-section__visuals">
+                        <img data-aos="zoom-in-up" class="gamepad" src="/Arcane-Front-build/imgs/contact-gamepad.png" alt="">
+                    </div>
+                    <div class="dv-section__infos" data-aos="fade-up">
+                        <div class="dv-section__infos-item">
+                            <span class="dv-section__infos-icon material-icons-outlined">
+                                phone_enabled
+                            </span>
+                            <a class="dv-section__infos-text" href="tel:09999995544" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" data-bs-title="برقراری تماس (کلیک کنید)">09999995544</a>
+                        </div>
+                        <div class="dv-section__infos-item">
+                            <span class="dv-section__infos-icon material-icons-outlined">
+                                mail
+                            </span>
+                            <a class="dv-section__infos-text" href="mailto:info@arcane.ir" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" data-bs-title="ارسال ایمیل (کلیک کنید)">info@arcane.ir</a>
+                        </div>
+                        <div class="dv-section__infos-item">
+                            <span class="dv-section__infos-icon material-icons-outlined">
+                                location_on
+                            </span>
+                            <p class="dv-section__infos-text">آدرس، خیابان، کوچه، پلاک</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- * [Section Contact-us] End -->
+    </main>
+
+    <!-- ************ Footer Start ************ -->
+    <footer class="dv-footer container">
+        <div class="dv-footer__container">
+
+            <!-- Logo -->
+            <div class="dv-footer__logo">
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo" class="dv-footer__logo-img" />
+            </div>
+
+            <!-- Description -->
+            <p class="dv-footer__description">
+                آن چیزی که می‌تواند در خصوص متن ها نوشته شود می تواند در این قسمت درج شود.
+            </p>
+
+            <!-- Social / Contact Icons -->
+            <div class="dv-footer__social">
+                <a href="#" class="dv-footer__social-item" aria-label="Email">
+                    <svg class="icon icon--xl icon-filled" viewBox="0 0 24 24">
+                        <use href="/Arcane-Front-build/icons/sprites.svg#mdi:instagram"></use>
+                    </svg>
+                </a>
+                <a href="#" class="dv-footer__social-item" aria-label="Phone">
+                    <svg class="icon icon--xl icon-filled" viewBox="0 0 24 24">
+                        <use href="/Arcane-Front-build/icons/sprites.svg#ic:baseline-telegram"></use>
+                    </svg>
+                </a>
+                <a href="#" class="dv-footer__social-item" aria-label="Instagram">
+                    <span class="icon icon--xl material-icons-outlined">
+                        phone
+                    </span>
+                </a>
+                <a href="#" class="dv-footer__social-item" aria-label="Instagram">
+                    <span class="icon icon--xl material-icons-outlined">
+                        mail_outline
+                    </span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="dv-footer__nav">
+                <li class="dv-footer__nav-item">
+                    <a href="/index.html" class="dv-footer__nav-link">صفحه اصلی</a>
+                </li>
+                <div class="dv-footer__divider"></div>
+                <li class="dv-footer__nav-item">
+                    <a href="about-us.html" class="dv-footer__nav-link">درباره ما</a>
+                </li>
+                <div class="dv-footer__divider"></div>
+                <li class="dv-footer__nav-item">
+                    <a href="faq.html" class="dv-footer__nav-link">تماس با ما</a>
+                </li>
+                <div class="dv-footer__divider"></div>
+                <li class="dv-footer__nav-item">
+                    <a href="games.html" class="dv-footer__nav-link">لیست بازی‌ها</a>
+                </li>
+            </ul>
+
+            <!-- Copyright / Credits -->
+            <div class="dv-footer__copyright">
+                تمامی حقوق محفوظ است |
+                طراحی و توسعه در استودیو <a href="#" class="dv-footer__credit">Devign</a>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ************ Footer End ************ -->
+
+    <!-- ! Core Scripts -->
+
+    <!-- ! Page Scripts -->
+</body>
+
+</html>
