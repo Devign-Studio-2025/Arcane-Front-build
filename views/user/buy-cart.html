@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سبد خرید</title>
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/buy-cart-B-_z53qh.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-CJ3woiqU.js">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/just-validate.es-C73wyOde.js">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DzLrQWc9.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/buy-cart-KuzZHR9L.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/cart-CGGgRlOi.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-Ddxq-lyp.css">
+</head>
+
+<body>
+    <!--  Navbar Start -->
+    <nav class="dv-nav container" x-data>
+        <div class="dv-nav__center">
+            <a class="dv-nav__link dv-padding-sm d-flex d-lg-none" href="#" data-bs-toggle="offcanvas"
+                data-bs-target="#sidemenu" aria-controls="sidemenu">
+                <span class="dv-nav__icon material-icons-outlined">
+                    menu
+                </span>
+            </a>
+            <div class="dv-nav__center-right">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
+                <h2 class="d-none d-lg-block">آرکـِیـن</h2>
+            </div>
+            <div class="dv-nav__center-left">
+                <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="اعلان‌ها">
+                    <button class="d-none d-lg-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                        data-bs-target="#notifs-modal" data-bs-toggle="modal">
+                        <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount"
+                            x-text="$store.ui.notifCount">
+                        </div>
+                        <span class="dv-btn__icon icon icon--xl material-icons-outlined">
+                            notifications
+                        </span>
+                    </button>
+                </span>
+                <button class="d-lg-none d-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                    data-bs-target="#notifs-offcanvas" data-bs-toggle="offcanvas">
+                    <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount" x-text="$store.ui.notifCount">
+                    </div>
+                    <span class="dv-btn__icon icon icon--xl material-icons-outlined">
+                        notifications
+                    </span>
+                </button>
+                <a class="dv-btn dv-btn--md dv-btn--secondary dv-btn--fill d-none d-lg-flex" href="../../index.html">
+                    <div class="dv-btn__text">ورود به سایت</div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!--  Navbar End -->
+
+    <!-- * Sidemenu Start -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="sidemenu" aria-labelledby="sidemenu-title">
+        <div class="offcanvas-header">
+            <a href="/" class="offcanvas-header__logo">
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo" />
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo_text.png" alt="فروشگاه گیمینگ آرکین" />
+            </a>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    arrow_forward_ios
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body">
+            <!-- Logged in Mode -->
+            <a class="dv-sidemenu__link" href="user-games.html">
+                <div class="dv-sidemenu__text">بازی‌های من</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="user-favs.html">
+                <div class="dv-sidemenu__text">علاقمندی‌ها</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">سبد خرید</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">سبد فروش</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="user-sell-list.html">
+                <div class="dv-sidemenu__text">لیست فروش</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="user-wallet.html">
+                <div class="dv-sidemenu__text">کیف پول</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="user-notifs.html">
+                <div class="dv-sidemenu__text">اعلان‌ها</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">اطلاعات کاربری</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">پشتیبانی</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <hr>
+            <!-- Logged in Mode -->
+            <a class="dv-sidemenu__link" href="games.html">
+                <div class="dv-sidemenu__text">بازی‌ها</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="faq.html">
+                <div class="dv-sidemenu__text">سوالات متداول</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="about-us.html">
+                <div class="dv-sidemenu__text">درباره ما</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+        </div>
+        <div class="offcanvas-footer">
+            <!-- ? Logged in Mode -->
+            <a class="dv-btn dv-btn--lg dv-btn--error dv-btn--outline" href="#">
+                <span class="dv-btn__icon material-icons-outlined dv-flip-hr">
+                    logout
+                </span>
+                <div class="dv-btn__text">خروج از حساب</div>
+            </a>
+            <!-- ? Logged in Mode -->
+
+            <!-- ? Guest Mode -->
+            <!-- <a class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill" href="#">
+        <span class="dv-btn__icon material-icons-outlined">
+          person
+        </span>
+        <div class="dv-btn__text">ورود | ثبت نام</div>
+      </a> -->
+            <!-- ? Guest Mode -->
+        </div>
+    </div>
+    <!--  Sidemenu End -->
+
+    <!--  Notifs Modal Start -->
+    <div x-data class="modal dv-modal fade" id="notifs-modal" tabindex="-1" role="dialog"
+        aria-labelledby="notifs-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+            <div class="modal-content dv-modal-content">
+                <div class="modal-header dv-modal-header">
+                    <span class="material-icons-outlined">
+                        notifications
+                    </span>
+                    <h5 class="modal-title" id="notifs-modal-title">
+                        اعلان‌ها (<span x-text="$store.ui.notifCount"></span>)
+                    </h5>
+                    <button type="button" class="dv-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="material-icons-outlined">
+                            close
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body dv-notifs">
+                    <div class="dv-notifs__notif">
+                        <label class="dv-label dv-label--subtle dv-label--success dv-label--sm">
+                            <span class="dv-label__icon icon icon--md material-icons-outlined">
+                                shopping_cart
+                            </span>
+                            خرید
+                        </label>
+                        <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                        <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                            1401/10/05 - 22:10
+                        </label>
+                    </div>
+                    <div class="dv-notifs__notif">
+                        <label class="dv-label dv-label--subtle dv-label--primary dv-label--sm">
+                            <span class="dv-label__icon icon icon--md material-icons-outlined">
+                                info
+                            </span>
+                            اطلاع‌رسانی
+                        </label>
+                        <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                        <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                            1401/10/05 - 22:10
+                        </label>
+                    </div>
+                    <div class="dv-notifs__notif">
+                        <label class="dv-label dv-label--subtle dv-label--warning dv-label--sm">
+                            <span class="dv-label__icon icon icon--md material-icons-outlined">
+                                warning_amber
+                            </span>
+                            هشدار
+                        </label>
+                        <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                        <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                            1401/10/05 - 22:10
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="notifs.html" data-bs-dismiss="modal"
+                        class="w-100 dv-btn dv-btn--sm dv-btn--primary dv-btn--fill">
+                        <div class="dv-btn__text">همه اعلان‌ها</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Notifs Modal Start -->
+
+    <!--  Notifs Start -->
+    <div x-data class="offcanvas offcanvas-bottom" tabindex="-1" id="notifs-offcanvas" aria-labelledby="notifs-title">
+        <div class="offcanvas-header">
+            <span class="material-icons-outlined">
+                notifications
+            </span>
+            <h5>اعلان‌ها
+                (<span x-text="$store.ui.notifCount"></span>)
+            </h5>
+            <a href="notifs.html" class="me-auto dv-btn dv-btn--sm dv-btn--fill dv-btn--primary">
+                <div class="dv-btn__text ">
+                    همه اعلان‌ها
+                </div>
+            </a>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body dv-notifs">
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--success dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    خرید
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--success dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    خرید
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--success dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    خرید
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--success dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    خرید
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--primary dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        info
+                    </span>
+                    اطلاع‌رسانی
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--warning dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        warning_amber
+                    </span>
+                    هشدار
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- * Notifs End -->
+
+    <!-- [Cart page main section] Start -->
+    <main class="dv-main container">
+        <!-- * [Section Cart] Start -->
+        <section class="dv-section dv-section--aside-content">
+            <aside x-data x-init="$store.filters.init()" class="dv-section__aside col-4 col-xl-3 d-none d-lg-flex">
+                <ul class="dv-section__aside-links">
+                    <li>
+                        <a href="user-games.html" class="dv-section__aside-link">
+                            بازی‌های من
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                sports_esports
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user-favs.html" class="dv-section__aside-link">
+                            علاقمندی
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                favorite_border
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dv-section__aside-link dv-section__aside-link--active">
+                            سبد خرید
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                shopping_cart
+                            </span>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.buyCartItemsCount > 0"
+                                x-text="$store.ui.buyCartItemsCount">(0)</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dv-section__aside-link">
+                            سبد فروش
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                sell
+                            </span>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.sellCartItemsCount > 0"
+                                x-text="$store.ui.sellCartItemsCount">(0)</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user-sell-list.html" class="dv-section__aside-link">
+                            لیست فروش
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                format_list_bulleted
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dv-section__aside-link">
+                            کیف پول
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                account_balance_wallet
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dv-section__aside-link">
+                            تیکت و پشتیبانی
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                question_answer
+                            </span>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.ticketCount"
+                                x-text="$store.ui.ticketCount"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifs.html" class="dv-section__aside-link">
+                            اعلان‌ها
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                notifications
+                            </span>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount"
+                                x-text="$store.ui.notifCount"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dv-section__aside-link">
+                            اطلاعات کاربری
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                person
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dv-section__aside-link">
+                            خروج از حساب
+                            <span class="dv-section__aside-link-icon material-icons-outlined dv-flip-hr">
+                                logout
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Content -->
+            <div class="dv-section__content col" x-data x-init="$store.buyCart.init()">
+
+                <!-- Header -->
+                <div class="dv-section__content-header-row">
+                    <h5 class="dv-section__content-header-title">سبد خرید
+                        <span class="dv-cart__count" x-text="`(${$store.buyCart.itemsCount})`">(0)</span>
+                    </h5>
+
+                    <button type="button" class="dv-btn dv-btn--md dv-btn--error dv-btn--outline dv-btn__clear-all"
+                        @click="$store.buyCart.clearCart()" x-show="$store.buyCart.items.length > 0"
+                        :disabled="$store.buyCart.isClearing">
+                        <span x-show="!$store.buyCart.isClearing">حذف همه</span>
+                        <span x-show="$store.buyCart.isClearing">در حال حذف...</span>
+                    </button>
+                </div>
+
+                <div class="dv-cart__body">
+                    <!-- Cart List -->
+                    <div class="dv-section__content-cards dv-cart__list">
+                        <template x-for="item in $store.buyCart.items" :key="item.id">
+                            <article class="dv-section__card dv-cart-item">
+                                <!-- Remove Button -->
+                                <button class="dv-cart-item__remove dv-btn dv-btn--sm dv-btn--error dv-btn--fill"
+                                    @click="$store.buyCart.removeItem(item.id)" type="button">
+                                    <span class="dv-btn__icon material-icons-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                                <div class="dv-card__head">
+                                    <div class="dv-card__image-wrapper">
+                                        <img class="dv-card__image skeleton" :src="item.image" :alt="item.title"
+                                            loading="lazy" alt="Game" />
+                                        <div class="dv-cart-item__quantity">
+                                            <button
+                                                class="dv-btn dv-btn--outline dv-btn--secondary dv-cart-item__quantity-btn"
+                                                @click="$store.buyCart.updateQuantity(item.id, item.quantity - 1)"
+                                                :disabled="item.quantity <= 1" type="button">
+                                                <span
+                                                    class="material-icons-outlined dv-cart-item__quantity-icon">remove</span>
+                                            </button>
+                                            <span class="dv-cart-item__quantity-value" x-text="item.quantity">
+                                            </span>
+                                            <button
+                                                class="dv-btn dv-btn--outline dv-btn--secondary dv-cart-item__quantity-btn"
+                                                @click="$store.buyCart.updateQuantity(item.id, item.quantity + 1)"
+                                                type="button">
+                                                <span
+                                                    class="material-icons-outlined dv-cart-item__quantity-icon">add</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <span class="dv-card__title" x-text="item.title"></span>
+                                </div>
+                                <div class="dv-card__body">
+                                    <div class="dv-cart-item__game-info">
+                                        <p class="dv-cart-item__version">
+                                            نسخه: <span x-text="item.version"></span>
+                                        </p>
+                                        <p class="dv-cart-item__capacity">
+                                            ظرفیت: <span x-text="item.capacity"></span>
+                                        </p>
+                                    </div>
+                                    <!-- Price Section -->
+                                    <div class="dv-cart-item__price">
+                                        <!-- with discount -->
+                                        <template x-if="item.discountPercent > 0">
+                                            <div class="dv-cart-item__price-with-discount">
+                                                <div class="dv-cart-item__price--wrapper">
+                                                    <div class="dv-cart-item__price-before-wrapper">
+                                                        <div class="dv-cart-item__discount">
+                                                            <span
+                                                                class="dv-label dv-label--sm dv-label--error dv-label--outline"
+                                                                x-text="`${item.discountPercent}%`">
+                                                            </span>
+                                                        </div>
+                                                        <div class="dv-cart-item__price-before"
+                                                            x-text="$store.buyCart.formatPrice(item.originalPrice * item.quantity)">
+                                                        </div>
+                                                    </div>
+                                                    <div class="dv-cart-item__price-after">
+                                                        <span class="dv-cart-item__price-unit">تومان</span>
+                                                        <span class="dv-cart-item__price-after-value"
+                                                            x-text="$store.buyCart.formatPrice($store.buyCart.getItemDiscountedPrice(item) * item.quantity)">
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </template>
+                                        <!-- without discount -->
+                                        <template x-if="item.discountPercent === 0">
+                                            <div class="dv-cart-item__price-simple">
+                                                <div class="dv-cart-item__price-after">
+                                                    <span class="dv-cart-item__price-unit">تومان</span>
+                                                    <span class="dv-cart-item__price-after-value"
+                                                        x-text="$store.buyCart.formatPrice($store.buyCart.getItemDiscountedPrice(item) * item.quantity)">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </article>
+                        </template>
+                    </div>
+
+                    <!-- Payment -->
+                    <div class="dv-cart-payment" id="dv-cart-payment">
+                        <form class="dv-cart-payment__form" @submit.prevent="$store.buyCart.completePurchase()">
+
+                            <!-- Total Price -->
+                            <div class="dv-cart-payment__total-price">
+                                <span class="dv-cart-payment__total-price-text">جمع کل:</span>
+                                <div class="dv-cart-payment__total-price-value">
+                                    <span
+                                        x-text="$store.buyCart.formatPrice($store.buyCart.totalOriginalPrice)">۰</span>
+                                    <svg class="icon icon--md icon-filled" viewBox="0 0 24 24">
+                                        <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Profit from Discounts -->
+                            <div class="dv-cart-payment__profit">
+                                <span class="dv-cart-payment__profit-text">سود شما از تخفیف:</span>
+                                <div class="dv-cart-payment__profit-value">
+                                    <span x-text="$store.buyCart.formatPrice($store.buyCart.totalProfit)">۰</span>
+                                    <svg class="icon icon--md icon-filled" viewBox="0 0 24 24">
+                                        <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Total Discount -->
+                            <div class="dv-cart-payment__profit-discount">
+                                <span class="dv-cart-payment__profit-discount-text">تخفیف کل:</span>
+                                <div class="dv-cart-payment__profit-discount-value">
+                                    <span x-text="$store.buyCart.formatPrice($store.buyCart.totalDiscount)">۰</span>
+                                    <svg class="icon icon--md icon-filled" viewBox="0 0 24 24">
+                                        <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Payable Amount -->
+                            <div class="dv-cart-payment__payable-amount">
+                                <span class="dv-cart-payment__payable-amount-text">قابل پرداخت:</span>
+                                <div class="dv-cart-payment__payable-amount-value">
+                                    <span x-text="$store.buyCart.formatPrice($store.buyCart.payableAmount)">۰</span>
+                                    <svg class="icon icon--md icon-filled" viewBox="0 0 24 24">
+                                        <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Discount Code -->
+                            <div class="dv-cart-payment__discount">
+                                <div class="dv-input w-100">
+                                    <div class="dv-input__field">
+                                        <input type="text" x-model="$store.buyCart.discountCode" id="discount_code"
+                                            placeholder="کد تخفیف">
+                                    </div>
+                                </div>
+                                <button type="button"
+                                    @click="$store.buyCart.applyDiscountCode($store.buyCart.discountCode)"
+                                    class="dv-btn dv-btn--md dv-btn--secondary dv-btn--fill dv-cart-payment__discount-btn">
+                                    اعمال
+                                </button>
+                            </div>
+
+                            <!-- Payment Method -->
+                            <div class="dv-payment-method">
+                                <span class="dv-payment-method__title">روش پرداخت:</span>
+
+                                <!-- Option 1: Gateway -->
+                                <label class="dv-payment-method__option" for="gateway">
+                                    <div class="dv-payment-method__content">
+                                        <span class="dv-payment-method__label">پرداخت مستقیم</span>
+                                        <span class="dv-payment-method__meta">درگاه زرین پال</span>
+                                    </div>
+                                    <div class="dv-payment-method__radio"></div>
+                                    <input type="radio" x-model="$store.buyCart.paymentMethod" name="payment_method"
+                                        value="gateway" id="gateway" class="dv-payment-method__input" />
+                                </label>
+
+                                <!-- Option 2: Wallet -->
+                                <label class="dv-payment-method__option" for="wallet">
+                                    <div class="dv-payment-method__content">
+                                        <span class="dv-payment-method__label">پرداخت از کیف پول</span>
+                                        <span class="dv-payment-method__meta">
+                                            موجودی:
+                                            <span
+                                                x-text="$store.buyCart.formatPrice($store.buyCart.walletBalance)"></span>
+                                            تومان
+                                        </span>
+                                    </div>
+                                    <div class="dv-payment-method__radio"></div>
+                                    <input type="radio" x-model="$store.buyCart.paymentMethod" name="payment_method"
+                                        value="wallet" id="wallet" class="dv-payment-method__input" />
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill w-100"
+                                id="dv-cart-payment__submit" :disabled="$store.buyCart.items.length === 0">
+                                <span x-show="$store.buyCart.items.length > 0">ثبت درخواست خرید</span>
+                                <span x-show="$store.buyCart.items.length === 0">سبد خرید خالی است</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- payment mobile summary start -->
+                    <div class="dv-payment-summary">
+                        <div class="dv-payment-summary__content">
+                            <div class="dv-payment-summary__payable-amount">
+                                <span class="dv-payment-summary__payable-amount-text">قابل پرداخت:</span>
+                                <div class="dv-payment-summary__payable-amount-value">
+                                    <span x-text="$store.buyCart.formatPrice($store.buyCart.payableAmount)">۰</span>
+                                    <svg class="icon icon--md icon-filled" viewBox="0 0 24 24">
+                                        <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <button data-bs-target="#dv-payment-offcanvas" data-bs-toggle="offcanvas"
+                                class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" href="#">
+                                <div class="dv-btn__text">جزئیات و پرداخت</div>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- payment mobile summary end -->
+
+                    <!-- payment mobile offcanvas start -->
+                    <div x-data class="offcanvas offcanvas-bottom dv-payment-offcanvas" tabindex="-1"
+                        id="dv-payment-offcanvas" aria-labelledby="dv-payment-offcanvas-title">
+                        <div class="offcanvas-header p-0">
+                            <span class="material-icons-outlined">
+                                shopping_cart
+                            </span>
+                            <h5>پرداخت
+                            </h5>
+                            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close">
+                                <span class="dv-btn__icon material-icons-outlined">
+                                    keyboard_arrow_down
+                                </span>
+                            </button>
+                        </div>
+                        <hr class="m-0">
+                        <div class="offcanvas-body ">
+                            <form class="dv-cart-payment__form dv-cart-payment__offcanvas-form"
+                                @submit.prevent="$store.buyCart.completePurchase()">
+
+                                <!-- Total Price -->
+                                <div class="dv-cart-payment__total-price">
+                                    <span class="dv-cart-payment__total-price-text">جمع کل:</span>
+                                    <div class="dv-cart-payment__total-price-value">
+                                        <span
+                                            x-text="$store.buyCart.formatPrice($store.buyCart.totalOriginalPrice)">۰</span>
+                                        <svg class="icon icon--md icon-filled" viewBox="0 0 24 24">
+                                            <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Profit from Discounts -->
+                                <div class="dv-cart-payment__profit">
+                                    <span class="dv-cart-payment__profit-text">سود شما از تخفیف:</span>
+                                    <div class="dv-cart-payment__profit-value">
+                                        <span x-text="$store.buyCart.formatPrice($store.buyCart.totalProfit)">۰</span>
+                                        <svg class="icon icon--md icon-filled" viewBox="0 0 24 24">
+                                            <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Total Discount -->
+                                <div class="dv-cart-payment__profit-discount">
+                                    <span class="dv-cart-payment__profit-discount-text">تخفیف کل:</span>
+                                    <div class="dv-cart-payment__profit-discount-value">
+                                        <span x-text="$store.buyCart.formatPrice($store.buyCart.totalDiscount)">۰</span>
+                                        <svg class="icon icon--md icon-filled" viewBox="0 0 24 24">
+                                            <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Payable Amount -->
+                                <div class="dv-cart-payment__payable-amount dv-cart-payment__payable-amount-offcanvas">
+                                    <span class="dv-cart-payment__payable-amount-text">قابل پرداخت:</span>
+                                    <div class="dv-cart-payment__payable-amount-value">
+                                        <span x-text="$store.buyCart.formatPrice($store.buyCart.payableAmount)">۰</span>
+                                        <svg class="icon icon--md icon-filled" viewBox="0 0 24 24">
+                                            <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Discount Code -->
+                                <div class="dv-cart-payment__discount">
+                                    <div class="dv-input w-100">
+                                        <div class="dv-input__field">
+                                            <input type="text" x-model="$store.buyCart.discountCode" id="discount_code"
+                                                placeholder="کد تخفیف">
+                                        </div>
+                                    </div>
+                                    <button type="button"
+                                        @click="$store.buyCart.applyDiscountCode($store.buyCart.discountCode)"
+                                        class="dv-btn dv-btn--md dv-btn--secondary dv-btn--fill dv-cart-payment__discount-btn">
+                                        اعمال
+                                    </button>
+                                </div>
+
+                                <!-- Payment Method -->
+                                <div class="dv-payment-method">
+                                    <span class="dv-payment-method__title">روش پرداخت:</span>
+
+                                    <!-- Option 1: Gateway -->
+                                    <label class="dv-payment-method__option" for="gateway">
+                                        <div class="dv-payment-method__content">
+                                            <span class="dv-payment-method__label">پرداخت مستقیم</span>
+                                            <span class="dv-payment-method__meta">درگاه زرین پال</span>
+                                        </div>
+                                        <div class="dv-payment-method__radio"></div>
+                                        <input type="radio" x-model="$store.buyCart.paymentMethod" name="payment_method"
+                                            value="gateway" id="gateway" class="dv-payment-method__input" />
+                                    </label>
+
+                                    <!-- Option 2: Wallet -->
+                                    <label class="dv-payment-method__option" for="wallet">
+                                        <div class="dv-payment-method__content">
+                                            <span class="dv-payment-method__label">پرداخت از کیف پول</span>
+                                            <span class="dv-payment-method__meta">
+                                                موجودی:
+                                                <span
+                                                    x-text="$store.buyCart.formatPrice($store.buyCart.walletBalance)"></span>
+                                                تومان
+                                            </span>
+                                        </div>
+                                        <div class="dv-payment-method__radio"></div>
+                                        <input type="radio" x-model="$store.buyCart.paymentMethod" name="payment_method"
+                                            value="wallet" id="wallet" class="dv-payment-method__input" />
+                                    </label>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill w-100"
+                                    id="dv-cart-payment__offcanvas-submit"
+                                    :disabled="$store.buyCart.items.length === 0">
+                                    <span x-show="$store.buyCart.items.length > 0">ثبت درخواست خرید</span>
+                                    <span x-show="$store.buyCart.items.length === 0">سبد خرید خالی است</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- payment mobile offcanvas end -->
+                </div>
+            </div>
+
+        </section>
+        <!-- * [Section Cart] End -->
+    </main>
+    <!-- [Cart page main section] End -->
+
+    <!-- <script type="module" src="/assets/js/stores/buyCart.store.js"></script> -->
+
+    <!-- ! Core Scripts -->
+
+    <!-- ! Page Scripts -->
+</body>
+
+</html>
