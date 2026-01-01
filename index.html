@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <script type="module" crossorigin src="/Arcane-Front-build/assets/index-Bb3cIWl3.js"></script>
-  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-Bdzntxov.js">
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/index-zPdY3QXH.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-J0b_Y7a1.js">
   <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/swiper-CRU51p5Y.js">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-CLnNTaS0.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DJxJE6BR.css">
   <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/swiper-DtOVtP06.css">
   <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/index-IrMzHZ5u.css">
 </head>
@@ -21,7 +21,7 @@
     <video src="/Arcane-Front-build/imgs/particles.mp4" autoplay loop muted></video>
 
     <!-- * Navbar Start -->
-    <nav data-aos="fade-down" class="dv-nav container">
+    <nav data-aos="fade-down" class="dv-nav container" x-data>
       <div class="dv-nav__right col d-none d-lg-flex">
         <a href="/index.html">
           <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
@@ -121,13 +121,13 @@
         <div class="dv-nav__left-auth">
           <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
             data-bs-title="سبد خرید">
-            <div class="dv-badge dv-badge--number">+9</div>
+            <div class="dv-badge dv-badge--number" x-show="$store.ui.cartCount" x-text="$store.ui.cartCount"></div>
             <span class="dv-btn__icon material-icons-outlined">
               shopping_cart
             </span>
           </a>
-          <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
-            data-bs-title="داشبورد کاربری">
+          <a class="dv-btn dv-btn--primary" href="views/user/user-games.html" data-bs-toggle="tooltip"
+            data-bs-placement="bottom" data-bs-title="داشبورد کاربری">
             <span class="dv-btn__icon material-icons-outlined">
               account_circle
             </span>
@@ -311,7 +311,7 @@
     <hr class="m-0">
     <div class="offcanvas-body">
       <!-- Logged in Mode -->
-      <a class="dv-sidemenu__link" href="#">
+      <a class="dv-sidemenu__link" href="views/user/user-games.html">
         <div class="dv-sidemenu__text">داشبورد کاربری</div>
         <span class="dv-sidemenu__icon material-icons-outlined">
           arrow_back_ios

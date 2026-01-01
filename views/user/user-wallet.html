@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اطلاعات کاربری</title>
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/user-wallet-DuItzqO_.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-J0b_Y7a1.js">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/just-validate.es-C73wyOde.js">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/datatable-fa-CUKt88BO.js">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DJxJE6BR.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/datatable-fa-4z33KFpF.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/user-wallet-BI6P-Tlc.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-Ddxq-lyp.css">
+</head>
+
+<body>
+    <!--  Navbar Start -->
+    <nav class="dv-nav container" x-data>
+        <div class="dv-nav__center">
+            <a class="dv-nav__link dv-padding-sm d-flex d-lg-none" href="#" data-bs-toggle="offcanvas"
+                data-bs-target="#sidemenu" aria-controls="sidemenu">
+                <span class="dv-nav__icon material-icons-outlined">
+                    menu
+                </span>
+            </a>
+            <div class="dv-nav__center-right">
+                <img class="dv-nav__logo" src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo">
+                <h2 class="d-none d-lg-block">آرکـِیـن</h2>
+            </div>
+            <div class="dv-nav__center-left">
+                <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="اعلان‌ها">
+                    <button class="d-none d-lg-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                        data-bs-target="#notifs-modal" data-bs-toggle="modal">
+                        <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount"
+                            x-text="$store.ui.notifCount">
+                        </div>
+                        <span class="dv-btn__icon icon icon--xl material-icons-outlined">
+                            notifications
+                        </span>
+                    </button>
+                </span>
+                <button class="d-lg-none d-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                    data-bs-target="#notifs-offcanvas" data-bs-toggle="offcanvas">
+                    <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount" x-text="$store.ui.notifCount">
+                    </div>
+                    <span class="dv-btn__icon icon icon--xl material-icons-outlined">
+                        notifications
+                    </span>
+                </button>
+                <a class="dv-btn dv-btn--md dv-btn--secondary dv-btn--fill d-none d-lg-flex" href="../../index.html">
+                    <div class="dv-btn__text">ورود به سایت</div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!--  Navbar End -->
+
+    <!-- * Mobile Navbar Start -->
+    <nav class="dv-nav-mobile container d-flex d-lg-none" x-data>
+        <ul class="dv-nav-mobile__links">
+            <li>
+                <a class="dv-nav-mobile__link dv-nav-mobile__link--active" href="">
+                    <span class="dv-nav-mobile__icon material-icons-outlined">
+                        account_balance_wallet
+                    </span>
+                    کیف پول
+                </a>
+            </li>
+            <li>
+                <a class="dv-nav-mobile__link" href="">
+                    <span class="dv-nav-mobile__icon material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    سبد خرید
+                    <div class="dv-badge dv-badge--number" x-show="$store.ui.cartCount" x-text="$store.ui.cartCount">
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="dv-nav-mobile__link" href="">
+                    <span class="dv-nav-mobile__icon material-icons-outlined">
+                        sports_esports
+                    </span>
+                    بازی‌ها
+                </a>
+            </li>
+            <li>
+                <a class="dv-nav-mobile__link" href="">
+                    <span class="dv-nav-mobile__icon material-icons-outlined">
+                        person
+                    </span>
+                    پروفایل
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- * Mobile Navbar End -->
+
+    <!-- * Sidemenu Start -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="sidemenu" aria-labelledby="sidemenu-title">
+        <div class="offcanvas-header">
+            <a href="/" class="offcanvas-header__logo">
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo.png" alt="Arcane Logo" />
+                <img src="/Arcane-Front-build/imgs/logos/arcane-logo_text.png" alt="فروشگاه گیمینگ آرکین" />
+            </a>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    arrow_forward_ios
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body">
+            <!-- Logged in Mode -->
+            <a class="dv-sidemenu__link" href="user-games.html">
+                <div class="dv-sidemenu__text">بازی‌های من</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="user-favs.html">
+                <div class="dv-sidemenu__text">علاقمندی‌ها</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">سبد خرید</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">سبد فروش</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="user-sell-list.html">
+                <div class="dv-sidemenu__text">لیست فروش</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="user-wallet.html">
+                <div class="dv-sidemenu__text">کیف پول</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="user-notifs.html">
+                <div class="dv-sidemenu__text">اعلان‌ها</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">اطلاعات کاربری</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="#">
+                <div class="dv-sidemenu__text">پشتیبانی</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <hr>
+            <!-- Logged in Mode -->
+            <a class="dv-sidemenu__link" href="games.html">
+                <div class="dv-sidemenu__text">بازی‌ها</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="faq.html">
+                <div class="dv-sidemenu__text">سوالات متداول</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+            <a class="dv-sidemenu__link" href="about-us.html">
+                <div class="dv-sidemenu__text">درباره ما</div>
+                <span class="dv-sidemenu__icon material-icons-outlined">
+                    arrow_back_ios
+                </span>
+            </a>
+        </div>
+        <div class="offcanvas-footer">
+            <!-- ? Logged in Mode -->
+            <a class="dv-btn dv-btn--lg dv-btn--error dv-btn--outline" href="#">
+                <span class="dv-btn__icon material-icons-outlined dv-flip-hr">
+                    logout
+                </span>
+                <div class="dv-btn__text">خروج از حساب</div>
+            </a>
+            <!-- ? Logged in Mode -->
+
+            <!-- ? Guest Mode -->
+            <!-- <a class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill" href="#">
+        <span class="dv-btn__icon material-icons-outlined">
+          person
+        </span>
+        <div class="dv-btn__text">ورود | ثبت نام</div>
+      </a> -->
+            <!-- ? Guest Mode -->
+        </div>
+    </div>
+    <!--  Sidemenu End -->
+
+    <!--  Notifs Modal Start -->
+    <div x-data class="modal dv-modal fade" id="notifs-modal" tabindex="-1" role="dialog"
+        aria-labelledby="notifs-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+            <div class="modal-content dv-modal-content">
+                <div class="modal-header dv-modal-header">
+                    <span class="material-icons-outlined">
+                        notifications
+                    </span>
+                    <h5 class="modal-title" id="notifs-modal-title">
+                        اعلان‌ها (<span x-text="$store.ui.notifCount"></span>)
+                    </h5>
+                    <button type="button" class="dv-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="material-icons-outlined">
+                            close
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body dv-notifs">
+                    <div class="dv-notifs__notif">
+                        <label class="dv-label dv-label--subtle dv-label--success dv-label--sm">
+                            <span class="dv-label__icon icon icon--md material-icons-outlined">
+                                shopping_cart
+                            </span>
+                            خرید
+                        </label>
+                        <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                        <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                            1401/10/05 - 22:10
+                        </label>
+                    </div>
+                    <div class="dv-notifs__notif">
+                        <label class="dv-label dv-label--subtle dv-label--primary dv-label--sm">
+                            <span class="dv-label__icon icon icon--md material-icons-outlined">
+                                info
+                            </span>
+                            اطلاع‌رسانی
+                        </label>
+                        <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                        <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                            1401/10/05 - 22:10
+                        </label>
+                    </div>
+                    <div class="dv-notifs__notif">
+                        <label class="dv-label dv-label--subtle dv-label--warning dv-label--sm">
+                            <span class="dv-label__icon icon icon--md material-icons-outlined">
+                                warning_amber
+                            </span>
+                            هشدار
+                        </label>
+                        <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                        <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                            1401/10/05 - 22:10
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="notifs.html" data-bs-dismiss="modal"
+                        class="w-100 dv-btn dv-btn--sm dv-btn--primary dv-btn--fill">
+                        <div class="dv-btn__text">همه اعلان‌ها</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Notifs Modal Start -->
+
+    <!--  Notifs Start -->
+    <div x-data class="offcanvas offcanvas-bottom" tabindex="-1" id="notifs-offcanvas" aria-labelledby="notifs-title">
+        <div class="offcanvas-header">
+            <span class="material-icons-outlined">
+                notifications
+            </span>
+            <h5>اعلان‌ها
+                (<span x-text="$store.ui.notifCount"></span>)
+            </h5>
+            <a href="notifs.html" class="me-auto dv-btn dv-btn--sm dv-btn--fill dv-btn--primary">
+                <div class="dv-btn__text ">
+                    همه اعلان‌ها
+                </div>
+            </a>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body dv-notifs">
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--success dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    خرید
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--success dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    خرید
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--success dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    خرید
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--success dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    خرید
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--primary dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        info
+                    </span>
+                    اطلاع‌رسانی
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+            <div class="dv-notifs__notif">
+                <label class="dv-label dv-label--subtle dv-label--warning dv-label--sm">
+                    <span class="dv-label__icon icon icon--md material-icons-outlined">
+                        warning_amber
+                    </span>
+                    هشدار
+                </label>
+                <div class="dv-notifs__notif-body">سلام کاربر گرامی، از خرید شما در آرکین سپاس‌گزاریم.</div>
+                <label class="dv-label dv-label--subtle dv-label--disable dv-label--sm me-auto">
+                    1401/10/05 - 22:10
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- * Notifs End -->
+
+    <main class="dv-main container">
+        <!-- * [Wallet section] Start -->
+        <section class="dv-section dv-section--aside-content">
+            <aside x-data class="dv-section__aside col-4 col-xl-3 d-none d-lg-flex">
+                <ul class="dv-section__aside-links">
+                    <li>
+                        <a href="user-games.html" class="dv-section__aside-link">
+                            بازی‌های من
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                sports_esports
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user-favs.html" class="dv-section__aside-link">
+                            علاقمندی
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                favorite_border
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="buy-cart.html" class="dv-section__aside-link">
+                            سبد خرید
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                shopping_cart
+                            </span>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.buyCartItemsCount > 0"
+                                x-text="$store.ui.buyCartItemsCount">(0)</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sell-cart.html" class="dv-section__aside-link">
+                            سبد فروش
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                sell
+                            </span>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.sellCartItemsCount > 0"
+                                x-text="$store.ui.sellCartItemsCount">(0)</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user-sell-list.html" class="dv-section__aside-link">
+                            لیست فروش
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                format_list_bulleted
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dv-section__aside-link dv-section__aside-link--active">
+                            کیف پول
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                account_balance_wallet
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dv-section__aside-link">
+                            تیکت و پشتیبانی
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                question_answer
+                            </span>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.ticketCount"
+                                x-text="$store.ui.ticketCount"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifs.html" class="dv-section__aside-link">
+                            اعلان‌ها
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                notifications
+                            </span>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount"
+                                x-text="$store.ui.notifCount"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dv-section__aside-link">
+                            اطلاعات کاربری
+                            <span class="dv-section__aside-link-icon material-icons-outlined">
+                                person
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dv-section__aside-link">
+                            خروج از حساب
+                            <span class="dv-section__aside-link-icon material-icons-outlined dv-flip-hr">
+                                logout
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- Content -->
+            <div class="dv-section__content col">
+                <div class="dv-section__wallet">
+                    <div class="dv-section__content-header">
+                        <h5 class="dv-section__content-header-title">کیف پول</h5>
+                        <div class="dv-wallet__header-btn-wrapper">
+                            <button type="button" class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill"
+                                id="deposit-modal-btn" data-bs-target="#deposit-modal" data-bs-toggle="modal">
+                                <span class="dv-btn__icon material-icons-outlined">
+                                    add_card
+                                </span>
+                                <div class="dv-btn__text">واریز</div>
+                            </button>
+                            <button type="button" class="dv-btn dv-btn--md dv-btn--error dv-btn--fill"
+                                id="withdraw-modal-btn" data-bs-target="#withdraw-modal" data-bs-toggle="modal">
+                                <span class="dv-btn__icon material-icons-outlined">
+                                    credit_card
+                                </span>
+                                <div class="dv-btn__text">برداشت</div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dv-wallet__cards">
+                        <div class="dv-wallet__card dv-wallet__card--primary">
+                            <div class="dv-wallet__card-title-row">
+                                <span class="dv-wallet__card-title">موجودی فعلی</span>
+                                <div class="dv-wallet__card-title-icon-wrapper">
+                                    <span class="dv-wallet__card-title-icon material-icons-outlined">
+                                        wallet
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dv-wallet__card-value-row">
+                                <span class="dv-wallet__card-value-title">2,000,000</span>
+                                <svg class="icon icon--lg icon-filled" viewBox="0 0 24 24">
+                                    <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dv-wallet__card dv-wallet__card--warning">
+                            <div class="dv-wallet__card-title-row">
+                                <span class="dv-wallet__card-title">در انتظار برداشت</span>
+                                <div class="dv-wallet__card-title-icon-wrapper">
+                                    <span class="dv-wallet__card-title-icon material-icons-outlined">
+                                        hourglass_top
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dv-wallet__card-value-row">
+                                <span class="dv-wallet__card-value-title">1,000,000</span>
+                                <svg class="icon icon--lg icon-filled" viewBox="0 0 24 24">
+                                    <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dv-wallet__card dv-wallet__card--error">
+                            <div class="dv-wallet__card-title-row">
+                                <span class="dv-wallet__card-title">کل برداشت شده</span>
+                                <div class="dv-wallet__card-title-icon-wrapper">
+                                    <span class="dv-wallet__card-title-icon material-icons-outlined">
+                                        credit_card
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dv-wallet__card-value-row">
+                                <span class="dv-wallet__card-value-title">2,000,000</span>
+                                <svg class="icon icon--lg icon-filled" viewBox="0 0 24 24">
+                                    <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dv-wallet__card dv-wallet__card--success">
+                            <div class="dv-wallet__card-title-row">
+                                <span class="dv-wallet__card-title">سود از تخفیف‌ها</span>
+                                <div class="dv-wallet__card-title-icon-wrapper">
+                                    <span class="dv-wallet__card-title-icon material-icons-outlined">
+                                        percent
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dv-wallet__card-value-row">
+                                <span class="dv-wallet__card-value-title">500,000</span>
+                                <svg class="icon icon--lg icon-filled" viewBox="0 0 24 24">
+                                    <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dv-wallet__card dv-wallet__card--secondary">
+                            <div class="dv-wallet__card-title-row">
+                                <span class="dv-wallet__card-title">کل خرید‌ها</span>
+                                <div class="dv-wallet__card-title-icon-wrapper">
+                                    <span class="dv-wallet__card-title-icon material-icons-outlined">
+                                        shopping_cart
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dv-wallet__card-value-row">
+                                <span class="dv-wallet__card-value-title">15,000,000</span>
+                                <svg class="icon icon--lg icon-filled" viewBox="0 0 24 24">
+                                    <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dv-wallet__card dv-wallet__card--neutral">
+                            <div class="dv-wallet__card-title-row">
+                                <span class="dv-wallet__card-title">کل واریز شده</span>
+                                <div class="dv-wallet__card-title-icon-wrapper">
+                                    <span class="dv-wallet__card-title-icon material-icons-outlined">
+                                        local_atm
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dv-wallet__card-value-row">
+                                <span class="dv-wallet__card-value-title">2,000,000</span>
+                                <svg class="icon icon--lg icon-filled" viewBox="0 0 24 24">
+                                    <use href="/Arcane-Front-build/icons/sprites.svg#toman"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dv-section__transactions">
+                    <div class="dv-section__content-header-row">
+                        <h5 class="dv-section__content-header-title">آخرین تراکنش‌ها</h5>
+                        <div class="dv-section__content-header">
+                            <div class="dv-input col col-lg-5">
+                                <div class="dv-input__field">
+                                    <input class="" type="search" x-data x-model="$store.tableStore.search"
+                                        name="keyword" id="" placeholder="جستجو...">
+                                    <span class="dv-input__icon material-icons-outlined">
+                                        search
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center dv-gap-md">
+                                <div x-data class="dropdown-center dv-dropdown w-100" data-dropdown>
+                                    <input type="hidden" name="" value="" data-dropdown-value>
+                                    <button class="dv-dropdown__btn w-100" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false" data-dropdown-btn>
+                                        <div class="dv-dropdown__btn-text">10</div>
+                                        <span class="dv-dropdown__arrow material-icons-outlined">
+                                            expand_more
+                                        </span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end dv-dropdown-menu w-100">
+                                        <li class="dv-dropdown-menu__li">
+                                            <button @click="
+                                                $store.tableStore.setPageSize(10);
+                                                " class=" dropdown-item active" type="button" data-value="10">
+                                                <span class="dv-dropdown-menu__value">10</span>
+                                                <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                    check
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li class="dv-dropdown-menu__li">
+                                            <button @click="
+                                                $store.tableStore.setPageSize(25);
+                                                " class=" dropdown-item" type="button" data-value="25">
+                                                <span class="dv-dropdown-menu__value">25</span>
+                                                <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                    check
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li class="dv-dropdown-menu__li">
+                                            <button @click="
+                                                $store.tableStore.setPageSize(50);
+                                                " class=" dropdown-item" type="button" data-value="50">
+                                                <span class="dv-dropdown-menu__value">50</span>
+                                                <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                    check
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li class="dv-dropdown-menu__li">
+                                            <button @click="
+                                                $store.tableStore.setPageSize(100);
+                                                " class=" dropdown-item" type="button" data-value="100">
+                                                <span class="dv-dropdown-menu__value">100</span>
+                                                <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                    check
+                                                </span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-wrapper table-responsive">
+                        <table id="sell-list-table" class="dv-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>تاریخ تراکنش</th>
+                                    <th>نوع تراکنش</th>
+                                    <th>مبلغ (تومان)</th>
+                                    <th>وضعیت</th>
+                                    <th>جزئیات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>1404/06/20</td>
+                                    <td>واریز مستقیم</td>
+                                    <td>10000000</td>
+                                    <td><label class="dv-label dv-label--outline dv-label--success dv-label--sm">
+                                            <span class="dv-label__icon material-icons-outlined">
+                                                check_circle_outline
+                                            </span>
+                                            موفق
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
+                                            id="transaction-modal-btn" data-bs-target="#transaction-modal"
+                                            data-bs-toggle="modal">
+                                            <div class="dv-btn__text">مشاهده</div>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>1404/06/2</td>
+                                    <td>برداشت</td>
+                                    <td>8000000</td>
+                                    <td><label class="dv-label dv-label--outline dv-label--success dv-label--sm">
+                                            <span class="dv-label__icon material-icons-outlined">
+                                                check_circle_outline
+                                            </span>
+                                            تایید شده
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
+                                            id="transaction-modal-btn" data-bs-target="#transaction-modal"
+                                            data-bs-toggle="modal">
+                                            <div class="dv-btn__text">مشاهده</div>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>1404/06/20</td>
+                                    <td>شارژ کیف پول</td>
+                                    <td>5000000</td>
+                                    <td><label class="dv-label dv-label--outline dv-label--error dv-label--sm">
+                                            <span class="dv-label__icon material-icons-outlined">
+                                                error_outline
+                                            </span>
+                                            ناموفق
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
+                                            id="transaction-modal-btn" data-bs-target="#transaction-modal"
+                                            data-bs-toggle="modal">
+                                            <div class="dv-btn__text">مشاهده</div>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>1404/06/20</td>
+                                    <td>برداشت وجه</td>
+                                    <td>3000000</td>
+                                    <td>
+                                        <label class="dv-label dv-label--outline dv-label--warning dv-label--sm">
+                                            <span class="dv-label__icon material-icons-outlined">
+                                                hourglass_top
+                                            </span>
+                                            در انتظار
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
+                                            id="transaction-modal-btn" data-bs-target="#transaction-modal"
+                                            data-bs-toggle="modal">
+                                            <div class="dv-btn__text">مشاهده</div>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- * [Wallet section] End -->
+
+    </main>
+
+    <!-- * Deposit Modal Start -->
+    <div x-data class="modal dv-modal fade" id="deposit-modal" tabindex="-1" role="dialog"
+        aria-labelledby="deposit-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+            <div class="modal-content dv-modal-content">
+                <div class="modal-header dv-modal-header">
+                    <span class="material-icons-outlined">
+                        add_card
+                    </span>
+                    <h5 class="modal-title" id="deposit-modal-title">
+                        واریز به کیف پول
+                    </h5>
+                    <button type="button" class="dv-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="material-icons-outlined">
+                            close
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="dv-modal__content">
+                        <div class="dv-modal__note">
+                            <span class="dv-modal__note-icon material-icons-outlined">
+                                info
+                            </span>
+                            <span class="dv-modal__note-text">مبلغ واریزی پس از انجام مراحل پرداخت، به موجودی فعلی شما
+                                خواهد
+                                شد.</span>
+                        </div>
+                        <form class="dv-deposit-modal__form">
+                            <!-- ! Honey pot input -->
+                            <div style="position:fixed; left:-9999px;">
+                                <input type="text" name="hp-field" tabindex="-1" autocomplete="off">
+                            </div>
+                            <div class="dv-input w-100">
+                                <div class="dv-input__field">
+                                    <input type="text" class="dv-format-num" name="desposit-amount" id="desposit-amount"
+                                        inputmode="numeric" placeholder="مبلغ واریز (ریال)">
+                                </div>
+                            </div>
+                            <div class="dv-modal__form-btn-wrapper">
+                                <button type="submit" x-data x-async="ajaxDepositToWallet()"
+                                    class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill"
+                                    id="dv-deposit-modal__form-btn">
+                                    <div class="dv-btn__text">رفتن به درگاه پرداخت</div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * Deposit Modal End -->
+
+    <!-- * Withdraw Modal Start -->
+    <div x-data class="modal dv-modal fade" id="withdraw-modal" tabindex="-1" role="dialog"
+        aria-labelledby="withdraw-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+            <div class="modal-content dv-modal-content">
+                <div class="modal-header dv-modal-header">
+                    <span class="material-icons-outlined">
+                        add_card
+                    </span>
+                    <h5 class="modal-title" id="withdraw-modal-title">
+                        برداشت از کیف پول
+                    </h5>
+                    <button type="button" class="dv-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="material-icons-outlined">
+                            close
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body dv-withdraw-modal__body">
+                    <div class="dv-modal__content">
+                        <div class="dv-modal__note">
+                            <span class="dv-modal__note-icon material-icons-outlined">
+                                info
+                            </span>
+                            <span class="dv-modal__note-text">مبلغ درخواستی شما پس از تایید به حسابتان واریز خواهد
+                                شد.</span>
+                        </div>
+                        <form class="dv-withdraw-modal__form">
+                            <!-- ! Honey pot input -->
+                            <div style="position:fixed; left:-9999px;">
+                                <input type="text" name="hp-field" tabindex="-1" autocomplete="off">
+                            </div>
+                            <div class="dv-input w-100">
+                                <div class="dv-input__field">
+                                    <input type="text" name="withdraw-amount" class="dv-format-num" id="withdraw-amount"
+                                        inputmode="numeric" placeholder="مبلغ واریز (ریال)">
+                                </div>
+                            </div>
+                            <div class="dv-input w-100">
+                                <div class="dv-input__field">
+                                    <input type="text" inputmode="numeric" name="account-sheba-number"
+                                        id="account-sheba-number" placeholder="شماره شبا">
+                                    <div class="dv-input__icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <use href="/Arcane-Front-build/icons/sprites.svg#IR"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dv-input w-100">
+                                <div class="dv-input__field">
+                                    <input type="text" inputmode="numeric" name="bank-card-number" id="bank-card-number"
+                                        placeholder="شماره کارت">
+                                </div>
+                            </div>
+                            <div class="dv-input w-100">
+                                <div class="dv-input__field">
+                                    <input type="text" name="bank-account-owner" id="bank-account-owner"
+                                        placeholder="نام مالک حساب">
+                                </div>
+                            </div>
+                            <div class="dv-modal__form-btn-wrapper">
+                                <button type="submit" x-data x-async="ajaxWithdrawToWallet()"
+                                    class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill"
+                                    id="dv-withdraw-modal__form-btn">
+                                    <div class="dv-btn__text">ثبت درخواست برداشت</div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * Withdraw Modal End -->
+
+    <!-- * Transaction Modal Start -->
+    <div x-data class="modal dv-modal fade" id="transaction-modal" tabindex="-1" role="dialog"
+        aria-labelledby="transaction-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+            <div class="modal-content dv-modal-content">
+                <div class="modal-header dv-modal-header">
+                    <span class="material-icons-outlined">
+                        receipt_long
+                    </span>
+                    <h5 class="modal-title" id="transaction-modal-title">
+                        جزئیات تراکنش
+                    </h5>
+                    <button type="button" class="dv-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="material-icons-outlined">
+                            close
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="dv-modal__content">
+                        <span
+                            class="dv-transaction-modal__amount dv-label dv-label--lg dv-label--success dv-label--outline w-100">تومان
+                            4,000,000</span>
+                        <div class="dv-transaction-modal__details">
+                            <div class="dv-transaction-modal__details-row">
+                                <span class="dv-transaction-modal__details-row-label">شماره تراکنش:</span>
+                                <span class="dv-transaction-modal__details-row-value">123456789</span>
+                            </div>
+                            <div class="dv-transaction-modal__details-row">
+                                <span class="dv-transaction-modal__details-row-label">تاریخ تراکنش:</span>
+                                <span class="dv-transaction-modal__details-row-value">1403/10/02 11:02</span>
+                            </div>
+                            <div class="dv-transaction-modal__details-row">
+                                <span class="dv-transaction-modal__details-row-label">نوع تراکنش:</span>
+                                <span class="dv-label dv-label--sm dv-label--success dv-label--outline">برداشت از
+                                    کیف</span>
+                            </div>
+                            <div class="dv-transaction-modal__details-row">
+                                <span class="dv-transaction-modal__details-row-label">وضعیت تراکنش:</span>
+                                <span class="dv-label dv-label--sm dv-label--success dv-label--outline">تایید شده</span>
+                            </div>
+                        </div>
+                        <div class="dv-transaction-modal__account">
+                            <div class="dv-transaction-modal__account-row">
+                                <span class="dv-transaction-modal__account-row-label">شماره شبا:</span>
+                                <span class="dv-transaction-modal__account-row-value">IR
+                                    12345678912345678912345678</span>
+                            </div>
+                            <div class="dv-transaction-modal__account-row">
+                                <span class="dv-transaction-modal__account-row-label">شماره حساب:</span>
+                                <span class="dv-transaction-modal__account-row-value">1234 5678 2345 6543</span>
+                            </div>
+                            <div class="dv-transaction-modal__account-row">
+                                <span class="dv-transaction-modal__account-row-label">مالک حساب:</span>
+                                <span class="dv-transaction-modal__account-row-value"> حسین فرهانی</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * Transaction Modal End -->
+
+    <!-- ! Core Scripts -->
+
+    <!-- ! Page Scripts -->
+</body>
+
+</html>
