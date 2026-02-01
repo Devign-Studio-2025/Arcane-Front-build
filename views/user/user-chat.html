@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/user-chat-DF0pdDUo.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-D2V5YL7I.js">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/just-validate.es-C73wyOde.js">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DcL-z6zl.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/user-chat-DOD3CDOe.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-DtsZgJML.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/fancybox-DxT1xVcY.css">
+</head>
+
+<body>
+
+    <main class="dv-main container">
+        <!-- * [Section Tickets] Start -->
+        <section class="dv-section dv-section--aside-content">
+            <a href="user-games.html" class="dv-back-btn d-lg-flex d-none" id="back-btn">
+                برگشت
+                <span class="dv-back-btn__icon material-icons-outlined">
+                    keyboard_double_arrow_left
+                </span>
+            </a>
+
+            <!-- ticket list start -->
+            <aside class="dv-section__aside d-none d-lg-flex col-4 col-xl-4" x-data="{
+                    selectTicket(ticketId) {
+                    $store.chatStore.setActiveTicket(ticketId);
+                    }
+                }">
+                <div class="dv-ticket-list">
+                    <!-- header -->
+                    <header class="dv-ticket-list__header">
+                        <h5 class="dv-ticket-list__header-title">لیست تیکت‌ها</h5>
+                        <span class="dv-ticket-list__header-icon material-icons-outlined">
+                            message
+                        </span>
+                    </header>
+
+                    <!-- tickets -->
+                    <ul class="dv-ticket-list__items">
+                        <!-- Loading state -->
+                        <template x-if="$store.chatStore.isLoading">
+                            <li class="dv-ticket-list__item dv-ticket-list__item--empty">
+                                <div class="dv-ticket-list__link">
+                                    <span class="material-icons-outlined">refresh</span>
+                                    <p>در حال بارگذاری...</p>
+                                </div>
+                            </li>
+                        </template>
+
+                        <!-- Empty state -->
+                        <template x-if="!$store.chatStore.isLoading && $store.chatStore.tickets.length === 0">
+                            <li class="dv-ticket-list__item dv-ticket-list__item--empty">
+                                <div class="dv-ticket-list__link">
+                                    <span class="material-icons-outlined">inbox</span>
+                                    <p>تیکتی وجود ندارد</p>
+                                </div>
+                            </li>
+                        </template>
+
+                        <!-- Ticket list -->
+                        <template x-for="ticket in $store.chatStore.tickets" :key="ticket.id">
+                            <li class="dv-ticket-list__item" :class="{
+                                'dv-ticket-list__item--unread': ticket.unread,
+                                'dv-ticket-list__item--active': ticket.id === $store.chatStore.activeTicketId}">
+                                <a type="button" class="dv-ticket-list__link" @click.prevent="selectTicket(ticket.id)"
+                                    :data-ticket-id="ticket.id">
+                                    <div class="dv-ticket-list__content">
+                                        <div class="dv-ticket-list__content-text">
+                                            <div class="dv-ticket-list__title-wrapper">
+                                                <div class="dv-ticket-list__title" :title="ticket.title">
+                                                    <span
+                                                        x-text="$store.chatStore.truncateText(ticket.title, 40)"></span>
+                                                </div>
+                                                <span class="dv-ticket-list__status-indicator"></span>
+                                            </div>
+                                            <div class="dv-ticket-list__excerpt" :title="ticket.message">
+                                                <span x-text="$store.chatStore.truncateText(ticket.message, 80)"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="dv-ticket-list__meta">
+                                            <span x-text="$store.chatStore.getStatusInfo(ticket.status).text"
+                                                class="dv-label dv-label--sm dv-label--subtle"
+                                                :class="$store.chatStore.getStatusInfo(ticket.status).class"></span>
+                                            <time class="dv-ticket-list__date">
+                                                <span x-text="$store.chatStore.formatDate(ticket.updated_at)"></span>
+                                            </time>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </template>
+                    </ul>
+                    <span class="dv-ticket-list__add-button" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="تیکت جدید">
+                        <button class="dv-btn dv-btn--sm dv-btn--fill dv-btn--secondary" id="add-ticket-modal-button-1"
+                            data-bs-target="#ticket-modal" data-bs-toggle="modal">
+                            <span class="dv-ticket-list__header-icon material-icons-outlined">
+                                add
+                            </span>
+                        </button>
+                    </span>
+                </div>
+            </aside>
+            <!-- ticket list end -->
+            <div class="dv-section__content col">
+                <div class="dv-section__content-header-row">
+                    <h5 class="dv-section__content-header-title">تیکت و پشتیبانی</h5>
+                    <button class="d-flex d-lg-none dv-btn dv-btn--md dv-btn--secondary dv-btn--outline"
+                        data-bs-toggle="offcanvas" data-bs-target="#ticket-list-offcanvas">
+                        <div class="dv-btn__text">پیام‌ها</div>
+                        <span class="dv-btn__icon material-icons-outlined">
+                            forum
+                        </span>
+                        <div class="dv-badge" x-data x-show="$store.chatStore.haveUnread()"></div>
+                    </button>
+                </div>
+
+                <div class="dv-section__content-chat-wrapper" x-data>
+
+                    <template x-if="$store.chatStore.activeTicketId">
+                        <div class="dv-section__content-chat-head">
+                            <div class="dv-section__content-chat-head-info">
+                                <div class="dv-section__content-chat-head-title-wrapper">
+                                    <div class="dv-section__content-chat-head-title"
+                                        x-text="$store.chatStore.getActiveTicket().title"></div>
+                                    <label style="cursor: auto;"
+                                        :class="$store.chatStore.getStatusInfo($store.chatStore.getActiveTicket().status).class"
+                                        class="dv-label dv-label--subtle dv-label--sm" for="">
+                                        <span
+                                            x-text="$store.chatStore.getStatusInfo($store.chatStore.getActiveTicket().status).text"></span>
+                                    </label>
+                                </div>
+                                <div class="dv-section__content-chat-head-date"
+                                    x-text="$store.chatStore.formatDate($store.chatStore.getActiveTicket().created_at)">
+                                </div>
+                            </div>
+                            <div x-show="$store.chatStore.getActiveTicket().status !== 'closed'">
+                                <button type="button" @click="$store.chatStore.closeTicket()"
+                                    class="dv-btn dv-btn--md dv-btn--error dv-btn--outline d-none d-lg-flex close-ticket-btn">
+                                    <div class="dv-btn__text">بستن تیکت</div>
+                                </button>
+                            </div>
+
+                            <div class="dropdown-center dv-dropdown d-flex d-lg-none me-auto" data-dropdown>
+                                <input type="hidden" name="edition" value="" data-dropdown-value>
+                                <button class="dv-dropdown__btn w-100" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" data-dropdown-btn>
+                                    <span class="material-icons-outlined">
+                                        more_vert
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end dv-dropdown-menu w-100">
+                                    <li class="dv-dropdown-menu__li">
+                                        <a href="user-games.html" class="dropdown-item" type="button"
+                                            data-value="newest">
+                                            <span class="dv-dropdown-menu__value">برگشت به پنل</span>
+                                            <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                check
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="dv-dropdown-menu__li"
+                                        x-show="$store.chatStore.getActiveTicket().status !== 'closed'">
+                                        <button class="dropdown-item close-ticket-btn" type="button"
+                                            @click="$store.chatStore.closeTicket()" data-value="">
+                                            <span class="dv-dropdown-menu__value text-danger">بستن تیکت</span>
+                                            <span class="dv-dropdown-menu__icon material-icons-outlined">
+                                                check
+                                            </span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </template>
+
+
+                    <div class="dv-section__content-chat-body" x-ref="chatBody">
+                        <template x-if="!$store.chatStore.activeTicketId">
+                            <div class="d-flex flex-column align-items-center m-auto gap-4">
+                                <div class="dv-empty-chat">
+                                    <span class="dv-empty-chat__icon material-icons-outlined">
+                                        question_answer
+                                    </span>
+                                    <div class="dv-empty-chat__text">
+                                        یک تیکت را انتخاب کنید.
+                                    </div>
+                                </div>
+                                <a href="user-games.html" class="dv-btn dv-btn--primary dv-btn--subtle dv-btn--md">
+                                    <span class="dv-btn__text">برگشت به پنل</span>
+                                </a>
+                            </div>
+                        </template>
+
+                        <template x-if="$store.chatStore.activeTicketId">
+                            <template x-for="message in $store.chatStore.messages" :key="message.id">
+                                <!-- * Message item -->
+                                <div class="dv-message-item">
+                                    <template x-for="file in message.attachments" :key="file.id">
+                                        <div :class="{
+                                                                    'dv-message-wrapper--user' : message.role == 'user' ,
+                                                                    'dv-message-wrapper--admin' : message.role == 'admin'
+                                                                }" class="dv-message-wrapper">
+
+                                            <!-- * Image -->
+                                            <template x-if="file.type.startsWith('image/')">
+                                                <a :href="file.preview" data-fancybox="chat-visual"
+                                                    class="dv-message__img" :class="{
+                                                                                'dv-message--error' : file.status == 'failed'
+                                                                            }">
+                                                    <img class="img-fluid" :src="file.preview" :alt="file.name">
+                                                </a>
+                                            </template>
+                                            <!-- * Image -->
+
+                                            <!-- * Video -->
+                                            <template x-if="file.type.startsWith('video/')">
+                                                <a type="button" class="dv-message__files-visual" :class="{
+                                                                                'dv-message--error' : file.status == 'failed'
+                                                                            }"
+                                                    @click="$store.chatStore.boxVideo(file)">
+                                                    <div class="d-flex flex-column gap-1 align-items-center">
+                                                        <span
+                                                            class="dv-message__files-visual-icon material-icons-outlined">video_file</span>
+                                                        فایل ویدیویی
+                                                    </div>
+                                                    <span class="dv-message__files-visual-name"
+                                                        x-text="file.name"></span>
+                                                </a>
+                                            </template>
+                                            <!-- * Video -->
+
+                                            <!-- * Audio -->
+                                            <template x-if="file.type.startsWith('audio/')">
+                                                <a type="button" class="dv-message__files-visual" :class="{
+                                                                                'dv-message--error' : file.status == 'failed'
+                                                                            }"
+                                                    @click="$store.chatStore.boxAudio(file)">
+                                                    <div class="d-flex flex-column gap-1 align-items-center">
+                                                        <span
+                                                            class="dv-message__files-visual-icon material-icons-outlined">audio_file</span>
+                                                        فایل صوتی
+                                                    </div>
+                                                    <span class="dv-message__files-visual-name"
+                                                        x-text="file.name"></span>
+                                                </a>
+                                            </template>
+                                            <!-- * Audio -->
+
+                                            <!-- * PDF -->
+                                            <template x-if="file.type.startsWith('application/pdf')">
+                                                <a type="button" class="dv-message__files-visual" target="_blank"
+                                                    :class="{
+                                                                                'dv-message--error' : file.status == 'failed'
+                                                                            }" :href="file.preview">
+                                                    <div class="d-flex flex-column gap-1 align-items-center">
+                                                        <span
+                                                            class="dv-message__files-visual-icon material-icons-outlined">picture_as_pdf</span>
+                                                        فایل سند
+                                                    </div>
+                                                    <span class="dv-message__files-visual-name"
+                                                        x-text="file.name"></span>
+                                                </a>
+                                            </template>
+                                            <!-- * PDF -->
+
+                                            <div x-show="file.status == 'uploading'" class="dv-message__loading">
+                                                <div class="spinner-border spinner-border-sm" aria-hidden="true"></div>
+                                                <span role="status">درحال اپلود...</span>
+                                            </div>
+                                            <a type="button" @click="$store.chatStore.ajaxFile(file)"
+                                                class="dv-message__failed"
+                                                x-show="file.status == 'failed' && $store.chatStore.getActiveTicket().status !== 'closed'">
+                                                <span
+                                                    class="dv-message__failed-icon material-icons-outlined">replay</span>
+                                                <span role="status">تلاش مجدد</span>
+                                            </a>
+                                            <div class="dv-message__date" x-show="file.status == 'sent'"
+                                                x-text="file.string_created_at"></div>
+                                        </div>
+                                    </template>
+
+                                    <div x-show="message.msg !== ''" :class="{
+                                                                    'dv-message-wrapper--user' : message.role == 'user' ,
+                                                                    'dv-message-wrapper--admin' : message.role == 'admin' ,
+                                                                }" class="dv-message-wrapper">
+                                        <div class="dv-message__text" :class="{
+                                                                    'dv-message--error' : message.status == 'failed'
+                                                                }" x-text="message.msg"></div>
+                                        <div x-show="message.status == 'sending'" class="dv-message__loading">
+                                            <div class="spinner-border spinner-border-sm" aria-hidden="true"></div>
+                                            <span role="status">درحال ارسال...</span>
+                                        </div>
+                                        <a type="button" @click="$store.chatStore.ajaxText(message)"
+                                            class="dv-message__failed"
+                                            x-show="message.status == 'failed' && $store.chatStore.getActiveTicket().status !== 'closed'">
+                                            <span class="dv-message__failed-icon material-icons-outlined">replay</span>
+                                            <span role="status">تلاش مجدد</span>
+                                        </a>
+                                        <div class="dv-message__date" x-show="message.status == 'sent'"
+                                            x-text="message.string_created_at"></div>
+                                    </div>
+                                </div>
+                                <!-- * Message item -->
+                            </template>
+                        </template>
+
+                    </div>
+
+                    <template x-if="$store.chatStore.activeTicketId">
+                        <div class="dv-section__content-chat-foot position-relative">
+
+                            <!-- * Open Modal/Offcanvas for attachments -->
+                            <template
+                                x-if="$store.chatStore.tmp_attachments.length > 0 && $store.chatStore.getActiveTicket().status !== 'closed'">
+                                <div class="dv-section__content-chat-attach-info d-flex" :class="{
+                                        'dv-section__content-chat-attach-info--error': !$store.chatStore.sendMsgIsAllowed(),
+                                        'd-none d-lg-flex': !$store.ui.isMobile,
+                                        'd-flex d-lg-none': $store.ui.isMobile
+                                    }" :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'"
+                                    :data-bs-target="$store.ui.isMobile ? '#attachments-offcanvas' : '#attachments-modal'">
+                                    <span class="material-icons-outlined">attach_file</span>
+                                    <span x-text="$store.chatStore.tmp_attachments.length"></span> فایل الصاق شده
+                                    <small class="text-decoration-underline">نمایش فایل‌ها</small>
+                                </div>
+                            </template>
+                            <!-- * Open Modal/Offcanvas for attachments -->
+
+                            <!-- * Input chat file -->
+                            <input class="d-none" @change="$store.chatStore.handleFiles($event, 'tmp_attachments');"
+                                type="file" name="" id="input-file" accept="image/*, video/*, audio/*, application/pdf"
+                                multiple>
+                            <label x-show="$store.chatStore.getActiveTicket().status !== 'closed'" for="input-file"
+                                class="dv-btn dv-btn--md dv-btn--primary dv-btn--outline" style="cursor: pointer;"
+                                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ارسال فایل">
+                                <span class="dv-btn__icon material-icons-outlined">
+                                    attach_file
+                                </span>
+                            </label>
+                            <!-- * Input chat file -->
+
+                            <!-- * Input chat text -->
+                            <div x-show="$store.chatStore.getActiveTicket().status !== 'closed'" class="dv-input">
+                                <div class="dv-input__field">
+                                    <textarea x-ref="chatInput"
+                                        @keydown.enter.shift.prevent="$store.chatStore.sendMsg(); $refs.chatInput._resetHeight(); $refs.chatInput.focus()"
+                                        x-model="$store.chatStore.tmp_message" x-autoheight rows="1" type="text" name=""
+                                        id="" autocomplete="off" placeholder="پیامی بنویسید..."></textarea>
+                                </div>
+                            </div>
+                            <!-- * Input chat text -->
+
+                            <!-- * Send Btn -->
+                            <button x-show="$store.chatStore.getActiveTicket().status !== 'closed'"
+                                class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" :class="{
+                                'opacity-50 pe-none' : !$store.chatStore.inputIsValid()
+                            }" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ارسال پیام
+                            (Shift+Enter)"
+                                @click="$store.chatStore.sendMsg(); $refs.chatInput._resetHeight(); $refs.chatInput.focus()">
+                                <svg class="icon icon--md" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                    <use href="/Arcane-Front-build/icons/sprites.svg#fluent:send-32-filled" />
+                                </svg>
+                            </button>
+                            <!-- * Send Btn -->
+
+                            <!-- * Closed state -->
+                            <div x-show="$store.chatStore.getActiveTicket().status == 'closed'"
+                                class="dv-section__content-chat-closed">
+                                دیگر قادر به ارسال پیام نیستید.
+                            </div>
+                            <!-- * Closed state -->
+
+                        </div>
+                    </template>
+
+                </div>
+            </div>
+        </section>
+        <!-- * [Section Tickets] End -->
+
+        <!-- * Attachments Modal Start -->
+        <div class="modal dv-modal fade" id="attachments-modal" tabindex="-1" role="dialog" x-data
+            aria-labelledby="attachments-modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+                <div class="modal-content dv-modal-content">
+                    <div class="modal-header dv-modal-header">
+                        <span class="material-icons-outlined">
+                            attach_file
+                        </span>
+                        <h5 class="modal-title" id="attachments-modal-title">
+                            فایل‌های الصاقی (<span x-text="$store.chatStore.tmp_attachments.length"></span>)
+                        </h5>
+                        <button type="button" class="dv-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span class="material-icons-outlined">
+                                close
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="dv-chat-modal__form">
+                            <div class="dv-input__file-wrapper w-100">
+                                <input @change="$store.chatStore.handleFiles($event, 'tmp_attachments')" type="file"
+                                    id="upload-chat-file-modal" class="dv-input__file"
+                                    accept="image/*, video/*, audio/*, application/pdf" multiple>
+                                <label for="upload-chat-file-modal" class="dv-input__file-label">اپلود فایل</label>
+                            </div>
+
+                            <!-- Uploads preview -->
+                            <div id="ticket-modal-uploads" class="dv-chat-modal__uploads">
+                                <!-- Empty state -->
+                                <template x-if="!$store.chatStore.filesExist('tmp_attachments')">
+                                    <div class="dv-chat-modal__uploads-empty">
+                                        <span>فایلی انتخاب نشده است</span>
+                                    </div>
+                                </template>
+
+                                <!-- Uploaded files -->
+                                <template x-for="file in $store.chatStore.tmp_attachments" :key="file.id">
+                                    <div class="dv-chat-modal__uploaded" :class="{
+                                    'dv-chat-modal__uploaded--error' : !file.validation.isValid
+                                }">
+                                        <!-- File preview -->
+                                        <template x-if="file.type.startsWith('image/')">
+                                            <div class="dv-chat-modal__uploaded-preview">
+                                                <img :src="file.preview" :alt="file.name"
+                                                    class="dv-chat-modal__uploaded-img">
+                                            </div>
+                                        </template>
+
+                                        <!-- Video/audio/other preview -->
+                                        <template x-if="!file.type.startsWith('image/')">
+                                            <div class="dv-chat-modal__uploaded-icon-wrapper">
+                                                <span class="dv-chat-modal__uploaded-icon material-icons-outlined"
+                                                    x-text="$store.chatStore.getFileIcon(file.type)"></span>
+                                            </div>
+                                        </template>
+
+                                        <div class="dv-chat-modal__uploaded-info">
+                                            <span class="dv-chat-modal__uploaded-title" x-text="file.name"></span>
+                                            <span class="dv-chat-modal__uploaded-size" x-text="file.size"></span>
+                                        </div>
+
+                                        <button type="button"
+                                            class="dv-chat-modal__uploaded-remove dv-btn dv-btn--sm dv-btn--fill dv-btn--error"
+                                            @click.prevent="$store.chatStore.removeFile(file.id, 'tmp_attachments')">
+                                            <span class="material-icons-outlined">close</span>
+                                        </button>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" x-show="$store.chatStore.filesExist('tmp_attachments')">
+                        <button class="dv-btn dv-btn--md dv-btn--error dv-btn--outline w-100"
+                            @click="$store.chatStore.removeAllFiles('tmp_attachments')">
+                            <div class="dv-btn__text">حذف تمام فایل‌ها</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- * Attachments Modal End -->
+
+        <!-- * Attachments Offcanvas Start -->
+        <div x-data class="offcanvas offcanvas-bottom" tabindex="-1" id="attachments-offcanvas"
+            aria-labelledby="attachments-title" x-data>
+            <div class="offcanvas-header">
+                <span class="material-icons-outlined">
+                    attach_file
+                </span>
+                <h5>فایل‌های الصاقی
+                    (<span x-text="$store.chatStore.tmp_attachments.length"></span>)
+                </h5>
+                <button class="dv-btn dv-btn--sm dv-btn--error dv-btn--subtle me-auto"
+                    @click="$store.chatStore.removeAllFiles('tmp_attachments')">
+                    <div class="dv-btn__text">حذف فایل‌ها</div>
+                </button>
+                <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
+                    <span class="dv-btn__icon material-icons-outlined">
+                        keyboard_arrow_down
+                    </span>
+                </button>
+            </div>
+            <hr class="m-0">
+            <div class="offcanvas-body dv-attachments-list">
+                <div class="dv-input__file-wrapper w-100">
+                    <input @change="$store.chatStore.handleFiles($event, 'tmp_attachments')" type="file"
+                        id="upload-chat-file-modal" class="dv-input__file"
+                        accept="image/*, video/*, audio/*, application/pdf" multiple>
+                    <label for="upload-chat-file-modal" class="dv-input__file-label">اپلود فایل</label>
+                </div>
+                <ul class="dv-attachments-list__items">
+                    <!-- Empty state -->
+                    <template x-if="!$store.chatStore.filesExist('tmp_attachments')">
+                        <div class="dv-chat-modal__uploads-empty">
+                            <span>فایلی انتخاب نشده است</span>
+                        </div>
+                    </template>
+
+                    <!-- Uploaded files -->
+                    <template x-for="file in $store.chatStore.tmp_attachments" :key="file.id">
+                        <div class="dv-chat-modal__uploaded" :class="{
+                                'dv-chat-modal__uploaded--error' : !file.validation.isValid
+                            }">
+                            <!-- File preview -->
+                            <template x-if="file.type.startsWith('image/')">
+                                <div class="dv-chat-modal__uploaded-preview">
+                                    <img :src="file.preview" :alt="file.name" class="dv-chat-modal__uploaded-img">
+                                </div>
+                            </template>
+
+                            <!-- Video/audio/other preview -->
+                            <template x-if="!file.type.startsWith('image/')">
+                                <div class="dv-chat-modal__uploaded-icon-wrapper">
+                                    <span class="dv-chat-modal__uploaded-icon material-icons-outlined"
+                                        x-text="$store.chatStore.getFileIcon(file.type)"></span>
+                                </div>
+                            </template>
+
+                            <div class="dv-chat-modal__uploaded-info">
+                                <span class="dv-chat-modal__uploaded-title" x-text="file.name"></span>
+                                <span class="dv-chat-modal__uploaded-size" x-text="file.size"></span>
+                            </div>
+
+                            <button type="button"
+                                class="dv-chat-modal__uploaded-remove dv-btn dv-btn--sm dv-btn--fill dv-btn--error"
+                                @click.prevent="$store.chatStore.removeFile(file.id, 'tmp_attachments')">
+                                <span class="material-icons-outlined">close</span>
+                            </button>
+                        </div>
+                    </template>
+
+                </ul>
+            </div>
+        </div>
+        <!-- * Attachments Offcanvas End -->
+
+        <!-- * ticket list offcanvas Start -->
+        <div class="offcanvas offcanvas-start dv-ticket-list__offcanvas" tabindex="-1" id="ticket-list-offcanvas"
+            aria-labelledby="ticket-list-title" x-data="{
+                    selectTicket(ticketId) {
+                    $store.chatStore.setActiveTicket(ticketId);
+                    console.log('Selected ticket:', ticketId);
+                    }
+                }">
+            <div class="offcanvas-header">
+                <header class="dv-ticket-list__header">
+                    <h5 class="dv-ticket-list__header-title">لیست تیکت‌ها</h5>
+                    <span class="dv-ticket-list__header-icon material-icons-outlined">
+                        message
+                    </span>
+                </header>
+                <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
+                    <span class="dv-btn__icon material-icons-outlined">
+                        arrow_back_ios
+                    </span>
+                </button>
+            </div>
+            <div class="offcanvas-body dv-ticket-list__offcanvas-body">
+                <ul class="dv-ticket-list__items">
+                    <!-- Loading state -->
+                    <template x-if="$store.chatStore.isLoading">
+                        <li class="dv-ticket-list__item dv-ticket-list__item--empty">
+                            <div class="dv-ticket-list__link">
+                                <span class="material-icons-outlined">refresh</span>
+                                <p>در حال بارگذاری...</p>
+                            </div>
+                        </li>
+                    </template>
+
+                    <!-- Empty state -->
+                    <template x-if="!$store.chatStore.isLoading && $store.chatStore.tickets.length === 0">
+                        <li class="dv-ticket-list__item dv-ticket-list__item--empty">
+                            <div class="dv-ticket-list__link">
+                                <span class="material-icons-outlined">inbox</span>
+                                <p>تیکتی وجود ندارد</p>
+                            </div>
+                        </li>
+                    </template>
+
+                    <!-- Ticket list -->
+                    <template x-for="ticket in $store.chatStore.tickets" :key="ticket.id">
+                        <li class="dv-ticket-list__item" :class="{
+                                'dv-ticket-list__item--unread': ticket.unread,
+                                'dv-ticket-list__item--active': ticket.id === $store.chatStore.activeTicketId}">
+                            <a href="#" class="dv-ticket-list__link" @click.prevent="selectTicket(ticket.id)"
+                                :data-ticket-id="ticket.id">
+                                <div class="dv-ticket-list__content">
+                                    <div class="dv-ticket-list__content-text">
+                                        <div class="dv-ticket-list__title-wrapper">
+                                            <div class="dv-ticket-list__title" :title="ticket.title">
+                                                <span x-text="$store.chatStore.truncateText(ticket.title, 40)"></span>
+                                            </div>
+                                            <!-- <div class="dv-badge" x-show=""></div> -->
+                                            <span class="dv-ticket-list__status-indicator"></span>
+                                        </div>
+                                        <div class="dv-ticket-list__excerpt" :title="ticket.message">
+                                            <span x-text="$store.chatStore.truncateText(ticket.message, 80)"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="dv-ticket-list__meta">
+                                        <span x-text="$store.chatStore.getStatusInfo(ticket.status).text"
+                                            class="dv-label dv-label--sm dv-label--subtle"
+                                            :class="$store.chatStore.getStatusInfo(ticket.status).class"></span>
+                                        <time class="dv-ticket-list__date">
+                                            <span x-text="$store.chatStore.formatDate(ticket.updated_at)"></span>
+                                        </time>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+            <div class="offcanvas-footer d-flex">
+                <button
+                    class="w-100 position-static m-3 dv-ticket-list__add-button dv-btn dv-btn--lg dv-btn--fill dv-btn--secondary"
+                    id="add-ticket-offcanvas-button-2" data-bs-target="#ticket-offcanvas" data-bs-toggle="offcanvas">
+                    <span class="dv-ticket-list__header-icon material-icons-outlined">
+                        add
+                    </span>
+                    <div class="dv-btn__text">تیکت جدید</div>
+                </button>
+            </div>
+        </div>
+        <!-- * ticket list offcanvas Start End -->
+
+        <!-- * "add new ticket" Modal Start -->
+        <div class="modal dv-modal fade" id="ticket-modal" tabindex="-1" role="dialog"
+            aria-labelledby="ticket-modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+                <div class="modal-content dv-modal-content">
+                    <div class="modal-header dv-modal-header">
+                        <span class="material-icons-outlined">
+                            message
+                        </span>
+                        <h5 class="modal-title" id="ticket-modal-title">
+                            ثبت تیکت جدید
+                        </h5>
+                        <button type="button" class="dv-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span class="material-icons-outlined">
+                                close
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="dv-modal__content">
+                            <form class="dv-chat-modal__form" id="ticket-modal-form">
+                                <!-- ! Honey pot input -->
+                                <div style="position:fixed; left:-9999px;">
+                                    <input type="text" name="hp-field" tabindex="-1" autocomplete="off">
+                                </div>
+                                <div class="dv-input w-100">
+                                    <div class="dv-input__field">
+                                        <input type="text" name="title" id="title-modal" placeholder="عنوان">
+                                    </div>
+                                </div>
+                                <div class="dv-input w-100">
+                                    <div class="dv-input__field">
+                                        <textarea rows="3" class="dv-section__form textarea" placeholder="متن پیام"
+                                            name="message" id="message-modal"></textarea>
+                                    </div>
+                                    <div class="dv-char-limit">
+                                        <span class='dv-char-limit__label'>تعداد کاراکترها:</span>
+                                        <small class='dv-char-limit__count'></small>
+                                    </div>
+                                </div>
+                                <div class="dv-input__file-wrapper w-100">
+                                    <input type="file" id="upload-file-modal"
+                                        accept="image/*, video/*, audio/*, application/pdf" x-data
+                                        @change="$store.chatStore.handleFiles($event, 'uploads', 'sent');"
+                                        class="dv-input__file" multiple>
+                                    <label for="upload-file-modal" class="dv-input__file-label">اپلود فایل</label>
+                                </div>
+
+                                <!-- Uploads preview -->
+                                <div id="ticket-modal-uploads" class="dv-chat-modal__uploads" x-data
+                                    x-show="$store.chatStore.filesExist('uploads')">
+
+                                    <!-- Uploaded files -->
+                                    <template x-for="upload in $store.chatStore.uploads" :key="upload.id">
+                                        <div class="dv-chat-modal__uploaded" :class="{
+                                            'dv-chat-modal__uploaded--error' : !upload.validation.isValid
+                                        }">
+                                            <!-- Image preview -->
+                                            <template x-if="upload.type === 'image'">
+                                                <div class="dv-chat-modal__uploaded-preview">
+                                                    <img :src="upload.preview" :alt="upload.name"
+                                                        class="dv-chat-modal__uploaded-img">
+                                                </div>
+                                            </template>
+
+                                            <!-- Video/audio/other preview -->
+                                            <template x-if="upload.type !== 'image'">
+                                                <div class="dv-chat-modal__uploaded-icon-wrapper">
+                                                    <span class="dv-chat-modal__uploaded-icon material-icons-outlined"
+                                                        x-text="$store.chatStore.getFileIcon(upload.type)"></span>
+                                                </div>
+                                            </template>
+
+                                            <div class="dv-chat-modal__uploaded-info">
+                                                <span class="dv-chat-modal__uploaded-title" x-text="upload.name"></span>
+                                                <span class="dv-chat-modal__uploaded-size" x-text="upload.size"></span>
+                                            </div>
+                                            <button type="button"
+                                                class="dv-chat-modal__uploaded-remove dv-btn dv-btn--sm dv-btn--fill dv-btn--error"
+                                                @click.prevent="$store.chatStore.removeFile(upload.id,'uploads')">
+                                                <span class="material-icons-outlined">close</span>
+                                            </button>
+                                        </div>
+                                    </template>
+                                </div>
+
+                                <div class="dv-modal__form-btn-wrapper w-100">
+                                    <button type="button" x-data x-show="$store.chatStore.filesExist('uploads')"
+                                        class="dv-btn dv-btn--md dv-btn--error dv-btn--outline w-100"
+                                        @click="$store.chatStore.removeAllFiles('uploads')">
+                                        <div class="dv-btn__text">حذف تمام فایل‌ها</div>
+                                    </button>
+
+                                    <button type="submit" x-data x-async="$store.chatStore.submitTicket('modal')"
+                                        class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill w-100"
+                                        id="dv-chat-modal__form-btn">
+                                        <div class="dv-btn__text">ثبت تیکت</div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * "add new ticket" Modal End -->
+
+        <!-- * "add new ticket" offcanvas Start -->
+        <div class="offcanvas dv-offcanvas offcanvas-bottom" tabindex="-1" id="ticket-offcanvas"
+            aria-labelledby="ticket-offcanvas-title" aria-hidden="true">
+            <div class="offcanvas-header">
+                <span class="material-icons-outlined">
+                    message
+                </span>
+                <h5 id="ticket-offcanvas-title">
+                    ثبت تیکت جدید
+                </h5>
+                <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
+                    <span class="dv-btn__icon material-icons-outlined">
+                        keyboard_arrow_down
+                    </span>
+                </button>
+                <button class="dv-btn dv-btn--sm dv-btn--error dv-btn--subtle me-auto" x-data
+                    x-show="$store.chatStore.filesExist('uploads')" @click="$store.chatStore.removeAllFiles('uploads')">
+                    <div class="dv-btn__text">حذف فایل‌ها</div>
+                </button>
+            </div>
+            <hr class="m-0">
+            <div class="offcanvas-body ">
+                <form class="dv-chat-modal__form" id="ticket-offcanvas-form">
+                    <!-- ! Honey pot input -->
+                    <div style="position:fixed; left:-9999px;">
+                        <input type="text" name="hp-field" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="dv-input w-100">
+                        <div class="dv-input__field">
+                            <input type="text" name="title" id="title-offcanvas" placeholder="عنوان">
+                        </div>
+                    </div>
+                    <div class="dv-input w-100">
+                        <div class="dv-input__field">
+                            <textarea rows="3" class="dv-section__form textarea" placeholder="متن پیام" name="message"
+                                id="message-offcanvas"></textarea>
+                        </div>
+                        <div class="dv-char-limit">
+                            <span class='dv-char-limit__label'>تعداد کاراکترها:</span>
+                            <small class='dv-char-limit__count'></small>
+                        </div>
+                    </div>
+                    <div class="dv-input__file-wrapper w-100">
+                        <input type="file" id="upload-file-offcanvas"
+                            accept="image/*, video/*, audio/*, application/pdf" x-data
+                            @change="$store.chatStore.handleFiles($event, 'uploads', 'sent');" class="dv-input__file"
+                            multiple>
+                        <label for="upload-file-offcanvas" class="dv-input__file-label">اپلود فایل</label>
+                    </div>
+
+                    <!-- Uploads preview -->
+                    <div id="ticket-offcanvas-uploads" class="dv-chat-modal__uploads" x-data
+                        x-show="$store.chatStore.filesExist('uploads')">
+
+                        <!-- Uploaded files -->
+                        <template x-for="upload in $store.chatStore.uploads" :key="upload.id">
+                            <div class="dv-chat-modal__uploaded" :class="{
+                                    'dv-chat-modal__uploaded--error' : !upload.validation.isValid
+                                }">
+                                <!-- Image preview -->
+                                <template x-if="upload.type === 'image'">
+                                    <div class="dv-chat-modal__uploaded-preview">
+                                        <img :src="upload.preview" :alt="upload.name"
+                                            class="dv-chat-modal__uploaded-img">
+                                    </div>
+                                </template>
+
+                                <!-- Video/audio/other preview -->
+                                <template x-if="upload.type !== 'image'">
+                                    <div class="dv-chat-modal__uploaded-icon-wrapper">
+                                        <span class="dv-chat-modal__uploaded-icon material-icons-outlined"
+                                            x-text="$store.chatStore.getFileIcon(upload.type)"></span>
+                                    </div>
+                                </template>
+
+                                <div class="dv-chat-modal__uploaded-info">
+                                    <span class="dv-chat-modal__uploaded-title" x-text="upload.name"></span>
+                                    <span class="dv-chat-modal__uploaded-size" x-text="upload.size"></span>
+                                </div>
+                                <button type="button"
+                                    class="dv-chat-modal__uploaded-remove dv-btn dv-btn--sm dv-btn--fill dv-btn--error"
+                                    @click.prevent="$store.chatStore.removeFile(upload.id,'uploads')">
+                                    <span class="material-icons-outlined">close</span>
+                                </button>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div class="dv-modal__form-btn-wrapper w-100">
+                        <button type="submit" class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill w-100" x-data
+                            x-async="$store.chatStore.submitTicket('offcanvas')" id="dv-ticket-offcanvas__form-btn">
+                            <div class="dv-btn__text">ثبت تیکت</div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- * "add new ticket" offcanvas end -->
+    </main>
+
+    <!-- ! Core Scripts -->
+
+    <!-- ! Page Scripts -->
+</body>
+
+</html>

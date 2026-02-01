@@ -5,15 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>اطلاعات کاربری</title>
-  <script type="module" crossorigin src="/Arcane-Front-build/assets/user-profile-BUBCPbD_.js"></script>
-  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-J0b_Y7a1.js">
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/user-profile-Ddqo9y4o.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-D2V5YL7I.js">
   <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/just-validate.es-C73wyOde.js">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DJxJE6BR.css">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/user-profile-BRt_q73d.css">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-Ddxq-lyp.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DcL-z6zl.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/user-profile-fD5m34bf.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-DtsZgJML.css">
 </head>
 
-<body>
+<body x-data>
     <!--  Navbar Start -->
     <nav class="dv-nav container" x-data>
         <div class="dv-nav__center">
@@ -28,9 +28,18 @@
                 <h2 class="d-none d-lg-block">آرکـِیـن</h2>
             </div>
             <div class="dv-nav__center-left">
+                <a href="user-chat.html" class="d-lg-flex d-none dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="پشتیبانی">
+                    <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount" x-text="$store.ui.notifCount">
+                    </div>
+                    <span class="dv-btn__icon icon icon--xl material-icons-outlined">
+                        question_answer
+                    </span>
+                </a>
                 <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="اعلان‌ها">
-                    <button class="d-none d-lg-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
-                        data-bs-target="#notifs-modal" data-bs-toggle="modal">
+                    <button class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                        :data-bs-target="$store.ui.isMobile ? '#notifs-offcanvas' : '#notifs-modal'"
+                        :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                         <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount"
                             x-text="$store.ui.notifCount">
                         </div>
@@ -39,14 +48,6 @@
                         </span>
                     </button>
                 </span>
-                <button class="d-lg-none d-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
-                    data-bs-target="#notifs-offcanvas" data-bs-toggle="offcanvas">
-                    <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount" x-text="$store.ui.notifCount">
-                    </div>
-                    <span class="dv-btn__icon icon icon--xl material-icons-outlined">
-                        notifications
-                    </span>
-                </button>
                 <a class="dv-btn dv-btn--md dv-btn--secondary dv-btn--fill d-none d-lg-flex" href="../../index.html">
                     <div class="dv-btn__text">ورود به سایت</div>
                 </a>
@@ -59,7 +60,7 @@
     <nav class="dv-nav-mobile container d-flex d-lg-none" x-data>
         <ul class="dv-nav-mobile__links">
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="user-wallet.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         account_balance_wallet
                     </span>
@@ -67,7 +68,7 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="buy-cart.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         shopping_cart
                     </span>
@@ -77,7 +78,7 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="user-games.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         sports_esports
                     </span>
@@ -85,11 +86,11 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link dv-nav-mobile__link--active" href="">
+                <a class="dv-nav-mobile__link" href="user-chat.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
-                        person
+                        question_answer
                     </span>
-                    پروفایل
+                    تیکت
                 </a>
             </li>
         </ul>
@@ -124,13 +125,13 @@
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="buy-cart.html">
                 <div class="dv-sidemenu__text">سبد خرید</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="sell-cart.html">
                 <div class="dv-sidemenu__text">سبد فروش</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
@@ -154,7 +155,7 @@
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="user-profile.html">
                 <div class="dv-sidemenu__text">اطلاعات کاربری</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
@@ -266,7 +267,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="notifs.html" data-bs-dismiss="modal"
+                    <a href="user-notifs.html" 
                         class="w-100 dv-btn dv-btn--sm dv-btn--primary dv-btn--fill">
                         <div class="dv-btn__text">همه اعلان‌ها</div>
                     </a>
@@ -285,7 +286,7 @@
             <h5>اعلان‌ها
                 (<span x-text="$store.ui.notifCount"></span>)
             </h5>
-            <a href="notifs.html" class="me-auto dv-btn dv-btn--sm dv-btn--fill dv-btn--primary">
+            <a href="user-notifs.html" class="me-auto dv-btn dv-btn--sm dv-btn--fill dv-btn--primary">
                 <div class="dv-btn__text ">
                     همه اعلان‌ها
                 </div>
@@ -388,7 +389,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="user-favs.html" class="dv-section__aside-link">
+                        <a href="user-favs.html" class="dv-section__aside-link ">
                             علاقمندی
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 favorite_border
@@ -401,8 +402,8 @@
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 shopping_cart
                             </span>
-                            <div class="dv-badge dv-badge--number" x-show="$store.ui.buyCartItemsCount > 0"
-                                x-text="$store.ui.buyCartItemsCount">(0)</div>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.cartCount"
+                                x-text="$store.ui.cartCount"></div>
                         </a>
                     </li>
                     <li>
@@ -411,8 +412,8 @@
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 sell
                             </span>
-                            <div class="dv-badge dv-badge--number" x-show="$store.ui.sellCartItemsCount > 0"
-                                x-text="$store.ui.sellCartItemsCount">(0)</div>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.sellCartCount"
+                                x-text="$store.ui.sellCartCount"></div>
                         </a>
                     </li>
                     <li>
@@ -424,7 +425,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="user-wallet.html" class="dv-section__aside-link">
                             کیف پول
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 account_balance_wallet
@@ -432,7 +433,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="user-chat.html" class="dv-section__aside-link">
                             تیکت و پشتیبانی
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 question_answer
@@ -442,7 +443,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="notifs.html" class="dv-section__aside-link">
+                        <a href="user-notifs.html" class="dv-section__aside-link">
                             اعلان‌ها
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 notifications
@@ -452,7 +453,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link dv-section__aside-link--active">
+                        <a href="user-profile.html" class="dv-section__aside-link dv-section__aside-link--active">
                             اطلاعات کاربری
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 person
@@ -476,7 +477,6 @@
                 <div class="dv-section__content-header-row">
                     <h5 class="dv-section__content-header-title">اطلاعات کاربری</h5>
                 </div>
-
                 <div class="dv-section__content-body">
                     <div class="dv-section__user-profile">
                         <div class="dv-user-profile__header">
@@ -489,8 +489,9 @@
                                 </div>
                             </div>
                             <div class="dv-user-profile__profile-btn-wrapper">
-                                <button type="button" class="dv-btn dv-btn--md dv-btn--primary dv-btn--outline"
-                                    id="upload-profile-img" data-bs-target="#profile-img-modal" data-bs-toggle="modal">
+                                <button type="button"
+                                    class="dv-btn dv-btn--md dv-btn--primary dv-btn--outline"
+                                    :data-bs-target="$store.ui.isMobile ? '#profile-img-offcanvas' : '#profile-img-modal'" :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                                     <span class="dv-btn__icon material-icons-outlined">
                                         account_circle
                                     </span>
@@ -510,7 +511,7 @@
                                     <span class="dv-input__star">*</span>
                                 </label>
                                 <div class="dv-input__field">
-                                    <input type="text" name="first_name" id="first_name" placeholder="رامتین">
+                                    <input type="text" name="first_name" id="first_name" value="رامتین">
                                 </div>
                             </div>
                             <div class="dv-input">
@@ -519,7 +520,7 @@
                                     <span class="dv-input__star">*</span>
                                 </label>
                                 <div class="dv-input__field">
-                                    <input type="text" name="last_name" id="last_name" placeholder="مرادی">
+                                    <input type="text" name="last_name" id="last_name" value="مرادی">
                                 </div>
                             </div>
                             <div class="dv-input">
@@ -532,7 +533,7 @@
                                 </label>
                                 <div class="dv-input__field">
                                     <input type="tel" maxlength="11" minlength="11" name="phone_number"
-                                        id="phone_number" placeholder="09356664489">
+                                        id="phone_number" value="09356664489">
                                 </div>
                             </div>
                             <div class="dv-input">
@@ -543,7 +544,7 @@
                                     ایمیل
                                 </label>
                                 <div class="dv-input__field">
-                                    <input type="email" name="email" id="email" placeholder="example@email.com">
+                                    <input type="email" name="email" id="email" value="example@email.com">
                                 </div>
                             </div>
                             <div class="dv-user-profile__form-btn-wrapper">
@@ -580,32 +581,77 @@
                     </button>
                 </div>
                 <div class="modal-body dv-profile__upload-modal-body">
-                    <form class="dv-profile__upload-form" id="form-profile-image">
+                    <form class="dv-profile__upload-form modal-form" id="form-profile-image-modal">
                         <div class="dv-profile__upload-container">
-                            <div class="dv-profile__upload-area" id="uploadArea">
-                                <span class="material-icons-outlined" id="uploadIcon">
+                            <div class="dv-profile__upload-area modal-upload-area" id="uploadArea-modal">
+                                <span class="material-icons-outlined modal-upload-icon" id="uploadIcon-modal">
                                     image
                                 </span>
-                                <span class="dv-profile__upload-text">کلیک کنید</span>
-                                <img class="dv-profile__preview-image" id="previewImage" alt="Preview">
+                                <span class="dv-profile__upload-text modal-upload-text">کلیک کنید</span>
+                                <img class="dv-profile__preview-image modal-preview-image" id="previewImage-modal"
+                                    alt="Preview">
                             </div>
-                            <input type="file" id="fileInput" class="dv-profile__file-input"
+                            <input type="file" id="fileInput-modal" class="dv-profile__file-input modal-file-input"
                                 accept="image/jpeg, image/png" name="profileImage">
                         </div>
-                        <button type="submit" x-data x-async="ajaxProfile()"
-                            class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" id="dv-user-profile__img-submit-btn">
+                        <button type="submit" class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill modal-submit-btn"
+                            id="dv-user-profile__img-submit-btn-modal">
                             <div class="dv-btn__text">تغییر تصویر پروفایل</div>
                         </button>
                     </form>
                 </div>
-                <div class="modal-footer dv-profile____validation-items">
-                    <div class="dv-profile____validation-item">1. فایل باید کمتر از 50MB باشد.</div>
-                    <div class="dv-profile____validation-item">2. فرمت های مورد قبول JPEG و PNG است.</div>
+                <div class="modal-footer dv-profile__validation-items">
+                    <span class="dv-profile__validation-item">1. فایل باید کمتر از 50MB باشد.</span>
+                    <span class="dv-profile__validation-item">2. فرمت های مورد قبول JPEG و PNG است.</span>
                 </div>
             </div>
         </div>
     </div>
     <!-- [profile image modal] End -->
+
+    <!-- [profile image offcanvas] Start -->
+    <div class="offcanvas dv-offcanvas offcanvas-bottom" tabindex="-1" id="profile-img-offcanvas"
+        aria-labelledby="profile-img-offcanvas-title" aria-hidden="true">
+        <div class="offcanvas-header">
+            <span class="material-icons-outlined">
+                account_circle
+            </span>
+            <h5 id="profile-img-offcanvas-title">
+                تصویر پروفایل
+            </h5>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body dv-profile__upload-modal-body">
+            <form class="dv-profile__upload-form offcanvas-form" id="form-profile-image-offcanvas">
+                <div class="dv-profile__upload-container">
+                    <div class="dv-profile__upload-area offcanvas-upload-area" id="uploadArea-offcanvas">
+                        <span class="material-icons-outlined offcanvas-upload-icon" id="uploadIcon-offcanvas">
+                            image
+                        </span>
+                        <span class="dv-profile__upload-text offcanvas-upload-text">کلیک کنید</span>
+                        <img class="dv-profile__preview-image offcanvas-preview-image" id="previewImage-offcanvas"
+                            alt="Preview">
+                    </div>
+                    <input type="file" id="fileInput-offcanvas" class="dv-profile__file-input offcanvas-file-input"
+                        accept="image/jpeg, image/png" name="profileImage">
+                </div>
+                <button type="submit" class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill offcanvas-submit-btn"
+                    id="dv-user-profile__img-submit-btn-offcanvas">
+                    <div class="dv-btn__text">تغییر تصویر پروفایل</div>
+                </button>
+            </form>
+        </div>
+        <div class="offcanvas-footer dv-profile__validation-items">
+            <span class="dv-profile__validation-item">1. فایل باید کمتر از 50MB باشد.</span>
+            <span class="dv-profile__validation-item">2. فرمت های مورد قبول JPEG و PNG است.</span>
+        </div>
+    </div>
+    <!-- [profile image offcanvas] end -->
 
     <!-- ! Core Scripts -->
 

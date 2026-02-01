@@ -1,0 +1,1 @@
+import{u as e}from"./main-D2V5YL7I.js";import{S as i}from"./swiper-CRU51p5Y.js";new i(".dv-section__comments-swiper",{direction:"horizontal",slidesPerView:"auto",spaceBetween:8,centeredSlides:!0,loop:!0,on:{init(){e(this)},slideChange(){e(this)}}});

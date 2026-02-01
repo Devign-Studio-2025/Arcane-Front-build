@@ -5,17 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>اطلاعات کاربری</title>
-  <script type="module" crossorigin src="/Arcane-Front-build/assets/user-wallet-DuItzqO_.js"></script>
-  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-J0b_Y7a1.js">
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/user-wallet-Fsvu3-8z.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-D2V5YL7I.js">
   <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/just-validate.es-C73wyOde.js">
-  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/datatable-fa-CUKt88BO.js">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DJxJE6BR.css">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/datatable-fa-DSWKXLgg.js">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DcL-z6zl.css">
   <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/datatable-fa-4z33KFpF.css">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/user-wallet-BI6P-Tlc.css">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-Ddxq-lyp.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/user-wallet-BfJi_8_s.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-DtsZgJML.css">
 </head>
 
-<body>
+<body x-data>
     <!--  Navbar Start -->
     <nav class="dv-nav container" x-data>
         <div class="dv-nav__center">
@@ -30,9 +30,18 @@
                 <h2 class="d-none d-lg-block">آرکـِیـن</h2>
             </div>
             <div class="dv-nav__center-left">
+                <a href="user-chat.html" class="d-lg-flex d-none dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="پشتیبانی">
+                    <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount" x-text="$store.ui.notifCount">
+                    </div>
+                    <span class="dv-btn__icon icon icon--xl material-icons-outlined">
+                        question_answer
+                    </span>
+                </a>
                 <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="اعلان‌ها">
-                    <button class="d-none d-lg-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
-                        data-bs-target="#notifs-modal" data-bs-toggle="modal">
+                    <button class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                        :data-bs-target="$store.ui.isMobile ? '#notifs-offcanvas' : '#notifs-modal'"
+                        :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                         <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount"
                             x-text="$store.ui.notifCount">
                         </div>
@@ -41,14 +50,6 @@
                         </span>
                     </button>
                 </span>
-                <button class="d-lg-none d-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
-                    data-bs-target="#notifs-offcanvas" data-bs-toggle="offcanvas">
-                    <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount" x-text="$store.ui.notifCount">
-                    </div>
-                    <span class="dv-btn__icon icon icon--xl material-icons-outlined">
-                        notifications
-                    </span>
-                </button>
                 <a class="dv-btn dv-btn--md dv-btn--secondary dv-btn--fill d-none d-lg-flex" href="../../index.html">
                     <div class="dv-btn__text">ورود به سایت</div>
                 </a>
@@ -61,7 +62,7 @@
     <nav class="dv-nav-mobile container d-flex d-lg-none" x-data>
         <ul class="dv-nav-mobile__links">
             <li>
-                <a class="dv-nav-mobile__link dv-nav-mobile__link--active" href="">
+                <a class="dv-nav-mobile__link dv-nav-mobile__link--active" href="user-wallet.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         account_balance_wallet
                     </span>
@@ -69,7 +70,7 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="buy-cart.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         shopping_cart
                     </span>
@@ -79,7 +80,7 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="user-games.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         sports_esports
                     </span>
@@ -87,11 +88,11 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="user-chat.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
-                        person
+                        question_answer
                     </span>
-                    پروفایل
+                    تیکت
                 </a>
             </li>
         </ul>
@@ -126,13 +127,13 @@
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="buy-cart.html">
                 <div class="dv-sidemenu__text">سبد خرید</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="sell-cart.html">
                 <div class="dv-sidemenu__text">سبد فروش</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
@@ -156,7 +157,7 @@
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="user-profile.html">
                 <div class="dv-sidemenu__text">اطلاعات کاربری</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
@@ -268,7 +269,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="notifs.html" data-bs-dismiss="modal"
+                    <a href="user-notifs.html"
                         class="w-100 dv-btn dv-btn--sm dv-btn--primary dv-btn--fill">
                         <div class="dv-btn__text">همه اعلان‌ها</div>
                     </a>
@@ -287,7 +288,7 @@
             <h5>اعلان‌ها
                 (<span x-text="$store.ui.notifCount"></span>)
             </h5>
-            <a href="notifs.html" class="me-auto dv-btn dv-btn--sm dv-btn--fill dv-btn--primary">
+            <a href="user-notifs.html" class="me-auto dv-btn dv-btn--sm dv-btn--fill dv-btn--primary">
                 <div class="dv-btn__text ">
                     همه اعلان‌ها
                 </div>
@@ -403,8 +404,8 @@
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 shopping_cart
                             </span>
-                            <div class="dv-badge dv-badge--number" x-show="$store.ui.buyCartItemsCount > 0"
-                                x-text="$store.ui.buyCartItemsCount">(0)</div>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.cartCount"
+                                x-text="$store.ui.cartCount"></div>
                         </a>
                     </li>
                     <li>
@@ -413,8 +414,8 @@
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 sell
                             </span>
-                            <div class="dv-badge dv-badge--number" x-show="$store.ui.sellCartItemsCount > 0"
-                                x-text="$store.ui.sellCartItemsCount">(0)</div>
+                            <div class="dv-badge dv-badge--number" x-show="$store.ui.sellCartCount"
+                                x-text="$store.ui.sellCartCount"></div>
                         </a>
                     </li>
                     <li>
@@ -426,7 +427,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link dv-section__aside-link--active">
+                        <a href="user-wallet.html" class="dv-section__aside-link dv-section__aside-link--active">
                             کیف پول
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 account_balance_wallet
@@ -434,7 +435,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="user-chat.html" class="dv-section__aside-link">
                             تیکت و پشتیبانی
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 question_answer
@@ -444,7 +445,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="notifs.html" class="dv-section__aside-link">
+                        <a href="user-notifs.html" class="dv-section__aside-link">
                             اعلان‌ها
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 notifications
@@ -454,7 +455,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="user-profile.html" class="dv-section__aside-link">
                             اطلاعات کاربری
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 person
@@ -477,15 +478,19 @@
                     <div class="dv-section__content-header">
                         <h5 class="dv-section__content-header-title">کیف پول</h5>
                         <div class="dv-wallet__header-btn-wrapper">
-                            <button type="button" class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill"
-                                id="deposit-modal-btn" data-bs-target="#deposit-modal" data-bs-toggle="modal">
+                            <!-- Deposit buttons -->
+                            <button type="button"
+                                class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill"
+                                id="deposit-modal-btn" :data-bs-target="$store.ui.isMobile ? '#deposit-offcanvas' : '#deposit-modal'" :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                                 <span class="dv-btn__icon material-icons-outlined">
                                     add_card
                                 </span>
                                 <div class="dv-btn__text">واریز</div>
                             </button>
+
+                            <!-- Withdraw buttons -->
                             <button type="button" class="dv-btn dv-btn--md dv-btn--error dv-btn--fill"
-                                id="withdraw-modal-btn" data-bs-target="#withdraw-modal" data-bs-toggle="modal">
+                                id="withdraw-modal-btn" :data-bs-target="$store.ui.isMobile ? '#withdraw-offcanvas' : '#withdraw-modal'" :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                                 <span class="dv-btn__icon material-icons-outlined">
                                     credit_card
                                 </span>
@@ -688,9 +693,9 @@
                                         </label>
                                     </td>
                                     <td>
-                                        <button type="button" class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
-                                            id="transaction-modal-btn" data-bs-target="#transaction-modal"
-                                            data-bs-toggle="modal">
+                                        <button type="button"
+                                            class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
+                                            id="transaction-modal-btn" :data-bs-target="$store.ui.isMobile ? '#transaction-offcanvas' : '#transaction-modal'" :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                                             <div class="dv-btn__text">مشاهده</div>
                                         </button>
                                     </td>
@@ -708,9 +713,9 @@
                                         </label>
                                     </td>
                                     <td>
-                                        <button type="button" class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
-                                            id="transaction-modal-btn" data-bs-target="#transaction-modal"
-                                            data-bs-toggle="modal">
+                                        <button type="button"
+                                            class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
+                                            id="transaction-modal-btn" :data-bs-target="$store.ui.isMobile ? '#transaction-offcanvas' : '#transaction-modal'" :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                                             <div class="dv-btn__text">مشاهده</div>
                                         </button>
                                     </td>
@@ -728,9 +733,9 @@
                                         </label>
                                     </td>
                                     <td>
-                                        <button type="button" class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
-                                            id="transaction-modal-btn" data-bs-target="#transaction-modal"
-                                            data-bs-toggle="modal">
+                                        <button type="button"
+                                            class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
+                                            id="transaction-modal-btn" :data-bs-target="$store.ui.isMobile ? '#transaction-offcanvas' : '#transaction-modal'" :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                                             <div class="dv-btn__text">مشاهده</div>
                                         </button>
                                     </td>
@@ -749,9 +754,9 @@
                                         </label>
                                     </td>
                                     <td>
-                                        <button type="button" class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
-                                            id="transaction-modal-btn" data-bs-target="#transaction-modal"
-                                            data-bs-toggle="modal">
+                                        <button type="button"
+                                            class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--fill"
+                                            id="transaction-modal-btn" :data-bs-target="$store.ui.isMobile ? '#transaction-offcanvas' : '#transaction-modal'" :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                                             <div class="dv-btn__text">مشاهده</div>
                                         </button>
                                     </td>
@@ -794,31 +799,84 @@
                                 خواهد
                                 شد.</span>
                         </div>
-                        <form class="dv-deposit-modal__form">
+                        <form class="dv-deposit-modal__form" data-form-type="modal" id="deposit-form-modal">
                             <!-- ! Honey pot input -->
                             <div style="position:fixed; left:-9999px;">
                                 <input type="text" name="hp-field" tabindex="-1" autocomplete="off">
                             </div>
                             <div class="dv-input w-100">
                                 <div class="dv-input__field">
-                                    <input type="text" class="dv-format-num" name="desposit-amount" id="desposit-amount"
-                                        inputmode="numeric" placeholder="مبلغ واریز (ریال)">
+                                    <input type="text" class="dv-format-num" name="deposit-amount"
+                                        id="deposit-amount-modal" inputmode="numeric" placeholder="مبلغ واریز (ریال)">
                                 </div>
                             </div>
-                            <div class="dv-modal__form-btn-wrapper">
-                                <button type="submit" x-data x-async="ajaxDepositToWallet()"
-                                    class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill"
-                                    id="dv-deposit-modal__form-btn">
-                                    <div class="dv-btn__text">رفتن به درگاه پرداخت</div>
-                                </button>
-                            </div>
                         </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="dv-modal__form-btn-wrapper">
+                        <button type="submit" x-data x-async="ajaxDepositToWallet()" form="deposit-form-modal"
+                            class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" id="dv-deposit-modal-form-btn">
+                            <div class="dv-btn__text">رفتن به درگاه پرداخت</div>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- * Deposit Modal End -->
+
+    <!-- [Deposit offcanvas] Start -->
+    <div x-data class="offcanvas dv-offcanvas offcanvas-bottom" tabindex="-1" id="deposit-offcanvas"
+        aria-labelledby="deposit-offcanvas-title" aria-hidden="true">
+        <div class="offcanvas-header">
+            <span class="material-icons-outlined">
+                add_card
+            </span>
+            <h5 class="modal-title" id="deposit-offcanvas-title">
+                واریز به کیف پول
+            </h5>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body">
+            <div class="dv-modal__content">
+                <div class="dv-modal__note">
+                    <span class="dv-modal__note-icon material-icons-outlined">
+                        info
+                    </span>
+                    <span class="dv-modal__note-text">مبلغ واریزی پس از انجام مراحل پرداخت، به موجودی فعلی شما
+                        خواهد
+                        شد.</span>
+                </div>
+                <form class="dv-deposit-modal__form" data-form-type="offcanvas" id="deposit-form-offcanvas">
+                    <!-- ! Honey pot input -->
+                    <div style="position:fixed; left:-9999px;">
+                        <input type="text" name="hp-field" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="dv-input w-100">
+                        <div class="dv-input__field">
+                            <input type="text" class="dv-format-num" name="deposit-amount" id="deposit-amount-offcanvas"
+                                inputmode="numeric" placeholder="مبلغ واریز (ریال)">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="offcanvas-footer">
+            <div class="dv-modal__form-btn-wrapper">
+                <button type="submit" x-data x-async="ajaxDepositToWallet()" form="deposit-form-offcanvas"
+                    class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" id="dv-deposit-offcanvas-form-btn">
+                    <div class="dv-btn__text">رفتن به درگاه پرداخت</div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- [Deposit offcanvas] end -->
 
     <!-- * Withdraw Modal Start -->
     <div x-data class="modal dv-modal fade" id="withdraw-modal" tabindex="-1" role="dialog"
@@ -838,7 +896,7 @@
                         </span>
                     </button>
                 </div>
-                <div class="modal-body dv-withdraw-modal__body">
+                <div class="modal-body">
                     <div class="dv-modal__content">
                         <div class="dv-modal__note">
                             <span class="dv-modal__note-icon material-icons-outlined">
@@ -847,21 +905,21 @@
                             <span class="dv-modal__note-text">مبلغ درخواستی شما پس از تایید به حسابتان واریز خواهد
                                 شد.</span>
                         </div>
-                        <form class="dv-withdraw-modal__form">
+                        <form class="dv-withdraw-modal__form" data-form-type="modal" id="withdraw-form-modal">
                             <!-- ! Honey pot input -->
                             <div style="position:fixed; left:-9999px;">
                                 <input type="text" name="hp-field" tabindex="-1" autocomplete="off">
                             </div>
                             <div class="dv-input w-100">
                                 <div class="dv-input__field">
-                                    <input type="text" name="withdraw-amount" class="dv-format-num" id="withdraw-amount"
-                                        inputmode="numeric" placeholder="مبلغ واریز (ریال)">
+                                    <input type="text" name="withdraw-amount" class="dv-format-num"
+                                        id="withdraw-amount-modal" inputmode="numeric" placeholder="مبلغ واریز (ریال)">
                                 </div>
                             </div>
                             <div class="dv-input w-100">
                                 <div class="dv-input__field">
                                     <input type="text" inputmode="numeric" name="account-sheba-number"
-                                        id="account-sheba-number" placeholder="شماره شبا">
+                                        id="account-sheba-number-modal" placeholder="شماره شبا">
                                     <div class="dv-input__icon">
                                         <svg viewBox="0 0 24 24">
                                             <use href="/Arcane-Front-build/icons/sprites.svg#IR"></use>
@@ -871,30 +929,105 @@
                             </div>
                             <div class="dv-input w-100">
                                 <div class="dv-input__field">
-                                    <input type="text" inputmode="numeric" name="bank-card-number" id="bank-card-number"
-                                        placeholder="شماره کارت">
+                                    <input type="text" inputmode="numeric" name="bank-card-number"
+                                        id="bank-card-number-modal" placeholder="شماره کارت">
                                 </div>
                             </div>
                             <div class="dv-input w-100">
                                 <div class="dv-input__field">
-                                    <input type="text" name="bank-account-owner" id="bank-account-owner"
+                                    <input type="text" name="bank-account-owner" id="bank-account-owner-modal"
                                         placeholder="نام مالک حساب">
                                 </div>
                             </div>
-                            <div class="dv-modal__form-btn-wrapper">
-                                <button type="submit" x-data x-async="ajaxWithdrawToWallet()"
-                                    class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill"
-                                    id="dv-withdraw-modal__form-btn">
-                                    <div class="dv-btn__text">ثبت درخواست برداشت</div>
-                                </button>
-                            </div>
                         </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="dv-modal__form-btn-wrapper">
+                        <button type="submit" x-data x-async="ajaxWithdrawToWallet()" form="withdraw-form-modal"
+                            class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" id="dv-withdraw-modal-form-btn">
+                            <div class="dv-btn__text">ثبت درخواست برداشت</div>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- * Withdraw Modal End -->
+
+    <!-- [Withdraw offcanvas] Start -->
+    <div x-data class="offcanvas dv-offcanvas offcanvas-bottom" tabindex="-1" id="withdraw-offcanvas"
+        aria-labelledby="withdraw-offcanvas-title" aria-hidden="true">
+        <div class="offcanvas-header">
+            <span class="material-icons-outlined">
+                add_card
+            </span>
+            <h5 class="modal-title" id="withdraw-offcanvas-title">
+                برداشت از کیف پول
+            </h5>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body">
+            <div class="dv-modal__content">
+                <div class="dv-modal__note">
+                    <span class="dv-modal__note-icon material-icons-outlined">
+                        info
+                    </span>
+                    <span class="dv-modal__note-text">مبلغ درخواستی شما پس از تایید به حسابتان واریز خواهد
+                        شد.</span>
+                </div>
+                <form class="dv-withdraw-modal__form" data-form-type="offcanvas" id="withdraw-form-offcanvas">
+                    <!-- ! Honey pot input -->
+                    <div style="position:fixed; left:-9999px;">
+                        <input type="text" name="hp-field" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="dv-input w-100">
+                        <div class="dv-input__field">
+                            <input type="text" name="withdraw-amount" class="dv-format-num"
+                                id="withdraw-amount-offcanvas" inputmode="numeric" placeholder="مبلغ واریز (ریال)">
+                        </div>
+                    </div>
+                    <div class="dv-input w-100">
+                        <div class="dv-input__field">
+                            <input type="text" inputmode="numeric" name="account-sheba-number"
+                                id="account-sheba-number-offcanvas" placeholder="شماره شبا">
+                            <div class="dv-input__icon">
+                                <svg viewBox="0 0 24 24">
+                                    <use href="/Arcane-Front-build/icons/sprites.svg#IR"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dv-input w-100">
+                        <div class="dv-input__field">
+                            <input type="text" inputmode="numeric" name="bank-card-number"
+                                id="bank-card-number-offcanvas" placeholder="شماره کارت">
+                        </div>
+                    </div>
+                    <div class="dv-input w-100">
+                        <div class="dv-input__field">
+                            <input type="text" name="bank-account-owner" id="bank-account-owner-offcanvas"
+                                placeholder="نام مالک حساب">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="offcanvas-footer">
+            <div class="dv-modal__form-btn-wrapper">
+                <button type="submit" x-data x-async="ajaxWithdrawToWallet()" form="withdraw-form-offcanvas"
+                    class="dv-btn dv-btn--md dv-btn--primary dv-btn--fill" id="dv-withdraw-offcanvas-form-btn">
+                    <div class="dv-btn__text">ثبت درخواست برداشت</div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- [Withdraw offcanvas] end -->
 
     <!-- * Transaction Modal Start -->
     <div x-data class="modal dv-modal fade" id="transaction-modal" tabindex="-1" role="dialog"
@@ -959,6 +1092,67 @@
         </div>
     </div>
     <!-- * Transaction Modal End -->
+
+    <!-- [Transaction offcanvas] Start -->
+    <div class="offcanvas dv-offcanvas offcanvas-bottom" tabindex="-1" id="transaction-offcanvas"
+        aria-labelledby="transaction-offcanvas-title" aria-hidden="true">
+        <div class="offcanvas-header">
+            <span class="material-icons-outlined">
+                receipt_long
+            </span>
+            <h5 class="modal-title" id="transaction-modal-title">
+                جزئیات تراکنش
+            </h5>
+            <button type="button" class="dv-btn dv-btn--sm button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <span class="dv-btn__icon material-icons-outlined">
+                    keyboard_arrow_down
+                </span>
+            </button>
+        </div>
+        <hr class="m-0">
+        <div class="offcanvas-body">
+            <div class="dv-modal__content">
+                <span
+                    class="dv-transaction-modal__amount dv-label dv-label--lg dv-label--success dv-label--outline w-100">تومان
+                    4,000,000</span>
+                <div class="dv-transaction-modal__details">
+                    <div class="dv-transaction-modal__details-row">
+                        <span class="dv-transaction-modal__details-row-label">شماره تراکنش:</span>
+                        <span class="dv-transaction-modal__details-row-value">123456789</span>
+                    </div>
+                    <div class="dv-transaction-modal__details-row">
+                        <span class="dv-transaction-modal__details-row-label">تاریخ تراکنش:</span>
+                        <span class="dv-transaction-modal__details-row-value">1403/10/02 11:02</span>
+                    </div>
+                    <div class="dv-transaction-modal__details-row">
+                        <span class="dv-transaction-modal__details-row-label">نوع تراکنش:</span>
+                        <span class="dv-label dv-label--sm dv-label--success dv-label--outline">برداشت از
+                            کیف</span>
+                    </div>
+                    <div class="dv-transaction-modal__details-row">
+                        <span class="dv-transaction-modal__details-row-label">وضعیت تراکنش:</span>
+                        <span class="dv-label dv-label--sm dv-label--success dv-label--outline">تایید شده</span>
+                    </div>
+                </div>
+                <div class="dv-transaction-modal__account">
+                    <div class="dv-transaction-modal__account-row">
+                        <span class="dv-transaction-modal__account-row-label">شماره شبا:</span>
+                        <span class="dv-transaction-modal__account-row-value">IR
+                            12345678912345678912345678</span>
+                    </div>
+                    <div class="dv-transaction-modal__account-row">
+                        <span class="dv-transaction-modal__account-row-label">شماره حساب:</span>
+                        <span class="dv-transaction-modal__account-row-value">1234 5678 2345 6543</span>
+                    </div>
+                    <div class="dv-transaction-modal__account-row">
+                        <span class="dv-transaction-modal__account-row-label">مالک حساب:</span>
+                        <span class="dv-transaction-modal__account-row-value"> حسین فرهانی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [Transaction offcanvas] end -->
 
     <!-- ! Core Scripts -->
 

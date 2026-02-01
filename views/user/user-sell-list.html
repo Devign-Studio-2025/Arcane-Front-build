@@ -5,12 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  <script type="module" crossorigin src="/Arcane-Front-build/assets/user-sell-list-B3zVWwQT.js"></script>
-  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-J0b_Y7a1.js">
-  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/datatable-fa-CUKt88BO.js">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DJxJE6BR.css">
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/user-sell-list-Bo_Fu0g5.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-D2V5YL7I.js">
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/datatable-fa-DSWKXLgg.js">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DcL-z6zl.css">
   <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/datatable-fa-4z33KFpF.css">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-Ddxq-lyp.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-DtsZgJML.css">
   <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/single-table-content-DNzIBtJ6.css">
 </head>
 
@@ -29,9 +29,18 @@
                 <h2 class="d-none d-lg-block">آرکـِیـن</h2>
             </div>
             <div class="dv-nav__center-left">
+                <a href="user-chat.html" class="d-lg-flex d-none dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="پشتیبانی">
+                    <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount" x-text="$store.ui.notifCount">
+                    </div>
+                    <span class="dv-btn__icon icon icon--xl material-icons-outlined">
+                        question_answer
+                    </span>
+                </a>
                 <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="اعلان‌ها">
-                    <button class="d-none d-lg-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
-                        data-bs-target="#notifs-modal" data-bs-toggle="modal">
+                    <button class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                        :data-bs-target="$store.ui.isMobile ? '#notifs-offcanvas' : '#notifs-modal'"
+                        :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                         <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount"
                             x-text="$store.ui.notifCount">
                         </div>
@@ -40,14 +49,6 @@
                         </span>
                     </button>
                 </span>
-                <button class="d-lg-none d-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
-                    data-bs-target="#notifs-offcanvas" data-bs-toggle="offcanvas">
-                    <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount" x-text="$store.ui.notifCount">
-                    </div>
-                    <span class="dv-btn__icon icon icon--xl material-icons-outlined">
-                        notifications
-                    </span>
-                </button>
                 <a class="dv-btn dv-btn--md dv-btn--secondary dv-btn--fill d-none d-lg-flex" href="../../index.html">
                     <div class="dv-btn__text">ورود به سایت</div>
                 </a>
@@ -60,7 +61,7 @@
     <nav class="dv-nav-mobile container d-flex d-lg-none" x-data>
         <ul class="dv-nav-mobile__links">
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="user-wallet.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         account_balance_wallet
                     </span>
@@ -68,7 +69,7 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="buy-cart.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         shopping_cart
                     </span>
@@ -78,7 +79,7 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="user-games.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         sports_esports
                     </span>
@@ -86,11 +87,11 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="user-chat.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
-                        person
+                        question_answer
                     </span>
-                    پروفایل
+                    تیکت
                 </a>
             </li>
         </ul>
@@ -125,13 +126,13 @@
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="buy-cart.html">
                 <div class="dv-sidemenu__text">سبد خرید</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="sell-cart.html">
                 <div class="dv-sidemenu__text">سبد فروش</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
@@ -155,7 +156,7 @@
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="user-profile.html">
                 <div class="dv-sidemenu__text">اطلاعات کاربری</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
@@ -267,7 +268,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="user-notifs.html" data-bs-dismiss="modal"
+                    <a href="user-notifs.html"
                         class="w-100 dv-btn dv-btn--sm dv-btn--primary dv-btn--fill">
                         <div class="dv-btn__text">همه اعلان‌ها</div>
                     </a>
@@ -390,7 +391,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="user-favs.html" class="dv-section__aside-link">
+                        <a href="user-favs.html" class="dv-section__aside-link ">
                             علاقمندی
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 favorite_border
@@ -398,7 +399,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="buy-cart.html" class="dv-section__aside-link">
                             سبد خرید
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 shopping_cart
@@ -408,7 +409,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="sell-cart.html" class="dv-section__aside-link">
                             سبد فروش
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 sell
@@ -426,7 +427,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="user-wallet.html" class="dv-section__aside-link">
                             کیف پول
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 account_balance_wallet
@@ -434,7 +435,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="user-chat.html" class="dv-section__aside-link">
                             تیکت و پشتیبانی
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 question_answer
@@ -454,7 +455,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="user-profile.html" class="dv-section__aside-link">
                             اطلاعات کاربری
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 person

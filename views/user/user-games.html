@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  <script type="module" crossorigin src="/Arcane-Front-build/assets/main-J0b_Y7a1.js"></script>
-  <script type="module" crossorigin src="/Arcane-Front-build/assets/dashboard-3EOY6Jif.js"></script>
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DJxJE6BR.css">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-Ddxq-lyp.css">
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/main-D2V5YL7I.js"></script>
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/dashboard-BuqQ0SAe.js"></script>
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DcL-z6zl.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/dashboard-DtsZgJML.css">
 </head>
 
 <body>
@@ -26,9 +26,18 @@
                 <h2 class="d-none d-lg-block">آرکـِیـن</h2>
             </div>
             <div class="dv-nav__center-left">
+                <a href="user-chat.html" class="d-lg-flex d-none dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="پشتیبانی">
+                    <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount" x-text="$store.ui.notifCount">
+                    </div>
+                    <span class="dv-btn__icon icon icon--xl material-icons-outlined">
+                        question_answer
+                    </span>
+                </a>
                 <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="اعلان‌ها">
-                    <button class="d-none d-lg-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
-                        data-bs-target="#notifs-modal" data-bs-toggle="modal">
+                    <button class="dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
+                        :data-bs-target="$store.ui.isMobile ? '#notifs-offcanvas' : '#notifs-modal'"
+                        :data-bs-toggle="$store.ui.isMobile ? 'offcanvas' : 'modal'">
                         <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount"
                             x-text="$store.ui.notifCount">
                         </div>
@@ -37,14 +46,6 @@
                         </span>
                     </button>
                 </span>
-                <button class="d-lg-none d-flex dv-btn dv-btn--sm dv-btn--secondary dv-btn--subtle"
-                    data-bs-target="#notifs-offcanvas" data-bs-toggle="offcanvas">
-                    <div class="dv-badge dv-badge--number" x-show="$store.ui.notifCount" x-text="$store.ui.notifCount">
-                    </div>
-                    <span class="dv-btn__icon icon icon--xl material-icons-outlined">
-                        notifications
-                    </span>
-                </button>
                 <a class="dv-btn dv-btn--md dv-btn--secondary dv-btn--fill d-none d-lg-flex" href="../../index.html">
                     <div class="dv-btn__text">ورود به سایت</div>
                 </a>
@@ -57,7 +58,7 @@
     <nav class="dv-nav-mobile container d-flex d-lg-none" x-data>
         <ul class="dv-nav-mobile__links">
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="user-wallet.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         account_balance_wallet
                     </span>
@@ -65,7 +66,7 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="buy-cart.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         shopping_cart
                     </span>
@@ -75,7 +76,7 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link dv-nav-mobile__link--active" href="">
+                <a class="dv-nav-mobile__link dv-nav-mobile__link--active" href="user-games.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
                         sports_esports
                     </span>
@@ -83,11 +84,11 @@
                 </a>
             </li>
             <li>
-                <a class="dv-nav-mobile__link" href="">
+                <a class="dv-nav-mobile__link" href="user-chat.html">
                     <span class="dv-nav-mobile__icon material-icons-outlined">
-                        person
+                        question_answer
                     </span>
-                    پروفایل
+                    تیکت
                 </a>
             </li>
         </ul>
@@ -123,13 +124,13 @@
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="buy-cart.html">
                 <div class="dv-sidemenu__text">سبد خرید</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="sell-cart.html">
                 <div class="dv-sidemenu__text">سبد فروش</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
@@ -153,13 +154,13 @@
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="user-profile.html">
                 <div class="dv-sidemenu__text">اطلاعات کاربری</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
                 </span>
             </a>
-            <a class="dv-sidemenu__link" href="#">
+            <a class="dv-sidemenu__link" href="user-chat.html">
                 <div class="dv-sidemenu__text">پشتیبانی</div>
                 <span class="dv-sidemenu__icon material-icons-outlined">
                     arrow_back_ios
@@ -265,7 +266,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="user-notifs.html" data-bs-dismiss="modal"
+                    <a href="user-notifs.html" 
                         class="w-100 dv-btn dv-btn--sm dv-btn--primary dv-btn--fill">
                         <div class="dv-btn__text">همه اعلان‌ها</div>
                     </a>
@@ -376,7 +377,7 @@
     <main class="dv-main container">
 
         <!-- * [Section Games] Start -->
-        <section class="dv-section dv-section--aside-content">
+        <section class="dv-section dv-section--aside-content" x-init="$store.ui.setInitCount('gamesCount', 6)">
             <aside x-data class="dv-section__aside col-4 col-xl-3 d-none d-lg-flex">
                 <ul class="dv-section__aside-links">
                     <li>
@@ -396,7 +397,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="buy-cart.html" class="dv-section__aside-link">
                             سبد خرید
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 shopping_cart
@@ -406,7 +407,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="sell-cart.html" class="dv-section__aside-link">
                             سبد فروش
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 sell
@@ -424,7 +425,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="user-wallet.html" class="dv-section__aside-link">
                             کیف پول
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 account_balance_wallet
@@ -432,7 +433,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="user-chat.html" class="dv-section__aside-link">
                             تیکت و پشتیبانی
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 question_answer
@@ -452,7 +453,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="dv-section__aside-link">
+                        <a href="user-profile.html" class="dv-section__aside-link">
                             اطلاعات کاربری
                             <span class="dv-section__aside-link-icon material-icons-outlined">
                                 person
@@ -471,7 +472,7 @@
             </aside>
             <div class="dv-section__content col" x-data>
                 <div class="dv-section__content-header-row">
-                    <h5 class="dv-section__content-header-title">بازی‌های من (45)</h5>
+                    <h5 class="dv-section__content-header-title">بازی‌های من (<span x-text="$store.ui.gamesCount"></span>)</h5>
                     <div class="dv-section__content-header">
                         <div class="dv-input col col-lg-5">
                             <div class="dv-input__field">
@@ -566,14 +567,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="dv-section__content-cards">
+                <div class="dv-section__content-cards" x-show="$store.ui.gamesCount > 0">
                     <div x-data x-show="$store.ui.loading" class="dv-section__content-overlay">
                         <div class="spinner-border" role="status">
                         </div>
                         در حال جستجو...
                     </div>
                     <div class="dv-section__card" x-data="sellCartAjax">
-                        <a class="dv-section__card-link" href="game.html">
+                        <a class="dv-section__card-link" href="../game.html">
                             <div class="dv-card__head">
                                 <div class="dv-card__image-wrapper">
                                     <div x-show="isAdded"
@@ -608,14 +609,13 @@
                                 </div>
                             </div>
                         </a>
-                        <button x-async="toggleSellCart()" :class="btnClass"
-                            class="dv-btn dv-btn--md dv-btn--secondary">
+                        <button x-async="toggle()" :class="btnClass()" class="dv-btn dv-btn--md dv-btn--secondary">
                             <span class="dv-btn__icon material-icons-outlined" x-text="icon"></span>
                             <div class="dv-btn__text d-flex dv-gap-xs" x-text="text">سبد فروش</div>
                         </button>
                     </div>
                     <div class="dv-section__card" x-data="sellCartAjax">
-                        <a class="dv-section__card-link" href="game.html">
+                        <a class="dv-section__card-link" href="../game.html">
                             <div class="dv-card__head">
                                 <div class="dv-card__image-wrapper">
                                     <div x-show="isAdded"
@@ -656,14 +656,13 @@
                                 </div>
                             </div>
                         </a>
-                        <button x-async="toggleSellCart()" :class="btnClass"
-                            class="dv-btn dv-btn--md dv-btn--secondary">
+                        <button x-async="toggle()" :class="btnClass()" class="dv-btn dv-btn--md dv-btn--secondary">
                             <span class="dv-btn__icon material-icons-outlined" x-text="icon"></span>
                             <div class="dv-btn__text d-flex dv-gap-xs" x-text="text">سبد فروش</div>
                         </button>
                     </div>
                     <div class="dv-section__card" x-data="sellCartAjax">
-                        <a class="dv-section__card-link" href="game.html">
+                        <a class="dv-section__card-link" href="../game.html">
                             <div class="dv-card__head">
                                 <div class="dv-card__image-wrapper">
                                     <div x-show="isAdded"
@@ -700,14 +699,13 @@
                                 </div>
                             </div>
                         </a>
-                        <button x-async="toggleSellCart()" :class="btnClass"
-                            class="dv-btn dv-btn--md dv-btn--secondary">
+                        <button x-async="toggle()" :class="btnClass()" class="dv-btn dv-btn--md dv-btn--secondary">
                             <span class="dv-btn__icon material-icons-outlined" x-text="icon"></span>
                             <div class="dv-btn__text d-flex dv-gap-xs" x-text="text">سبد فروش</div>
                         </button>
                     </div>
                     <div class="dv-section__card" x-data="sellCartAjax">
-                        <a class="dv-section__card-link" href="game.html">
+                        <a class="dv-section__card-link" href="../game.html">
                             <div class="dv-card__head">
                                 <div class="dv-card__image-wrapper">
                                     <div x-show="isAdded"
@@ -740,14 +738,13 @@
                                 </div>
                             </div>
                         </a>
-                        <button x-async="toggleSellCart()" :class="btnClass"
-                            class="dv-btn dv-btn--md dv-btn--secondary">
+                        <button x-async="toggle()" :class="btnClass()" class="dv-btn dv-btn--md dv-btn--secondary">
                             <span class="dv-btn__icon material-icons-outlined" x-text="icon"></span>
                             <div class="dv-btn__text d-flex dv-gap-xs" x-text="text">سبد فروش</div>
                         </button>
                     </div>
                     <div class="dv-section__card" x-data="sellCartAjax">
-                        <a class="dv-section__card-link" href="game.html">
+                        <a class="dv-section__card-link" href="../game.html">
                             <div class="dv-card__head">
                                 <div class="dv-card__image-wrapper">
                                     <div x-show="isAdded"
@@ -784,14 +781,13 @@
                                 </div>
                             </div>
                         </a>
-                        <button x-async="toggleSellCart()" :class="btnClass"
-                            class="dv-btn dv-btn--md dv-btn--secondary">
+                        <button x-async="toggle()" :class="btnClass()" class="dv-btn dv-btn--md dv-btn--secondary">
                             <span class="dv-btn__icon material-icons-outlined" x-text="icon"></span>
                             <div class="dv-btn__text d-flex dv-gap-xs" x-text="text">سبد فروش</div>
                         </button>
                     </div>
                     <div class="dv-section__card" x-data="sellCartAjax">
-                        <a class="dv-section__card-link" href="game.html">
+                        <a class="dv-section__card-link" href="../game.html">
                             <div class="dv-card__head">
                                 <div class="dv-card__image-wrapper">
                                     <div x-show="isAdded"
@@ -824,17 +820,29 @@
                                 </div>
                             </div>
                         </a>
-                        <button x-async="toggleSellCart()" :class="btnClass"
-                            class="dv-btn dv-btn--md dv-btn--secondary">
+                        <button x-async="toggle()" :class="btnClass()" class="dv-btn dv-btn--md dv-btn--secondary">
                             <span class="dv-btn__icon material-icons-outlined" x-text="icon"></span>
                             <div class="dv-btn__text d-flex dv-gap-xs" x-text="text">سبد فروش</div>
                         </button>
                     </div>
                 </div>
-                <div class="dv-section__content-footer">
+                <div class="dv-section__content-footer" x-show="$store.ui.gamesCount > 0">
                     <button x-data x-async="ajaxLoad()" class="m-auto dv-btn dv-btn--lg dv-btn--primary dv-btn--subtle">
                         <div class="dv-btn__text">مشاهده بیشتر</div>
                     </button>
+                </div>
+
+                <!-- Empty Cart State -->
+                <div x-show="$store.ui.gamesCount === 0" class="dv-empty-state">
+                    <span class="material-icons-outlined dv-empty-state__icon">sports_esports</span>
+                    <h5 class="dv-empty-state__title">هیچ بازی‌ای خریداری شده‌ای ندارید!</h5>
+                    <p class="dv-empty-state__description">می‌توانید از فروشگاه محصولات مورد نظر خود را اضافه کنید
+                    </p>
+                    <a href="../games.html" class="dv-btn dv-btn--lg dv-btn--primary dv-btn--fill dv-empty-state__btn">
+                        <span class="material-icons-outlined dv-btn__icon">storefront</span>
+
+                        <span class="dv-btn__text"> بازگشت به فروشگاه</span>
+                    </a>
                 </div>
             </div>
         </section>

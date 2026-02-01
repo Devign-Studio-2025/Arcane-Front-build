@@ -5,13 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  <script type="module" crossorigin src="/Arcane-Front-build/assets/game-D1mF9_GB.js"></script>
-  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-J0b_Y7a1.js">
+  <script type="module" crossorigin src="/Arcane-Front-build/assets/game-BFC6hqlT.js"></script>
+  <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/main-D2V5YL7I.js">
   <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/swiper-CRU51p5Y.js">
   <link rel="modulepreload" crossorigin href="/Arcane-Front-build/assets/just-validate.es-C73wyOde.js">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DJxJE6BR.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/main-DcL-z6zl.css">
   <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/swiper-DtOVtP06.css">
-  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/game-CMlrM390.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/game-X45BSPyF.css">
+  <link rel="stylesheet" crossorigin href="/Arcane-Front-build/assets/fancybox-DxT1xVcY.css">
 </head>
 
 <body>
@@ -116,7 +117,7 @@
           <div class="dv-btn__text">ورود | ثبت نام</div>
         </a> -->
             <div class="dv-nav__left-auth">
-                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                <a class="dv-btn dv-btn--primary" href="user/buy-cart.html" data-bs-toggle="tooltip" data-bs-placement="bottom"
                     data-bs-title="سبد خرید">
                     <div class="dv-badge dv-badge--number" x-show="$store.ui.cartCount" x-text="$store.ui.cartCount">
                     </div>
@@ -130,10 +131,10 @@
                         account_circle
                     </span>
                 </a>
-                <a class="dv-btn dv-btn--primary" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                <a class="dv-btn dv-btn--primary" href="user/user-chat.html" data-bs-toggle="tooltip" data-bs-placement="bottom"
                     data-bs-title="پشتیبانی">
                     <span class="dv-btn__icon material-icons-outlined">
-                        headset
+                        question_answer
                     </span>
                 </a>
             </div>
@@ -220,7 +221,7 @@
 
     <!-- ************ [Header Game Background] Start ************ -->
     <div class="dv-game-header">
-        <img class="dv-game-header__bg" src="/Arcane-Front-build/imgs/66246-2880x1800-desktop-hd-assassins-creed-background.jpg"
+        <img class="dv-game-header__bg skeleton" src="/Arcane-Front-build/imgs/66246-2880x1800-desktop-hd-assassins-creed-background.jpg"
             loading="lazy" alt="background image">
         <!-- ************ [Payment box] Start ************ -->
         <div class="dv-payment-box__container container">
@@ -309,15 +310,13 @@
                                 </ul>
                             </div>
                             <div class="dv-payment-box__btn-wrapper">
-                                <button type="submit" class="dv-btn dv-btn--md dv-btn--primary dv-btn--outline w-100">
-                                    <div class="dv-btn__text">افزودن به سبد</div>
+                                <button class="dv-btn dv-btn--md dv-btn--primary w-100" :class="btnClass(true)"
+                                    x-data="cartAjax" x-async="toggle()">
+                                    <div class="dv-btn__text" x-text="text('افزودن به سبد')"></div>
                                 </button>
-                                <button
-                                    class="dv-btn dv-btn--md dv-btn--secondary dv-btn--outline dv-payment-box__fav-btn"
-                                    href="#">
-                                    <span class="dv-btn__icon material-icons-outlined">
-                                        favorite_border
-                                    </span>
+                                <button class="dv-btn dv-btn--md dv-btn--secondary dv-payment-box__fav-btn"
+                                    x-data="favAjax" x-async="toggle()" :class="btnClass()">
+                                    <span class="dv-btn__icon material-icons-outlined" x-text="icon"></span>
                                 </button>
                             </div>
                             <div class="dv-payment-box__price-wrapper">
@@ -339,7 +338,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="dv-payment-box__box dv-payment-box__box-left"><img
+                <div class="dv-payment-box__box dv-payment-box__box-left"><img class="skeleton"
                         src="/Arcane-Front-build/imgs/66246-2880x1800-desktop-hd-assassins-creed-background.jpg" loading="lazy"
                         alt="game cover"></img>
                 </div>
@@ -434,7 +433,6 @@
                                 <span class="dv-game-details__label">امتیاز آرکین:</span>
                             </div>
                             <span class="dv-game-details__value">
-                                <i class="dv-game-details__icon dv-icon-star"></i>
                                 ۹ / ۱۰
                             </span>
                         </li>
@@ -489,7 +487,9 @@
                             class="dv-game-gallery__item">
                             <img src="/Arcane-Front-build/imgs/fc-24 (1).webp" alt="Game screenshot" class="dv-game-gallery__image" />
                             <span class="dv-game-gallery__overlay">
-                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                                <span class="material-icons-outlined dv-game-gallery__icon">
+                                    zoom_in
+                                </span>
                             </span>
                         </a>
                     </div>
@@ -498,7 +498,9 @@
                             class="dv-game-gallery__item">
                             <img src="/Arcane-Front-build/imgs/fc-24 (2).webp" alt="Game screenshot" class="dv-game-gallery__image" />
                             <span class="dv-game-gallery__overlay">
-                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                                <span class="material-icons-outlined dv-game-gallery__icon">
+                                    zoom_in
+                                </span>
                             </span>
                         </a>
                     </div>
@@ -507,7 +509,9 @@
                             class="dv-game-gallery__item">
                             <img src="/Arcane-Front-build/imgs/fc-24 (3).webp" alt="Game screenshot" class="dv-game-gallery__image" />
                             <span class="dv-game-gallery__overlay">
-                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                                <span class="material-icons-outlined dv-game-gallery__icon">
+                                    zoom_in
+                                </span>
                             </span>
                         </a>
                     </div>
@@ -516,7 +520,9 @@
                             class="dv-game-gallery__item">
                             <img src="/Arcane-Front-build/imgs/fc-24 (4).jpg" alt="Game screenshot" class="dv-game-gallery__image" />
                             <span class="dv-game-gallery__overlay">
-                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                                <span class="material-icons-outlined dv-game-gallery__icon">
+                                    zoom_in
+                                </span>
                             </span>
                         </a>
                     </div>
@@ -525,7 +531,9 @@
                             class="dv-game-gallery__item">
                             <img src="/Arcane-Front-build/imgs/fc-24 (5).jpg" alt="Game screenshot" class="dv-game-gallery__image" />
                             <span class="dv-game-gallery__overlay">
-                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                                <span class="material-icons-outlined dv-game-gallery__icon">
+                                    zoom_in
+                                </span>
                             </span>
                         </a>
                     </div>
@@ -534,7 +542,9 @@
                             class="dv-game-gallery__item">
                             <img src="/Arcane-Front-build/imgs/fc-24 (6).jpg" alt="Game screenshot" class="dv-game-gallery__image" />
                             <span class="dv-game-gallery__overlay">
-                                <i class="dv-game-gallery__icon dv-icon-zoom"></i>
+                                <span class="material-icons-outlined dv-game-gallery__icon">
+                                    zoom_in
+                                </span>
                             </span>
                         </a>
                     </div>
@@ -614,7 +624,7 @@
                     </span>
                     <h4 class="dv-section__title">محصولات مشابه</h4>
                 </div>
-                <a href="#" class="dv-section__see-more-wrapper">
+                <a href="games.html" class="dv-section__see-more-wrapper">
                     <h4 class="dv-section__see-more-text">مشاهده بیشتر</h4>
                     <span class="dv-section__see-more-icon material-icons-outlined">
                         arrow_circle_left
@@ -622,7 +632,79 @@
                 </a>
             </div>
             <div class="dv-section__body">
-                <div class="dv-section__game-cards-swiper swiper padding-sm">
+                <div class="skeleton-cards" x-data x-show="$store.ui.skeletonLoading">
+                    <div class="skeleton-card">
+                        <div class="skeleton skeleton-card__image"></div>
+                        <div class="skeleton-card__texts">
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text skeleton-card__text--half"></div>
+                        </div>
+                        <div class="skeleton skeleton-card__text"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton skeleton-card__image"></div>
+                        <div class="skeleton-card__texts">
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text skeleton-card__text--half"></div>
+                        </div>
+                        <div class="skeleton skeleton-card__text"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton skeleton-card__image"></div>
+                        <div class="skeleton-card__texts">
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text skeleton-card__text--half"></div>
+                        </div>
+                        <div class="skeleton skeleton-card__text"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton skeleton-card__image"></div>
+                        <div class="skeleton-card__texts">
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text skeleton-card__text--half"></div>
+                        </div>
+                        <div class="skeleton skeleton-card__text"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton skeleton-card__image"></div>
+                        <div class="skeleton-card__texts">
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text skeleton-card__text--half"></div>
+                        </div>
+                        <div class="skeleton skeleton-card__text"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton skeleton-card__image"></div>
+                        <div class="skeleton-card__texts">
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text skeleton-card__text--half"></div>
+                        </div>
+                        <div class="skeleton skeleton-card__text"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton skeleton-card__image"></div>
+                        <div class="skeleton-card__texts">
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text"></div>
+                            <div class="skeleton skeleton-card__text skeleton-card__text--half"></div>
+                        </div>
+                        <div class="skeleton skeleton-card__text"></div>
+                    </div>
+                </div>
+                <div class="dv-section__game-cards-swiper swiper padding-sm" x-data x-show="!$store.ui.skeletonLoading">
                     <div class="dv-section__swiper-wrapper swiper-wrapper">
                         <div class="dv-section__swiper-slide swiper-slide">
                             <a href="game.html" class="dv-section__card">
@@ -879,7 +961,7 @@
                     </div>
                 </div>
                 <span class="m-auto">
-                    <button type="submit" class="dv-btn dv-btn--lg dv-btn--primary dv-btn--outline">
+                    <button class="dv-btn dv-btn--lg dv-btn--primary dv-btn--outline" x-data x-async="loadComments()">
                         <div class="dv-btn__text">مشاهده بیشتر</div>
                     </button>
                 </span>
